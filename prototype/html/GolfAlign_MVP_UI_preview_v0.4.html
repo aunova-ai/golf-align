@@ -1,0 +1,1577 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GolfAlign Preview</title>
+    <style>
+      :root {
+        --bg: #faf9f4;
+        --card: #ffffff;
+        --text: #1f1f1f;
+        --sub: #6d6256;
+        --muted: #aaa39a;
+        --line: #e5ded4;
+        --amber: #dc9f23;
+        --amber-dark: #8b5b06;
+        --amber-soft: #fff4df;
+        --green: #2f7a4f;
+        --green-soft: #eaf5ee;
+        --red: #c65048;
+        --red-soft: #ffe8e4;
+        --shadow: 0 5px 18px rgba(31, 31, 31, 0.05);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #eee8df;
+        color: var(--text);
+        font-family:
+          Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+          "Segoe UI", system-ui, sans-serif;
+        line-height: 1.55;
+      }
+
+      button,
+      input,
+      textarea {
+        border: 0;
+        background: none;
+        color: inherit;
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .phone {
+        min-height: 100vh;
+        max-width: 430px;
+        margin: 0 auto;
+        background: var(--bg);
+        padding-bottom: 92px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        padding: 0 22px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(250, 249, 244, 0.96);
+        backdrop-filter: blur(10px);
+      }
+
+      .mode-switch {
+        display: flex;
+        gap: 6px;
+        margin: 14px 22px 0;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: white;
+        padding: 4px;
+      }
+
+      .mode-button {
+        flex: 1;
+        min-height: 38px;
+        border-radius: 999px;
+        color: var(--sub);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .mode-button.active {
+        background: var(--amber);
+        color: white;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+        font-size: 21px;
+        font-weight: 800;
+      }
+
+      .profile {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: white;
+        color: var(--amber-dark);
+        font-weight: 800;
+      }
+
+      .profile img {
+        display: block;
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+      }
+
+      .wordmark {
+        display: block;
+        width: 156px;
+        max-width: 50vw;
+        height: 34px;
+        object-fit: contain;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .icon-button {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border-radius: 999px;
+        color: var(--sub);
+        font-size: 24px;
+      }
+
+      main {
+        padding: 26px 22px 32px;
+      }
+
+      .page {
+        display: none;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      .app-mode {
+        display: none;
+      }
+
+      .app-mode.active {
+        display: block;
+      }
+
+      .hero h1,
+      .page-title {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1.35;
+        letter-spacing: 0;
+      }
+
+      .hero p,
+      .page-subtitle {
+        margin: 10px 0 0;
+        color: var(--sub);
+        font-size: 17px;
+      }
+
+      .primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        min-height: 60px;
+        border-radius: 13px;
+        background: var(--amber);
+        color: white;
+        font-size: 18px;
+        font-weight: 800;
+        box-shadow: 0 8px 18px rgba(139, 91, 6, 0.15);
+      }
+
+      .hero .primary {
+        margin-top: 28px;
+      }
+
+      .secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: white;
+        color: var(--amber-dark);
+        font-weight: 800;
+      }
+
+      .hint {
+        margin: 10px 0 0;
+        color: var(--sub);
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .section {
+        margin-top: 28px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 23px;
+        line-height: 1.35;
+      }
+
+      .text-link {
+        color: var(--amber-dark);
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      .pad {
+        padding: 18px;
+      }
+
+      .soft {
+        border-color: #efd49f;
+        background: var(--amber-soft);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        border-radius: 999px;
+        padding: 5px 12px;
+        font-size: 14px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .pill.amber {
+        background: #f6e5c5;
+        color: var(--amber-dark);
+      }
+
+      .pill.green {
+        background: var(--green-soft);
+        color: var(--green);
+      }
+
+      .pill.red {
+        background: var(--red-soft);
+        color: var(--red);
+      }
+
+      .pill.gray {
+        background: #efede8;
+        color: var(--sub);
+      }
+
+      .title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .desc {
+        margin: 4px 0 0;
+        color: var(--sub);
+        font-size: 16px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .coach {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .coach-photo {
+        display: grid;
+        width: 54px;
+        height: 54px;
+        place-items: center;
+        border: 3px solid var(--amber);
+        border-radius: 999px;
+        background: linear-gradient(145deg, #183e2c, #66a07b);
+        color: white;
+        font-weight: 800;
+      }
+
+      .pro-badge {
+        display: block;
+        width: 72px;
+        height: 72px;
+        object-fit: contain;
+      }
+
+      .todo-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 64px;
+        border-radius: 12px;
+        background: #f6f4f1;
+        padding: 13px 14px;
+      }
+
+      .todo-row + .todo-row {
+        margin-top: 12px;
+      }
+
+      .check {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 auto;
+        border: 2px solid #9d8973;
+        border-radius: 7px;
+        background: white;
+      }
+
+      .check.done {
+        display: grid;
+        place-items: center;
+        border-color: var(--amber);
+        background: var(--amber);
+        color: white;
+        font-weight: 900;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .chip {
+        min-height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: white;
+        padding: 7px 13px;
+        color: var(--sub);
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .chip.active {
+        border-color: var(--amber);
+        background: var(--amber-soft);
+        color: var(--amber-dark);
+      }
+
+      .records {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 64%;
+        gap: 14px;
+        overflow-x: auto;
+        padding: 2px 0 4px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .records::-webkit-scrollbar {
+        display: none;
+      }
+
+      .record-card {
+        overflow: hidden;
+        scroll-snap-align: start;
+      }
+
+      .record-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .record-item {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 14px;
+        padding: 12px;
+      }
+
+      .record-image,
+      .thumb {
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(145deg, rgba(32, 31, 27, 0.05), rgba(32, 31, 27, 0.26)),
+          linear-gradient(140deg, #d6b16b, #314d2c 58%, #121d17);
+      }
+
+      .record-image {
+        min-height: 150px;
+      }
+
+      .record-image.golfball,
+      .thumb.golfball {
+        background:
+          radial-gradient(circle at 63% 52%, #f9faf7 0 13%, transparent 14%),
+          linear-gradient(120deg, #234c30, #99ad78 45%, #e4cf98);
+      }
+
+      .thumb {
+        width: 82px;
+        min-height: 82px;
+        border-radius: 11px;
+      }
+
+      .play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        transform: translate(-50%, -50%);
+        border: 2px solid rgba(255, 255, 255, 0.82);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.18);
+        color: white;
+        font-size: 20px;
+      }
+
+      .record-body {
+        padding: 14px 15px 16px;
+      }
+
+      .viewer {
+        position: relative;
+        min-height: 420px;
+        overflow: hidden;
+        border-radius: 14px;
+        background:
+          linear-gradient(rgba(13, 20, 16, 0.08), rgba(13, 20, 16, 0.12)),
+          radial-gradient(circle at 44% 36%, #bfd1b1 0 7%, transparent 8%),
+          linear-gradient(180deg, #102719 0%, #274d2d 45%, #8aa96d 72%, #c2b067 100%);
+      }
+
+      .viewer.small {
+        min-height: 280px;
+      }
+
+      .pause {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: grid;
+        width: 78px;
+        height: 78px;
+        place-items: center;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 999px;
+        background: rgba(64, 70, 57, 0.62);
+        color: white;
+        font-size: 36px;
+        font-weight: 800;
+      }
+
+      .sticker {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        padding: 9px 14px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .sticker:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        width: 1px;
+        height: 42px;
+        background: currentColor;
+        opacity: 0.55;
+      }
+
+      .sticker.goal {
+        left: 45%;
+        top: 76px;
+        background: var(--amber);
+        color: white;
+      }
+
+      .sticker.warn {
+        right: 42px;
+        top: 130px;
+        background: #fff0cd;
+        color: var(--amber-dark);
+      }
+
+      .sticker.fix {
+        left: 45px;
+        top: 205px;
+        background: var(--red-soft);
+        color: var(--red);
+      }
+
+      .sticker.good {
+        left: 132px;
+        top: 290px;
+        background: #68b986;
+        color: white;
+      }
+
+      .summary-grid {
+        display: grid;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .summary-card {
+        padding: 20px;
+      }
+
+      .summary-title {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 10px;
+        font-size: 22px;
+        font-weight: 900;
+      }
+
+      .field {
+        margin-top: 16px;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text);
+        font-size: 16px;
+        font-weight: 800;
+      }
+
+      .input,
+      .textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: white;
+        padding: 14px 15px;
+        color: var(--text);
+        font-size: 16px;
+      }
+
+      .textarea {
+        min-height: 92px;
+        resize: vertical;
+      }
+
+      .training-expanded {
+        border: 1.5px solid var(--amber);
+        border-radius: 14px;
+        background: white;
+        padding: 18px;
+      }
+
+      .training-line {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .training-detail {
+        margin: 16px 0 0 40px;
+        border-radius: 12px;
+        background: var(--amber-soft);
+        padding: 16px;
+      }
+
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 16px;
+      }
+
+      .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid #ead7b2;
+      }
+
+      .switch {
+        width: 56px;
+        height: 32px;
+        border-radius: 999px;
+        background: var(--amber);
+        padding: 4px;
+      }
+
+      .switch:after {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin-left: auto;
+        border-radius: 999px;
+        background: white;
+      }
+
+      .round-card {
+        position: relative;
+        overflow: hidden;
+        padding: 28px 20px;
+        border-style: dashed;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: white;
+        padding: 13px 10px;
+        text-align: center;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      .metric span {
+        color: var(--sub);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .member-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .people-row {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 2px 0 4px;
+      }
+
+      .people-row::-webkit-scrollbar {
+        display: none;
+      }
+
+      .person {
+        min-width: 64px;
+        text-align: center;
+      }
+
+      .person .mini-profile {
+        margin: 0 auto 6px;
+      }
+
+      .person span {
+        color: var(--sub);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .member-card {
+        display: grid;
+        grid-template-columns: 50px 1fr auto;
+        gap: 12px;
+        align-items: center;
+        padding: 14px;
+      }
+
+      .mini-profile {
+        display: grid;
+        width: 50px;
+        height: 50px;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--amber-soft);
+        color: var(--amber-dark);
+        font-weight: 900;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .avatars {
+        display: flex;
+        justify-content: center;
+        gap: 9px;
+        margin: 16px 0 8px;
+      }
+
+      .avatar {
+        display: grid;
+        width: 43px;
+        height: 43px;
+        place-items: center;
+        border-radius: 999px;
+        background: #e8e2d6;
+        color: #8b8177;
+        font-weight: 900;
+      }
+
+      .avatar.empty {
+        border: 1px dashed #cfc7bd;
+        background: transparent;
+      }
+
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        z-index: 20;
+        display: grid;
+        width: 100%;
+        max-width: 430px;
+        grid-template-columns: repeat(5, 1fr);
+        transform: translateX(-50%);
+        border-top: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.96);
+        padding: 9px 4px 10px;
+        box-shadow: 0 -4px 12px rgba(31, 31, 31, 0.03);
+      }
+
+      .nav-item {
+        display: grid;
+        gap: 3px;
+        justify-items: center;
+        color: #a19a92;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .nav-item.active {
+        color: var(--amber);
+      }
+
+      .nav-icon {
+        font-size: 23px;
+        line-height: 1;
+      }
+
+      .mt {
+        margin-top: 16px;
+      }
+
+      .mt-lg {
+        margin-top: 24px;
+      }
+
+      @media (min-width: 720px) {
+        .phone {
+          border-left: 1px solid var(--line);
+          border-right: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <header class="topbar">
+        <div class="brand">
+          <img class="wordmark" src="assets/golfalign-wordmark.png" alt="GolfAlign" />
+          <span class="brand-text" id="brand-title">GolfAlign</span>
+        </div>
+        <button class="icon-button" aria-label="알림">○</button>
+      </header>
+
+      <div class="mode-switch" aria-label="미리보기 모드 전환">
+        <button class="mode-button active" data-mode="member">회원 미리보기</button>
+        <button class="mode-button" data-mode="pro">프로 미리보기</button>
+      </div>
+
+      <main class="app-mode active" id="member-mode">
+        <section class="page active member-page" id="home">
+          <div class="hero">
+            <h1>스윙을 기록하고,<br />성장을 정렬하다.</h1>
+            <p>오늘도 당신의 완성도 높은 스윙을 위해.</p>
+            <button class="primary" data-go="upload">영상/이미지 업로드</button>
+            <p class="hint">스윙 영상은 5초 권장, 최대 7초까지 가능해요.</p>
+          </div>
+
+          <section class="section">
+            <article class="card pad soft">
+              <div class="row">
+                <span class="pill amber">새 피드백</span>
+                <span class="desc">방금 전</span>
+              </div>
+              <div class="coach">
+                <div class="coach-photo">김</div>
+                <div>
+                  <p class="title">김프로님의 새로운 코멘트</p>
+                  <p class="desc">백스윙 시 왼쪽 어깨 위치를 확인하세요.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <h2>오늘 할 훈련</h2>
+              <button class="text-link" data-go="training">전체 보기</button>
+            </div>
+            <article class="card pad">
+              <div class="todo-row">
+                <div class="check"></div>
+                <div>
+                  <p class="title">드라이버 릴리즈 포인트 연습</p>
+                  <p class="desc">김프로방 · 공통 드릴</p>
+                </div>
+              </div>
+              <div class="todo-row">
+                <div class="check"></div>
+                <div>
+                  <p class="title">김프로 피드백 영상 복습</p>
+                  <p class="desc">김프로 · 개인 과제</p>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="section">
+            <div class="section-title">
+              <h2>최근 기록</h2>
+              <button class="text-link" data-go="records">전체보기</button>
+            </div>
+            <div class="records">
+              <button class="card record-card" data-go="detail">
+                <div class="record-image"><div class="play">▶</div></div>
+                <div class="record-body">
+                  <p class="title">24.05.21 연습</p>
+                  <p class="desc">드라이버 스윙</p>
+                </div>
+              </button>
+              <button class="card record-card" data-go="detail">
+                <div class="record-image golfball"><div class="play">IMG</div></div>
+                <div class="record-body">
+                  <p class="title">24.05.19 연습</p>
+                  <p class="desc">아이언 어프로치</p>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <section class="section">
+            <article class="card round-card">
+              <span class="pill gray">개발 중</span>
+              <h2 style="margin-top: 12px">라운드 모집</h2>
+              <p class="desc">함께 라운드할 멤버를 찾는 기능이 준비 중입니다.</p>
+              <div class="avatars">
+                <div class="avatar">김</div>
+                <div class="avatar">박</div>
+                <div class="avatar empty">+</div>
+                <div class="avatar empty">+</div>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="page member-page" id="records">
+          <h1 class="page-title">내 기록</h1>
+          <p class="page-subtitle">스윙, 어프로치, 퍼팅 기록을 모아보세요.</p>
+          <button class="primary mt-lg" data-go="upload">새 기록 업로드</button>
+          <div class="chips">
+            <button class="chip active">전체</button>
+            <button class="chip">영상</button>
+            <button class="chip">이미지</button>
+            <button class="chip">공유됨</button>
+            <button class="chip">피드백 있음</button>
+          </div>
+          <div class="record-list">
+            <button class="card record-item" data-go="detail">
+              <div class="thumb"><div class="play">▶</div></div>
+              <div>
+                <p class="title">7번 아이언 측면 스윙</p>
+                <p class="desc">아이언 · 측면 · 영상</p>
+                <span class="pill gray mt">비공개</span>
+              </div>
+            </button>
+            <button class="card record-item" data-go="detail">
+              <div class="thumb golfball"><div class="play">IMG</div></div>
+              <div>
+                <p class="title">퍼팅 라인 체크</p>
+                <p class="desc">퍼터 · 퍼팅 라인 · 이미지</p>
+                <span class="pill green mt">김프로방 공유됨</span>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <section class="page member-page" id="upload">
+          <h1 class="page-title">기록 업로드</h1>
+          <p class="page-subtitle">영상이나 이미지를 올려 내 자세를 기록하세요.</p>
+          <article class="card pad mt-lg">
+            <button class="secondary">영상 또는 이미지 선택</button>
+            <p class="hint">스윙 영상은 5초 정도가 가장 좋습니다. 최대 7초까지 업로드할 수 있습니다.</p>
+            <div class="field">
+              <label>제목</label>
+              <input class="input" value="7번 아이언 측면 스윙" />
+            </div>
+            <div class="field">
+              <label>기록 유형</label>
+              <div class="chips">
+                <button class="chip active">스윙</button>
+                <button class="chip">어프로치</button>
+                <button class="chip">퍼팅</button>
+                <button class="chip">훈련 결과</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>클럽</label>
+              <div class="chips">
+                <button class="chip">드라이버</button>
+                <button class="chip active">아이언</button>
+                <button class="chip">웨지</button>
+                <button class="chip">퍼터</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>촬영 방향</label>
+              <div class="chips">
+                <button class="chip">정면</button>
+                <button class="chip active">측면</button>
+                <button class="chip">후면</button>
+                <button class="chip">퍼팅 라인</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>메모</label>
+              <textarea class="textarea">다운스윙 때 상체가 먼저 나오는 느낌이 있습니다.</textarea>
+            </div>
+            <button class="primary mt-lg" data-go="records">저장하기</button>
+          </article>
+        </section>
+
+        <section class="page member-page" id="detail">
+          <h1 class="page-title">기록 상세</h1>
+          <p class="page-subtitle">영상이나 이미지 위에 피드백을 확인합니다.</p>
+          <section class="section">
+            <div class="viewer small">
+              <span class="sticker goal">목표</span>
+              <span class="sticker warn">주의</span>
+              <span class="sticker good">좋음</span>
+              <div class="pause">Ⅱ</div>
+            </div>
+          </section>
+          <article class="card pad mt-lg">
+            <div class="row">
+              <div>
+                <p class="title">7번 아이언 측면 스윙</p>
+                <p class="desc">아이언 · 측면 · 영상</p>
+              </div>
+              <span class="pill gray">비공개</span>
+            </div>
+            <p class="desc mt">다운스윙 때 상체가 먼저 나오는 느낌이 있습니다.</p>
+            <div class="chips">
+              <button class="chip active">프로방에 공유</button>
+              <button class="chip">Before & After</button>
+            </div>
+          </article>
+          <div class="summary-grid">
+            <article class="card summary-card">
+              <div class="summary-title">이번 목표</div>
+              <p class="desc">임팩트 때 체중을 왼발에 더 실어주세요.</p>
+            </article>
+            <article class="card summary-card soft">
+              <div class="summary-title">신경 쓸 점</div>
+              <p class="desc">다운스윙 시작 때 상체가 먼저 나옵니다.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="page member-page" id="training">
+          <h1 class="page-title">훈련</h1>
+          <p class="page-subtitle">오늘 할 훈련을 체크리스트처럼 관리하세요.</p>
+          <div class="chips mt-lg">
+            <button class="chip active">오늘</button>
+            <button class="chip">진행 중</button>
+            <button class="chip">완료</button>
+          </div>
+          <section class="section">
+            <article class="training-expanded">
+              <div class="training-line">
+                <div class="check"></div>
+                <div>
+                  <p class="title">드라이버 릴리즈 포인트 연습</p>
+                  <p class="desc">김프로방 · 공통 드릴</p>
+                </div>
+                <span class="pill green">진행 중</span>
+              </div>
+              <div class="training-detail">
+                <div class="detail-row">
+                  <span>목표 횟수</span>
+                  <strong>30회</strong>
+                </div>
+                <p class="title" style="margin-top: 14px; font-size: 17px">코치 메모</p>
+                <p class="desc">임팩트 이후 손목 릴리즈 타이밍을 확인하세요. 결과와 피드백은 본인과 프로만 확인합니다.</p>
+                <div class="toggle">
+                  <span>결과를 프로에게 제출</span>
+                  <div class="switch"></div>
+                </div>
+              </div>
+              <button class="primary mt-lg" data-go="training-result">결과 기록</button>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <div class="training-line">
+                <div class="check"></div>
+                <div>
+                  <p class="title">어프로치 연습 100개</p>
+                  <p class="desc">김프로 · 개인 과제</p>
+                </div>
+                <span class="pill amber">개인</span>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <div class="training-line">
+                <div class="check done">✓</div>
+                <div>
+                  <p class="title">퍼팅 라인 정렬 기초</p>
+                  <p class="desc">개인 훈련 · 완료</p>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="page member-page" id="training-result">
+          <h1 class="page-title">훈련 결과 기록</h1>
+          <p class="page-subtitle">영상이나 이미지는 선택으로 첨부할 수 있습니다.</p>
+          <article class="card pad mt-lg">
+            <p class="title">어프로치 연습 100개</p>
+            <p class="desc">목표: 거리감 일정하게 만들기</p>
+            <div class="field">
+              <label>실제 수행 횟수</label>
+              <input class="input" value="100개" />
+            </div>
+            <div class="field">
+              <label>체감 난이도</label>
+              <div class="chips">
+                <button class="chip">쉬움</button>
+                <button class="chip active">보통</button>
+                <button class="chip">어려움</button>
+              </div>
+            </div>
+            <div class="field">
+              <label>결과 메모</label>
+              <textarea class="textarea">30m 거리감이 조금 안정됐지만 방향은 아직 흔들립니다.</textarea>
+            </div>
+            <button class="secondary mt">영상/이미지 선택 첨부</button>
+            <div class="toggle">
+              <span>김프로방에 결과 공유</span>
+              <div class="switch"></div>
+            </div>
+            <button class="primary mt-lg" data-go="training">결과 저장</button>
+          </article>
+        </section>
+
+        <section class="page member-page" id="room">
+          <h1 class="page-title">프로방</h1>
+          <p class="page-subtitle">프로와 연결된 기록과 훈련을 확인하세요.</p>
+          <section class="section">
+            <article class="card pad">
+              <div class="row">
+                <div>
+                  <p class="title">김프로 · 드라이버 교정반</p>
+                  <p class="desc">새 피드백 1개 · 공통 드릴 1개 · 개인 과제 1개</p>
+                </div>
+                <span class="pill amber">참여 중</span>
+              </div>
+              <div class="section" style="margin-top: 18px">
+                <p class="title" style="font-size: 17px">참여 회원</p>
+                <div class="people-row mt">
+                  <div class="person"><div class="mini-profile">나</div><span>나</span></div>
+                  <div class="person"><div class="mini-profile">박</div><span>박회원</span></div>
+                  <div class="person"><div class="mini-profile">이</div><span>이회원</span></div>
+                  <div class="person"><div class="mini-profile">+9</div><span>더보기</span></div>
+                </div>
+                <p class="desc">회원 이름과 프로필만 보이고, 영상과 피드백은 본인 것만 볼 수 있습니다.</p>
+              </div>
+              <div class="section" style="margin-top: 18px">
+                <p class="title" style="font-size: 17px">공통 드릴</p>
+                <div class="todo-row mt">
+                  <div class="check"></div>
+                  <div>
+                    <p class="title">드라이버 릴리즈 포인트 연습</p>
+                    <p class="desc">방 전체 과제 · 결과는 개인 비공개</p>
+                  </div>
+                </div>
+              </div>
+              <button class="primary mt-lg" data-go="detail">피드백 보기</button>
+              <button class="secondary mt">기록 공유</button>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <p class="title">초대 코드 입력</p>
+              <p class="desc">프로가 보낸 코드를 입력해 새 방에 참여할 수 있습니다.</p>
+              <input class="input mt" value="GA-2026" />
+              <button class="primary mt-lg" data-go="invite">초대 방 확인</button>
+            </article>
+          </section>
+        </section>
+
+        <section class="page member-page" id="invite">
+          <h1 class="page-title">프로방 초대</h1>
+          <p class="page-subtitle">카카오톡이나 문자로 받은 링크에서 들어온 화면입니다.</p>
+          <section class="section">
+            <article class="card pad soft">
+              <div class="row">
+                <div>
+                  <p class="title">김프로 · 드라이버 교정반</p>
+                  <p class="desc">초급/중급 골퍼를 위한 스윙 교정 방입니다.</p>
+                </div>
+                <span class="pill amber">초대됨</span>
+              </div>
+              <div class="section" style="margin-top: 18px">
+                <p class="title" style="font-size: 17px">이 방에서 할 수 있는 것</p>
+                <p class="desc">공통 드릴 확인, 내 기록 공유, 개인 피드백과 훈련 과제 확인</p>
+              </div>
+              <button class="primary mt-lg" data-go="signup">가입하고 참여하기</button>
+              <button class="secondary mt" data-go="room">이미 계정이 있어요</button>
+            </article>
+          </section>
+        </section>
+
+        <section class="page member-page" id="signup">
+          <h1 class="page-title">간편 가입</h1>
+          <p class="page-subtitle">프로토타입에서는 아이디와 비밀번호만 가볍게 만듭니다.</p>
+          <article class="card pad mt-lg">
+            <div class="field">
+              <label>아이디</label>
+              <input class="input" value="golfalign_user" />
+            </div>
+            <div class="field">
+              <label>비밀번호</label>
+              <input class="input" type="password" value="password123" />
+            </div>
+            <div class="field">
+              <label>가입 유형</label>
+              <div class="chips">
+                <button class="chip active">일반 회원</button>
+                <button class="chip">프로</button>
+              </div>
+            </div>
+            <p class="desc mt">정식 가입에서는 이름, 연락처, 골프 경력, 프로 인증 정보를 단계별로 받습니다.</p>
+            <button class="primary mt-lg" data-go="join-room">가입 완료</button>
+          </article>
+        </section>
+
+        <section class="page member-page" id="join-room">
+          <h1 class="page-title">방 참여 완료</h1>
+          <p class="page-subtitle">이제 기록을 선택해 프로에게 공유할 수 있습니다.</p>
+          <section class="section">
+            <article class="card pad">
+              <p class="title">공유할 기록 선택</p>
+              <p class="desc">선택한 기록만 김프로가 볼 수 있습니다. 공유하지 않고 시작해도 됩니다.</p>
+              <div class="todo-row mt">
+                <div class="check"></div>
+                <div>
+                  <p class="title">7번 아이언 측면 스윙</p>
+                  <p class="desc">아이언 · 측면 · 영상</p>
+                </div>
+              </div>
+              <div class="todo-row">
+                <div class="check"></div>
+                <div>
+                  <p class="title">어프로치 훈련 결과</p>
+                  <p class="desc">훈련 결과 · 이미지</p>
+                </div>
+              </div>
+              <button class="primary mt-lg" data-go="room">선택 기록 공유</button>
+              <button class="secondary mt" data-go="room">공유하지 않고 시작</button>
+            </article>
+          </section>
+        </section>
+
+        <section class="page member-page" id="more">
+          <h1 class="page-title">더보기</h1>
+          <p class="page-subtitle">부가 기능과 설정을 확인합니다.</p>
+          <section class="section">
+            <article class="card round-card">
+              <span class="pill gray">개발 중</span>
+              <h2 style="margin-top: 12px">라운드 모집</h2>
+              <p class="desc">함께 라운드할 멤버를 찾는 기능이 준비 중입니다.</p>
+              <div class="avatars">
+                <div class="avatar">김</div>
+                <div class="avatar">박</div>
+                <div class="avatar empty">+</div>
+                <div class="avatar empty">+</div>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <p class="title">내 프로필</p>
+              <p class="desc">골프 경력, 목표, 평균 타수를 관리합니다.</p>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <p class="title">언어 설정</p>
+              <p class="desc">앱 표시 언어를 선택합니다. 기본값은 기기 언어를 우선 확인합니다.</p>
+              <div class="chips mt">
+                <button class="chip active">한국어</button>
+                <button class="chip">English</button>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <p class="title">저장 공간</p>
+              <p class="desc">영상은 5초 권장, 최대 7초까지 업로드할 수 있습니다. 원본은 기기에 보관하고 앱에는 공유용 파일만 저장합니다.</p>
+            </article>
+          </section>
+        </section>
+      </main>
+
+      <main class="app-mode" id="pro-mode">
+        <section class="page pro-page active" id="pro-home">
+          <h1 class="page-title">프로 홈</h1>
+          <p class="page-subtitle">오늘 처리할 피드백과 훈련 결과를 확인합니다.</p>
+          <section class="section">
+            <article class="card pad soft">
+              <div class="row">
+                <div>
+                  <p class="title">오늘 확인할 일</p>
+                  <p class="desc">피드백 대기와 훈련 결과를 빠르게 처리하세요.</p>
+                </div>
+                <img class="pro-badge" src="assets/golfalign-pro-badge.png" alt="GolfAlign PRO 인증 배지" />
+              </div>
+              <div class="metric-grid">
+                <div class="metric"><strong>3</strong><span>피드백</span></div>
+                <div class="metric"><strong>2</strong><span>훈련확인</span></div>
+                <div class="metric"><strong>1</strong><span>재촬영</span></div>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <div class="section-title">
+              <h2>내 레슨방</h2>
+              <button class="text-link" data-go="pro-rooms">전체보기</button>
+            </div>
+            <article class="card pad">
+              <div class="row">
+                <div>
+                  <p class="title">드라이버 교정반</p>
+                  <p class="desc">회원 12명 · 공통 드릴 1개 · 피드백 대기 2건</p>
+                </div>
+                <span class="pill green">운영 중</span>
+              </div>
+              <div class="action-grid">
+                <button class="secondary" data-go="pro-room-detail">방 보기</button>
+                <button class="secondary">초대 링크 복사</button>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <div class="section-title">
+              <h2>최근 요청</h2>
+              <button class="text-link" data-go="pro-feedback">피드백 보기</button>
+            </div>
+            <article class="card record-item" data-go="pro-feedback">
+              <div class="thumb"><div class="play">▶</div></div>
+              <div>
+                <p class="title">박회원 · 드라이버 정면</p>
+                <p class="desc">방금 전 업로드 · 피드백 대기</p>
+                <span class="pill amber mt">확인 필요</span>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="page pro-page" id="pro-rooms">
+          <h1 class="page-title">레슨방</h1>
+          <p class="page-subtitle">방별 회원과 진행 상태를 관리합니다.</p>
+          <button class="primary mt-lg">레슨방 만들기</button>
+          <section class="section">
+            <article class="card pad">
+              <div class="row">
+                <div>
+                  <p class="title">드라이버 교정반</p>
+                  <p class="desc">회원 12명 · 공통 드릴 1개 · 훈련 진행 8건</p>
+                </div>
+                <span class="pill green">운영 중</span>
+              </div>
+              <button class="primary mt-lg" data-go="pro-room-detail">회원 보기</button>
+            </article>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <div class="row">
+                <div>
+                  <p class="title">초급 어프로치반</p>
+                  <p class="desc">회원 7명 · 훈련 확인 2건</p>
+                </div>
+                <span class="pill amber">확인 필요</span>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="page pro-page" id="pro-room-detail">
+          <h1 class="page-title">드라이버 교정반</h1>
+          <p class="page-subtitle">김프로 · 초급/중급 스윙 교정</p>
+          <section class="section">
+            <article class="card pad soft">
+              <p class="title">초대 링크</p>
+              <p class="desc">회원에게 링크나 코드를 보내 방에 초대합니다.</p>
+              <div class="action-grid">
+                <button class="secondary">링크 복사</button>
+                <button class="secondary">코드 복사</button>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <div class="section-title">
+              <h2>공통 드릴</h2>
+              <button class="text-link">드릴 만들기</button>
+            </div>
+            <article class="card pad">
+              <div class="row">
+                <div>
+                  <p class="title">드라이버 릴리즈 포인트 연습</p>
+                  <p class="desc">대상: 방 전체 · 완료 8/12명 · 확인 대기 3명</p>
+                </div>
+                <span class="pill amber">진행 중</span>
+              </div>
+            </article>
+          </section>
+          <section class="section">
+            <div class="section-title">
+              <h2>회원 목록</h2>
+              <span class="pill gray">12명</span>
+            </div>
+            <div class="member-list">
+              <button class="card member-card" data-go="pro-member">
+                <div class="mini-profile">박</div>
+                <div>
+                  <p class="title">박회원</p>
+                  <p class="desc">공유 기록 2개 · 훈련 확인 1개</p>
+                </div>
+                <span class="pill amber">대기</span>
+              </button>
+              <button class="card member-card" data-go="pro-member">
+                <div class="mini-profile">이</div>
+                <div>
+                  <p class="title">이회원</p>
+                  <p class="desc">공유 기록 1개 · 진행 훈련 2개</p>
+                </div>
+                <span class="pill green">진행</span>
+              </button>
+            </div>
+          </section>
+        </section>
+
+        <section class="page pro-page" id="pro-member">
+          <h1 class="page-title">박회원</h1>
+          <p class="page-subtitle">6개월차 · 드라이버 슬라이스 교정</p>
+          <section class="section">
+            <div class="section-title">
+              <h2>공유 기록</h2>
+              <span class="pill amber">피드백 대기</span>
+            </div>
+            <button class="card record-item" data-go="pro-feedback">
+              <div class="thumb"><div class="play">▶</div></div>
+              <div>
+                <p class="title">드라이버 정면 스윙</p>
+                <p class="desc">드라이버 · 정면 · 영상</p>
+                <span class="pill amber mt">피드백 작성</span>
+              </div>
+            </button>
+          </section>
+          <section class="section">
+            <article class="card pad">
+              <div class="row">
+                <div>
+                  <p class="title">어프로치 연습 100개</p>
+                  <p class="desc">회원 완료 · 확인 필요</p>
+                </div>
+                <button class="text-link" data-go="pro-training-review">결과 확인</button>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <section class="page pro-page" id="pro-feedback">
+          <h1 class="page-title">피드백 작성</h1>
+          <p class="page-subtitle">중요 장면을 멈추고 스냅샷에 짧은 코멘트를 남깁니다.</p>
+          <section class="section">
+            <div class="viewer small">
+              <span class="sticker goal">목표</span>
+              <span class="sticker warn">주의</span>
+              <span class="sticker fix">교정</span>
+              <div class="pause">Ⅱ</div>
+            </div>
+          </section>
+          <article class="card pad mt-lg">
+            <button class="secondary">스냅샷 만들기</button>
+            <div class="field">
+              <label>이번 목표</label>
+              <input class="input" value="임팩트 때 체중을 왼발에 싣기" />
+            </div>
+            <div class="field">
+              <label>잘한 점</label>
+              <textarea class="textarea">어드레스 균형은 좋아졌습니다.</textarea>
+            </div>
+            <div class="field">
+              <label>신경 쓸 점</label>
+              <textarea class="textarea">다운스윙 시작 때 상체가 먼저 나옵니다.</textarea>
+            </div>
+            <button class="secondary mt">추천 훈련 선택</button>
+            <button class="primary mt-lg" data-go="pro-member">저장하고 전송</button>
+          </article>
+        </section>
+
+        <section class="page pro-page" id="pro-training-review">
+          <h1 class="page-title">훈련 결과 확인</h1>
+          <p class="page-subtitle">회원의 수행 결과를 보고 다음 과제를 결정합니다.</p>
+          <article class="card pad mt-lg">
+            <p class="title">어프로치 연습 100개</p>
+            <p class="desc">완료: 100개 · 난이도: 보통</p>
+            <p class="desc mt">회원 메모: 30m 거리감이 조금 안정됐습니다.</p>
+            <button class="secondary mt">첨부 기록 보기</button>
+            <div class="field">
+              <label>짧은 과정 피드백</label>
+              <textarea class="textarea">어프로치 훈련은 충분히 수행됐습니다. 다음 주에는 거리 조절 과제로 넘어가겠습니다.</textarea>
+            </div>
+            <div class="chips">
+              <button class="chip active">완료</button>
+              <button class="chip">같은 과제 연장</button>
+              <button class="chip">새 과제 추천</button>
+              <button class="chip">재촬영 요청</button>
+            </div>
+            <button class="primary mt-lg" data-go="pro-member">저장하고 전송</button>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <nav class="bottom-nav active" id="member-nav" aria-label="회원 하단 메뉴">
+      <button class="nav-item active" data-go="home"><span class="nav-icon">⌂</span><span>홈</span></button>
+      <button class="nav-item" data-go="records"><span class="nav-icon">▣</span><span>기록</span></button>
+      <button class="nav-item" data-go="training"><span class="nav-icon">⚒</span><span>훈련</span></button>
+      <button class="nav-item" data-go="room"><span class="nav-icon">♣</span><span>프로방</span></button>
+      <button class="nav-item" data-go="more"><span class="nav-icon">…</span><span>더보기</span></button>
+    </nav>
+
+    <nav class="bottom-nav" id="pro-nav" aria-label="프로 하단 메뉴" style="display: none">
+      <button class="nav-item active" data-go="pro-home"><span class="nav-icon">⌂</span><span>홈</span></button>
+      <button class="nav-item" data-go="pro-rooms"><span class="nav-icon">▤</span><span>레슨방</span></button>
+      <button class="nav-item" data-go="pro-feedback"><span class="nav-icon">✎</span><span>피드백</span></button>
+      <button class="nav-item" data-go="pro-training-review"><span class="nav-icon">✓</span><span>훈련확인</span></button>
+      <button class="nav-item" data-go="pro-home"><span class="nav-icon">…</span><span>마이</span></button>
+    </nav>
+
+    <script>
+      const pages = document.querySelectorAll(".page");
+      const navItems = document.querySelectorAll(".nav-item");
+      const modes = document.querySelectorAll(".app-mode");
+      const modeButtons = document.querySelectorAll(".mode-button");
+      const memberNav = document.getElementById("member-nav");
+      const proNav = document.getElementById("pro-nav");
+      const brandTitle = document.getElementById("brand-title");
+      const navMap = {
+        home: "home",
+        records: "records",
+        upload: "records",
+        detail: "records",
+        training: "training",
+        "training-result": "training",
+        room: "room",
+        more: "more",
+        invite: "room",
+        signup: "room",
+        "join-room": "room",
+        "pro-home": "pro-home",
+        "pro-rooms": "pro-rooms",
+        "pro-room-detail": "pro-rooms",
+        "pro-member": "pro-rooms",
+        "pro-feedback": "pro-feedback",
+        "pro-training-review": "pro-training-review"
+      };
+
+      function showPage(id) {
+        pages.forEach((page) => page.classList.toggle("active", page.id === id));
+        navItems.forEach((item) => {
+          item.classList.toggle("active", item.dataset.go === navMap[id]);
+        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function showMode(mode) {
+        modes.forEach((item) => item.classList.toggle("active", item.id === `${mode}-mode`));
+        modeButtons.forEach((item) => item.classList.toggle("active", item.dataset.mode === mode));
+        memberNav.style.display = mode === "member" ? "grid" : "none";
+        proNav.style.display = mode === "pro" ? "grid" : "none";
+        brandTitle.textContent = mode === "member" ? "GolfAlign" : "GolfAlign Pro";
+        showPage(mode === "member" ? "home" : "pro-home");
+      }
+
+      document.querySelectorAll("[data-go]").forEach((button) => {
+        button.addEventListener("click", () => showPage(button.dataset.go));
+      });
+
+      modeButtons.forEach((button) => {
+        button.addEventListener("click", () => showMode(button.dataset.mode));
+      });
+    </script>
+  </body>
+</html>

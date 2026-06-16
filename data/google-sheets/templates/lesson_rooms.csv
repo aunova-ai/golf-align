@@ -1,0 +1,2 @@
+id,pro_id,owner_user_id,name,description,room_type,visibility,member_profile_visibility,default_result_visibility,created_at,updated_at,status
+room_001,pro_001,usr_100,김프로 드라이버 교정방,초급/중급 스윙 교정,private,invite_only,name_profile_only,pro_only,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

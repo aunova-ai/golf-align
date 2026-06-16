@@ -1,0 +1,2 @@
+id,room_id,pro_id,user_id,assignment_scope,title,goal,description,reps_target,success_target,duration_text,due_date,require_media,result_visibility_default,source_type,created_at,updated_at,status
+assign_001,room_001,pro_001,usr_001,personal,어프로치 100개,30m 거리감 안정,피니시를 2초 유지하세요.,100,70,20분,2026-05-21,optional,pro_only,pro,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

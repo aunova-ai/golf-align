@@ -1,0 +1,2 @@
+id,room_id,pro_id,user_id,record_id,goal_comment,focus_comment,summary_comment,next_action,created_at,updated_at,status,pro_name,snapshot_url,pose_angles_visible,hidden_angle_mark_ids,annotations,pose_analysis_json,pose_engine
+fb_001,room_001,pro_001,usr_001,rec_001,이번 주는 어드레스 정렬을 먼저 맞춥니다.,백스윙 때 왼쪽 어깨가 빨리 열립니다.,하프스윙으로 방향성을 먼저 잡겠습니다.,하프스윙 50개 후 측면 영상 업로드,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active,김프로,,true,

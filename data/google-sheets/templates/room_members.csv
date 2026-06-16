@@ -1,0 +1,2 @@
+id,room_id,user_id,member_role,display_name,profile_image_file_id,public_profile_enabled,joined_from_invite_id,joined_at,last_activity_at,created_at,updated_at,status
+rm_001,room_001,usr_001,member,김회원,,true,inv_001,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

@@ -1,0 +1,2 @@
+id,feedback_id,record_id,record_snapshot_id,pro_id,user_id,timestamp_sec,snapshot_provider,snapshot_file_id,snapshot_url,backup_path,sticker_type,short_comment,detail_comment,created_at,updated_at,status
+snap_001,fb_001,rec_001,rsnap_001,pro_001,usr_001,2.4,drive,,,,note,어깨 열림,다운스윙 시작 때 왼쪽 어깨가 먼저 열립니다.,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

@@ -1,0 +1,2 @@
+id,room_id,pro_id,invite_code,invite_url,invite_title,invite_message,max_uses,used_count,expires_at,created_at,updated_at,status
+inv_001,room_001,pro_001,GA-2026,https://golfalign.app/invite/GA-2026,김프로 레슨방 초대,GolfAlign에서 훈련을 관리합니다.,30,0,,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

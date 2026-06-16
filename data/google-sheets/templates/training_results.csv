@@ -1,0 +1,2 @@
+id,assignment_id,room_id,user_id,actual_reps,success_count,difficulty,member_note,result_record_id,visibility,completed_at,created_at,updated_at,status
+result_001,assign_001,room_001,usr_001,100,72,normal,30m 거리감은 좋아졌지만 방향이 흔들립니다.,,pro_only,2026-05-14T20:00:00+09:00,2026-05-14T20:00:00+09:00,2026-05-14T20:00:00+09:00,submitted

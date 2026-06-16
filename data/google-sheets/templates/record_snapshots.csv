@@ -1,0 +1,2 @@
+id,record_id,user_id,snapshot_type,captured_at_sec,image_provider,image_file_id,image_url,width,height,created_at,updated_at,status
+rsnap_001,rec_001,usr_001,middle,2.7,drive,,,1280,720,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

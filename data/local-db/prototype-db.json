@@ -1,0 +1,1093 @@
+{
+  "accounts": [
+    {
+      "id": "acc_local_1779185204984_ksiooi",
+      "username": "nielfarm3@gmail.com",
+      "loginId": "nielfarm3@gmail.com",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T10:06:44.984Z",
+      "role": "pro",
+      "displayName": "Niel 프로",
+      "organization": "Niel Farm",
+      "phone": "",
+      "profileImageUrl": "/assets/profiles/kenji.png"
+    },
+    {
+      "id": "acc_local_1779185204928_thsmog",
+      "username": "niel333l@gmail.com",
+      "loginId": "niel333l@gmail.com",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T10:06:44.928Z",
+      "role": "member",
+      "displayName": "Niel 회원",
+      "phone": "",
+      "golfExperience": "6개월",
+      "mainGoal": "드라이버 슬라이스 교정",
+      "profileImageUrl": "/assets/profiles/liam.png"
+    },
+    {
+      "id": "acc_local_1779184229259_6sldno",
+      "username": "aunova5",
+      "loginId": "aunova5",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T09:50:29.259Z",
+      "role": "pro",
+      "displayName": "Aunova 프로 2",
+      "organization": "Aunova 레슨랩",
+      "phone": "010-0000-1005"
+    },
+    {
+      "id": "acc_local_1779184229254_s10k03",
+      "username": "aunova4",
+      "loginId": "aunova4",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T09:50:29.254Z",
+      "role": "member",
+      "displayName": "Aunova 회원 3",
+      "phone": "010-0000-1004"
+    },
+    {
+      "id": "acc_local_1779184229251_bup0vs",
+      "username": "aunova3",
+      "loginId": "aunova3",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T09:50:29.251Z",
+      "role": "pro",
+      "displayName": "Aunova 프로 1",
+      "organization": "GolfAlign 테스트 센터",
+      "phone": "010-0000-1003"
+    },
+    {
+      "id": "acc_local_1779184229247_wwevla",
+      "username": "aunova2",
+      "loginId": "aunova2",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T09:50:29.247Z",
+      "role": "member",
+      "displayName": "Aunova 회원 2",
+      "phone": "010-0000-1002"
+    },
+    {
+      "id": "acc_local_1779184229243_ek0k9y",
+      "username": "aunova1",
+      "loginId": "aunova1",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "termsAgreedAt": "2026-05-19T09:50:29.243Z",
+      "role": "member",
+      "displayName": "Aunova 회원 1",
+      "phone": "010-0000-1001",
+      "golfExperience": "6개월",
+      "mainGoal": "드라이버 슬라이스 교정",
+      "profileImageUrl": "/assets/profiles/liam.png"
+    },
+    {
+      "id": "acc_admin_demo",
+      "username": "golfalign_admin",
+      "loginId": "golfalign_admin",
+      "password": "admin123",
+      "authProvider": "local",
+      "emailVerified": true,
+      "role": "admin",
+      "displayName": "관리자",
+      "bio": "관리자 테스트",
+      "phone": "",
+      "profileImageUrl": "/assets/profiles/kenji.png"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb_local_1781340174153",
+      "recordId": "rec_pose_real_video_mvp",
+      "proName": "김프로",
+      "goalComment": "이번 주는 어드레스 정렬을 먼저 맞춥니다.",
+      "focusComment": "백스윙 때 왼쪽 어깨가 너무 빨리 열리지 않게 해주세요.",
+      "stickerComment": "자세 각도 체크",
+      "snapshotUrl": "data:image/webp;base64,UklGRshVAABXRUJQVlA4WAoAAAAgAAAAfwIAZwEASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDgg2lMAALDQAZ0BKoACaAE+YSyTRyQiJqMls7sA0AwJZ2oT11ufmb5yxv6GAlpevx5CKirsSEaJEJsJ4A3XTo5v4fuCNkvUi5ANoXo//6Pkq+ybqBOVw/R57Y8VfXi39+JP5p91fEf87683Bf8n4Of2D9oR7MBrFD/32zLzY/UDyzKC/6o42gKw1k8+im2t8hPku7efHz9dQy+/mWMX2yuQ3lYhQXd8pKJ096wa+WRf8nyg2ReGKsDF0lSbchAvimn79N2iGIqo9gNF10P3S+VInVgmfKoP0QpTLMPVdHieIp+31ZjGedG5/9tMvm1vCMCuEFEjGHbShS5QQ2j5W5xzYdE68UAM3oKKFfs8pZP6+xSWETr5OuRkiY3MS2C9tsjpqalNf+Hp/HrOz+c/Bdhawb+IERBsXr74OtMMJAKTMuRrnIEu7PgBdxiRiRHQCXK5dZ+qEkBsdfX38tcL9qrMKegXnfoM7/NO2vsWjw3PQn19RYi+X+J0w+c97nubvEG4zVr7k7kaE3+0vMw8HB3CSjqFkdWzvsK2HkYDfj4B59ZTx9bO5LshmJz5qcxIO8ZzxM9r6VONQhUKWHCRQ14oB9Xr7XuYuzfxDpKH/rYJl3Ld3mvLs0WQhdSxMVflrv1bkLqlXxdfH08W5hsBpF7uZKMSMkoXNdDcGqMoLVGSn3JVd11DKR9gxQfAIkABCob22vBrkFISI6PGXxTS/0wQ+86xyctMupEtLXNQfl614Kl+JMV7zBfs/KPXaPxSMV3CV5J9iMQhWRfqva5rs/+Vn3HEQx9gxKbbQ/I+32ThPRgSitfeqS72F/XpEOD27aoU5t1jYM92ehAJkBvVWdNrjHCUoQEVty89rvQVOsE8tziUBVMm0X3sSb+RHFvupcp6zL7Z7xTI//5ptUUg5cmTVbQ4e+uus+wCy7A0jm2uJPLxvj+j79QtLOlmviAn6yVh8Fp7r9zODdmrdYuTdMNk70eDkPOBy8AvgqVIE4C75iVwCEmdZ8Y0yIMvjuHXSWm8lWXgQM7+wFZN43da/ahXPLiWwg4nun8a9l1eI57D88AwRQdUp4yquZsqY7n5zRQBR9+KLF8lT5Kh+ts/a84QbcqOJOwu+Nydz/SmxrYlrzplT/ivZiyEvc8U8X0JnMgPLx3fQypkHOiGWaoXScByvSr0KCVljoZJMNN4cfNXQAnoYn20LPZj9+q1SMZGEaZ8whqH5MmjoxtU04zgLqjUPb5K+IbFdBctv0ujhnjlIuC30acJ03VZ2OFFViNAn0vmDwXqJpPW5Du5n++bz4ZzYe8SZpFeeld974THT6GmuJCJPfMyRG7q7vaRa8wut4cVul/FG3RBBnbIQW55G0LzSLHJgAdeAAfUYGP38IAdtELCp85CO6MOhMc2aEL8LY3J6tXY4UfsA2fqY7zkAckPmVDMGA5NClSEaX/0OyljdqYatU5xzAhPpoB5O1t0QHQedxDQcV/unAEkZ1xElSKi/OXZbWmbXE+532KH1+j7yaGP7afbDxvUtcy5JbuqVWjFAPQL/tjTqYgZG+4k8Z0TETy7k4kOOMSsA1ijmvxSBpX7QjhHmuNxymGxuNKMGc+EutuJhXUCD5UJ8TNCKVu+9qJAAMKxvwsX2eO0eVCzsRF2+DyzpfpWkTjr8uq1hKtM+kaZ6QK84G6EGxKeWPPF7dT0kkYg5z0GKkmyva9n5B2b5TLLwjNndPX8oI2tOSgmBTqEnCz3eAlL7fhcpJiUpLilDJV+4OLnqQ7dTRemHookZ6vVsLkzgZv0avjJw6rAsNR6/1UvvSdSYqJwcf3bwH0b78zd0fnxBdWszAAhLBYdi7ZfxYZ0yvIPX6O7lifIyAlLUdu97l1jD/yBZNyA9K5UZM7Bn2LfV7Ck1nmPACRhZGjgomrN5CfhYchE3PX5A9QyNWb8xuegxVSc5aP0t9+8f7iDvfsM/GDqtw0Gh/MNlCKt0x8haoE1CWh9NZpW0Fkm7R55ttHoXfNivgvWp6MKftIW573ZILRfWn5gEvklNKrDDF5od46NGKyFWNxHR+6D1jNYAOJ2rpR4SSMF9L0WLioy6rtAJOujON13jbU9lyJGTlHGeJDEEAD5ge8zft9xZLDl+SDLzWcvJ3/3vvngTpL3eXJuGx7GbeApGTVnxvq4fFgYOUehPLyfQSyCkcKhJrquEeGCcEQiK4Sg68uHufF5tJQl4DPWLzju7kyx8I88JLmRUEJ3VvjWZaeokaP4sOCneTbV2KvIGxxgIPzopFqd6xmVg6A9aEZ0Y2CSYFgSLRa3hNYiXlPqEmvMoz1mwH6YnT6Ta9Q3Z6je2VdCIrYhny3tWHAmzay7YLmBpyFM572+phHwCw7L/CU62hlNkzi3hTBgTi6z5z1EZwg1yyclv/P/qjlWZOC1lLf4u9jmBaEumXZBz07FOUXhkHux7GwNpU6Kmo8GGD33psNYVNHNEkX1t7qZXRWLwcU8mZvv5xgEFLIequJzDj47dv+J6BfqYmgy02xxZPgAcQ/Nsz4beibtOYffc5CleL0Zu+8T5CviNQt6cPmrtHTNdJY8NqgccjfRRub05D3S0BLQOjJWgUTwS3ErJZf/W+Z0zsabYOfZbtoeQ2G21/TC6b8k/kovMxqDy+GPstbOPmXggKASfLGrxjRGoncrdJpG5+KFn/Ys8xOUvZjcXN1O0L+iVwGrizKFr32IgL2/RXS1NKShc0+i0ZRMxIHQxogARhc/fKnqOW+LD8oM5MBEIkg8BhITQQ+H+9jVjPAop/5dc0/RHLlXBO/dEHUcdFnSLWw1PHzC8CGaHkDKyfJVV53v48W/+MfMoTjk5v9Flw2UB1SL6ei7WEZ0/MKjrh+zGQzAp5Bpa3gR1htDdCvn4Hp3ia72J+vUULh+Fu6IL4Pf1DUTwGrv28xmUigTmUfXHWqSSHf8IftfSa/ySv8f+7YLNgnd9p8r0G7WMQ43EmlmpwmDX0E3CYAEa5ODp6njAxtbX1uCrvwr11pc664VAWiTD4jOi+wwp1cjQVfVoCIJEFCrK/37C6JJCY6IthWHWjIzqkgYgwgo0EyyQRACDJIENLonrwnBZ//fCjifsH9Gr9P0gkvdrLbZTRicrsF9xda0iClxQJHf+EsY294wBqNSIlEBu1mXxbrpUS5SHpfeMzpeZ4kREoTwnpDFXSqJ696+hVJkD+DDDm2Yae+FkcqrHSm2Mch3Kw0D7Nw34s9B6ZMrUcXuvcSpfbeTsAMjyJ+jQVcpUuK0TckjecRaKQgtGmW84dy+BXzB80BNHnyeh+XAOniuS0Pz+EWQ2KVtUaTSyoEFJXwphGWouwS+g9fSo13eS48ISqRngYkOMRDnspGC9QrSubmn1OHfS3fLix0WPcqRB1OPoGJuccVRver/7AMEHkWoulYPOHYF934hLAL7vttp4+ALeyNFcJZbTz5RRQvnc+kYH1YfKGAMjyk0J2iG30XCq/6zsAkrKkK/U90PLmoy3BRsPtzfCctIywT0XHlXalF8E5M1XojlfJTdDhEIXOOwv5FizjXMcwNedVC/uteWiaHADpnaOfYM6KhUD/yFh6ywFLr/nNndcx9RZurxTDkNNl0TZa/85w3pphAZ9xjYmhzyHjKFvBDDvwCArg7raPRmN+5qg7MG0fOxhlOn+KpAvtrvTseoWKwjoptNdFwoRP/f8b821MFUJ6q1TjGqIEN/VgEOB9GvjSSAuZQPB4mmLaoH1hgAhLVc9BVLSTvTO0BWXcMkPZI7gf/H0jnbspMBss9mIlfNolzu+DgP/0oSDOlk7GuuD23Z7xoaCVGykljmM6IA50/sHBlLZxrgY5tfSCYUHisPtpRZtMxmRz7MQuVKjcBnmcYButhjGxoO7PtzRA28nplONAO/n3tKqmTHIZH85lH9P85+OUK69xY6qEm1lRn0jhuH34q3nk9mShm6AUx6b/BUFMGToBrmhR0xVls9surn28mJMnnbWPwASMaZH9fhbBf0bA41SkEFSko2OS/Hh5DIM7mpLNImNeKLYyrZpMHuYykIIt73LqnpPo5XfmMbSmpBfCJyaOQuQekR6ylxtmroNwbfti+H21ssWtDnOEqZzp6B5q40SKeOGdUQP1v94B69+n3w02mqK0AnmbYRajOcn9SoGfnknUjRcR75b+yTju5NVymNFulECJRmTInEOZmA8Gm4IQQV40iXF4Pz1zYGfNC3k9j2UpgXxP15kIJBeVzmn66SluyKiB6oxoR3BnHGgvSAxs/31Kij/6HQSsqSriBYfrANEq/Mk6jcPhh++uAsbu0jnPGwu5kf4wjVelaSq7qLegTudiom5xcE/zcwguo+wGOvhrSuz7Yhv8o1nk5u2Eg5oXYMy7FkRzQph05sa6/Ch7XmtDtfpXT4K4ogvLqzYI5h1s7zTh9NE0dvndis0c8W08IlfCq2w0XEpT+rzuKl6CQFN6ppjExqPXiXgATxg01QQp3wmuoLhrhLIu/JeZ647k43YHhAdhs3Y4+8A3thhWFhNg7Y0YhTfAiiLt0+GsTVRyu1c3nOCydbBIQyFVi/uj7U+gh6SVLcPTTdm3nShjS7n2iyGvK73rrj7M32oCk8jnSjxO2AT+kNcJKGQs2Mv48OWwbj9pkvVuTHNu8HHIMY6KAMVNrIynSTEOZ9K89MFv3EdvOzhdpIBpoRnX1DCrSd04SxebEhMN29wkoST0mCne6eWBlfm1t6J/7i8k+uHefpyX8V0UbnlkQFM2DUL+e25w0VoHmk/lN7eAUrWNHqfViwrRWzROL4amlyKMVNqU+PsheewMF8b+xXvxR8LEuIH9Qc6bnFGbIOKRFFHQrzC2M5hrTl63LJ0y8bq0r5pd3Z9irWOC3jaI7Fp20HpKt3t413LbZRMctIv+l5FK3OVwo1HnsKQTtx7rTa5BDmf0CNmA3WuU7Sotrmf3KXEk6E4oBHC15AUdx19eVQYYl0disWDI0Op5sFQAD+9HjZagwvxsEtGfkz6Z1rND0DXk4++93I0Mgr6ZyCersEd728AzeR2IrrqXghaSwdZNU/cmQdw0wc3Ye4fs/IbLOwkq3NJ/ZSlqhZkYqayzh2Pmb+/WJXeHwmra21MfcX/uKnOWlrQYvEOIC39+7+cz9rxCSgvgO+m3mq1j9Wrcl3ww2AnPxKGsIMllNVaowJab6X9DBUAdyereTor5e0usItlL/s01f+CW+TfAXSV9gKfzd7NI5AsjW2WisrtjX2IWGG3wCfQdYq28DOWiCvDiiF/QRE0h4YYSoSuxHgE2534sAdrWjyoU7Ymd6qDg7ENCINUrf2Z7a4aoSwUejbi5mpcqHq8Nws2BbmApLc0yH+QXHYhatFREdXGleuAZeBf/IgEA4+Q4Rnb8ksChyq1FxgWMx30eJaSjnASg/n4ArYn3kc+6EDI8Hg6ekYItscdpwE3T7Yyqq6kFz+LnfEuDLrQUgEjVuidU00eqlPo08XlHe7ji7Lh/xc9s2u+7rgpZjpwX1ZfDPHBs+118vi9GzDjxN7zp+ImgLKXPoVqr8pMYJ1+KfcVkzgDteTl9mJ/iL1PGpKSpUK3PgVuNCYb+dp5bLqykZdPiQ6Yx8W3b0ODe1godchLISkYB/dv9RqyHyJz5SCrrb0xM9kWYPlInlbNsiR/274GzovQDv8mh+OPBGFDuO/Nvidmo3sBWWN/+laBVe+1rygyq3hjmpmR7skl2RkU8+csfORyFqilh++mZY411mDOEj8+n+mx9LXXtAV3EMvBaSY9YcR168xYeJEtOc8ckGmwh3LuTlarjar21GulqsZsK8nmyXdzbmuVeOdf6htuoJLuqNC4kxbvyvHhls3VKWpKVunV6UcKtMgZ26WEcCV1DFht2jSPNUfngTbjFPeCvMdJKL4O3yioakoPTOOmvK97EBOvAu3o+OVLrhxTsGKRXuXVV4tH0XJDEnhy7zPnfiKAs+yr5WxRfAqQGOpvSCJmgSAKF8zF4/rFGdTxTuNWuXUh3FXOFJb43XH1ejy7lhmGACPQ1/iAs9kiL4IEmBPsLr32lfY3l5a3BdWxBNeQyDJTFPyFxXdRryqdJnWHirM4c6g1QulPJHJ0hRgvb6Ob+A8fR005dJUYtmshhYHGBq7GHj/iFtDuNNLeZXEwGdcp2MT9Y4WxBT6Jo2xZKg/KDgrOAb9YrQm0Kmt5N01FuPWoZymuMbz49j+PEAK+cKj4j7ZCyzgGixNn0P2CEfxXinLT+qdJnspm/utxx1ttyTYS1hHiMliDHuq03wDXAnuxz9+68h4LNdJZV0JAHxsu9HMtuKiF35v+CYBVikMZuqnQx5WJp8kuwPkUEhEqUMp9DDkKob6fc4JjjNnmYeIPbBLHfjaJsQ0+kNobsaEFzwx+cFyxw6YC0AOrVdBEo0FrKg+dJDRukbRoH+HN2ZSKLdB/M79gyI2Qv6B3rVdEiVtIUDVdvYX0MJ8BwWuRCrrT7SdFzqUTgvyObA3ucVgqFVFXNqa0tdBsa3Q8JDW9j3xHFQqMyO0RvBc6EMCLkv/a7R99WPJ0RfjmzYy4EPGrRzIiQ/LmGszl/OsUL9Vs9vyUzRBDCTiOjDJe0QbrHieFqd2MrYpuARx0Gz34vc0ZiPUppBqYoNWudtkQT7JDl3jV7+DItUj4DqpB55K50erQtZqU5/0LlUppvksZVcaE2DJDX3LftBD7+Z2em5JgGfTrsXmYd+kcXo5SpGjJ7g6WcoLyDvQiF4SZQCu7uaHSowaJIMEBvUc7bqt9aHcvQxO/Do8IWHJpIopfn0IvJrBEXHlf1JTM7lWWg6ThCS9uXpDtG+r0OfE6BbDnQbv93+xiGGSNY3MNxcsdz5Zh/UI1tB/l9LyV28O/cN0ujWNBT2QW9nXUUj+f7lbyykTMl8LOtrq46Y1EMpkUEdLnuaFs8+Wr8yfQcCz66O8p7nwefparCvYqVgJuTCedjcv2vl1QHHxYvUOAX6SKbnoWYgrvzSis7FvqZrbrRIVyOXNppFMHuP9Qm/1QVlD5BgsHpMFGsFgSI3hNEq99qgOH4Xv60zVsHfmYpm8MPHzftPPiYYcmtVVGBNWcPKsH8VBpbhsZE+UvcmZvHZDDgHfvhLoKgAmQiPNFPq4D+xVWSrN37z8kXPDiX3wKxwUQG4MxdTmFByTQ86aJqVxq4ejYqUpqB1HnQ+3ggRzU0pfURejo+K0SzLOCVN0JpMYMmioN9ih25obdrOOPoTbxY24JWq4C5SsSkj+AclLBDpCnFM5qoLybd1qxiCmrMZoLcchmLf4T2TY+ZqjsPGWaFA7OrxCpKOxfI30pttMIEkdomZZo95lWtlXRMGE9Bxf51bTgop3f+YnC6e0O5CzLV4hvH+quVptyXeNrD5YZ8b/Kum8RcD+bxUak8hgkTjmZ4zp4W0Lw7OWiq+eRUaVtsYvEq5APi7kpjIyiU3ekY3Dnxa+2SL6lII1aoXMNmI0qPu+jfwfBFeRD0Sk6V6Ww+/WArwq1jh+ImghrqjO1A9s1SMz2T9r+Tr8oafovjiBs6yvyIf0pY0hRhc6wVt9Kr4p2wJP1DPypmHShhsp3/w+2ar6+K+aI6Npdc2jKWEBUSbBmBWevkULle/BIXbzstjCMTii+PaRqAnpnPhLYElGnIFeeo5SYMhk005Olqh1xOtEZITA1DuYT4sDcx5oj8T4cNzJJAzDPMhin1+/oSWSgdv1YWRmOz6NL51rD7+Gtn7i7gVGqfHRCawrV9YfB25uR4apsZMIT5lT6IkXDRes2bVU0pbysogaEKRN9uxzcZSlidyf2ap/SUFHuWdVGuiKqFQMxP5vvM1kfX24jq2Kp9ESYCELj/BOvCMp5FIZGWzyMcTXcZIjMIbE4ZprDm+Gya/CxNRo70HI1KF4KH2fHG481G1fJrj1vwiQc0+cvBkmfyWloSTrN5KX1B1QmZwgkyaH7uHarMKtfYegtCmNB3q9vuSSqlH09t9MycGBoUgBL7W2egATPXSuHZDLkr/sjxrLcycN9dteQnEblH4q9MCX7LmuJymJhQp1sUEWI7kXf71bM9ZzBJqo9ohktAq2pBqopPdEMX5NY5HVRUUISjcQaqqNoqYvMm9zmkb8Zdb1+tDpiSRgFWBobyen/fcfxIMP6lxlrLq3agQQWUe0Pf8sZHEOEvfkGBo6FFWYEhTi0tbpSpjLJUhdJ/MPnRrHZDgDjn1E2lx5smSjEjtJqmMhv4m9UZSYCJSCuq2P114aFsyV0F2CIvQv426kSZaJ5I+DMnBUfhY9nsSCpXfA8Vp+6JGhirB6VhUK6GOwChfWSRY4RNMXz0PyZWyVny0AHwWnFZjHnkfnSnngp6X02W9XhkddDwMfpkGcKBBIaEW62M8Fims7llx4bVZ+fCzJv2xpaF7qABXW7wCNoRr2LjZu35utIWdddh2/kQwT2VbF8jB3VhqNiZ/ysuwSA+w0laiaa/vUuK7oDAedaH9lt9yeqcpdHDe7zfli12Ec/wcKtUj6qgBvgw3dcQUHZWqJgn80vcBNzVLUdoQvX7O4kRhkg2I87MzZ/koMst0UJm0NJblC5VPGgfi/vym9+VE39x/DNAd055VEpUOKd3zrBMabXosuPv7AoBfxQdTe+rD0TLuv6Yzm4LG85QWk28NOYLT4BoW03iWBJdGmmWpS+xwqW/bclK032YnAUWcxIF+1PPQs1Agc39modC6VjTICaU7uCe2FnooMO3uiufFyiB22OKdEBkpulR/fX6CZGDhV43JO8YYtrLBAGXAofPu+GaT/nhg7v9GBaXyCn0iex50GXqGzLIo9M5rt8c49pKNa/+j+4igtMEfHjuR6LXtlKa7Ou/X3n1GbrbYt0W5AK3tE57lqBaF3d5YZunp7WD4+bpvO895cH+WCfsnpTNIOM2TUNkCDqPf4gHkc/99NWqu2eGhu2TzyMarRibWBnHnvRpPX4voE2iqIwj1OTH/a5l5NStPliOsXCh4Jpf5c/kg8md/Ae7dEt4S/SRVAvO82CJMJ4r8jrYUJ7NYuFPgRyInuMJgmrUEsyHk4gn1gNJPBpFS20EZj8cRDgBpfOX+Vo9BGnDTrVqfvGjE1v8tlMTU01GJ+I+XDQ6y85g0pERZlbfotCCCERWUqkkMTuXTK0vKjRrOJC33Xpmsu8ZEbyCnFdNVBYc+3luHE2oIbFXhWK7a+0qKy2oIcA/KuZ4LJiqJ1z/jVk03bzUgo4UVNH23/ndpwQD1VOrl7b6Hh//w9oGa9ku7EqpXZ/plGi1//37Vgp/xcLpbm10RUpkwUFx3mER/VHwxMLKvdTK85yPNxhCMYnZaKuLfh6whMR9ykeavLesoxl7qokZ7LFf4EEHN3airDlNPzSACzTQ/a1FkeJO5uV+mA/qxORbkRGPUC2avSu55fjtaKsYnDDGMRpWWOXmAz0H67VEwd43M2wkZH2xBSLDh6bLRa8RdzO+E/jKRh99/pnIow7blpdFOHbOted5TfLoM9+a1rueGcjwvugUMEeLz3tiHLoXg2l8zOOkDGNuSe4nvBmF05E77IxV4mcudlIDx2KxNA2qvJQ6432jAWdxRGZiBMeI8yEUkFNGBJP7oboxQlNABgFNVy795Y7HS4sSu0YNiVBTNBOTvn18ODcxzYdtur3EHGfhRhF7ZzPviG9NYqKPYWMvm04Sjph/TFpfaQYjHdPhFc2RvhQc5Tj/e1giJYJEXW2TlntvSQu/HlkDyaj+GgY6Rwk3WgM3ay2oct3QD1ExyyO9U/JN/KMScHd4OJispzA/VBnqP1SoWCC7WZTGKPQWQJnL/SvqWvIEsLs2P/FAaZ21pKM98B8oPKB13Xxbl4Kq6EqVANkQPJGLSLmfpgzWmcvQOM+742YLFRnM8SYrHBqbLWXSjywLmWa5drEo7woyfBt+sUnM36YfSeQ+eIiinSNdKSGs3Uvb8mTcH/AvVNdStHVJXIzIsjkGPfZVguiPluezPTyYUCa+rDjltI+vqI2wSTq+p4FhUlwC+iCCUC2Ozt7ZHHFkNgwwgSsjJbLBxyACd3ywIHvnXogtwoOq89eluBPP8V+WTj24TP/S6qWi9P5hzKiYozvgF7CyzmJEXyAPEO0BcNrHh4lbWtR/SU8ESUKsg/WEsGOJ1kw9MzBvb9NVXGcjFnIYXUBBrfaTcy/hOU02aV6FPUKTYlk1ypoqoZ4f1mtDh0NdngEop2hTJYfTKmj1HGsIPgsNSZmVxxv0FNGBs84goMTn5e/uGzavKD2TEDIOodkkwAxfvwB+UdkJH+DOYJWKxMIAKyA00Wa6jEmMWmDdBHUWImSxXeBSeJ8w6qb6Q1NIFtoEYB7KPDK9HUukfSRJxwXTgXyCXhKIgjPgZ0pBrNN8WGTBeH8XnA93vzztFN+nx9GayGzJDjiSEUJAb9O8hJ+MxaJrPLfu+CHcXCmmeikz2w82yDKIZ8ncdT/KZWpdCaYBE+10ovS0nMmShSAaHJn7K045Ln1iKfYjbvu+VLwnGth00lKGBg7BQAZEWTF8Qx3PxUXAqUDvai6ujH/PIKaLIDu++zLkBPDf1NP45xNLXLLIsLi1R4DD+jlmwtDHEPg1c3TSbd78wa9ucKgtNcjKFhjkEA07FSoOjon3tDolglc+fmcLO8NRPG1z+1sPgteYsgvOb0VgehSpL4cz3M0AckAhDle5G64B58dXtM7sNGNs7cDvqZ+50Iy51ISB2sbETZkOqSDXQZ+aPN3in3C7BocU/EtxbJF2Yqb5wAqPepIEAy4wUwYjiRYAe1RXlesdYDQmvOask+Gk6QnWE7Gsgutfgli/AkqUqwFUAwNE/fxjbplKtlb6KxPC49XnB6luTFQQHnNigD/gvoCxCqq4H5s4nWM7GwSpGNaQiNpd0CdVpFme7SrjFSrb98/uOdqfJd8stHWjJdvtWjAcJ7BPQnecu3VYY94i4q71Yvf9gjqo+8Pu5fhS3FHtYG1Ue+HzURZ0ZcuOfZvsEBANeNIHQmVYRb/+WaOkDk2CkaAZNsbm9erTPTsVBHMJFdGtt6u7amUeYm+DoAKDtzWJDoviunm/zQT9a7L/Oi6G9suc9aVJwLME/b2SFfngW0CsGud1RiKW+1FJxqbhnH2vO96o14W2r7utWT3mvEwarYb9Lwgpf9KqsjoqQmGRSkkR1hpgbFWB+fsnrS+ZP955WbJezEAE7sFWmtpbpyZLEHuxi+ORbiYkTgL3yv38OBWsoT0aruMx4PSS/7ypp2ykdKwpwz70LOjdRn4iyqdeCEePMQ9mqaM5EjRw5aqBKQ/gFFyA84HIFcKcHxoWP3P5+im8Acpj9Wevph5Y0RW+z3BbU6uIU7G7jwwzVcSwn8SNnyKuNr1oo5xdt8577Ill/VEBIH3RvFyb1zkvjHYTiifZS6SecKhuPGXNSJiA3KBGHuoY3PGOJ1bVnG1ed9Gdzg+gbdrg9sim0hCw+6qbThUCxLMODnqscl9qFa+6C5pTzdICT4KbYVX2eJtrVEG7ZESSd9mucGF3S8ewPe360XMbV2TqvuQBRQwpzL15PVhoIn3vh/usABDiJnMSHXXIbrUHJ2hoa7wv5TZEovGxu1GsLl/+C2Lt2LWJDGIK8GsznSlqeoNVy9ZF0rXVFDrYrx912zRLUQ8DWyVNx7DLf6TmG+AesM4LxbN/FqSi9sAHo123OoRF/KD1pQmZJwJzcGDSgvIoXul8SUhGobRbSkoNtYv5HtcEDvt8/xd1fMtiAK8LHGAK7e9bmAzlgvxNXxzeY135w/VrjCyac38hupq3GaFPsklxcYP0w080oRz2PpVepvsyVQ3Q8151ESuFYqKH8irPEpBh5Flh+n1h1l+W//NeKhRiz1Ncgfa2n2JJBbv3K8FjDAWy7O5H4XH6og4XblIosVdywBAd1qaEysAiJ7cuRBL05t2yfV2rDlxcVNqCwqHqAnbwmMzzGeE6FpQe6vfAbtdvX7WLf1Q2eWyfakQt59fWoObbDLGjAiXGloYsiDiBM2wo+0H/hwA/q7HG5y/jn1++NFkbh9EGjelRIbhGeCQPMwQFsYr0IVHQOxljU6+TkA66SbJHFELKLggtV7O5RstRnlvqXT3kW5zv7c5eGnwnyTIDOZJGG+b+2g2pDMbb8j4hcwoosOKeG8IPc4QBIMTIDHlmRyRGQPhi5+b2t96fYnv3E4Zw+W3C0bbvy+WgAan71KCJ2dRKllHzLbQxvkigSPdlyNaQPNTNBIlsvRvW08XTa++f5L39MXtBkixUZgrNaWyu3DFhQJ7nolb5zdGYAktBftz8MYMRxnD44dd7ehgra2Z0yYhWhlElppwUDM7yYXpCTqxWBaCXo+SGioBVRz+/hrGhlMoPDoGDV3qiUHhlt7UlURYAeRbSIcNlMgduNVaKYn573eVer1NZmhmCkh8aBnBspgUn9D6/2a+cg7SNptX8kE9zfsVDZfyGZ+/bIXbAhfSRrawsp2ECwnHBZBat3DnX55MMeteI7Ki4tdBZB1ryHEZD2YLQYHIeNwX/E/zMlxxDKGl8lwrIgKSlnt1nnoS85eA1lU4E2HDwD5QroLJPt1h6zuA73G/BOR5x8XxTeSEpqaVIAgryz27dYkgo1HPYLq9W09T5wT5X62L9MF8e4tQKwTGvHbHfA2YLSB+R8vgeXo8s2JoWc/nJ7NTFxu2a/EgXsdxu/iV5RBw9p3yyz6E/9Wb2+ukYzlrzIBW4dK/hbVknVtlaBmDkgLgxTc1UUkzNaDFrbBhYoAtOVePPVtDZWSL6OGS8kqa76YPc26gY1msRZL126OUfU4f0hmURw04KyCVq5MmplQnjfcNHTgs6z5c5R4W2G/y5kxjKH0Ds306AFwOATxcLkBvRz1A5Q2hRciHkOXgjuZl6S7l0ezN0/Dwtvi96UzLr4QfC+NEMp/MDYWgZpj1UFPxcntgCf6FgYuSc2+cREslxaKc8samLuOJSzVLCE+bBDu687+03Ry0zlXBGK0D3t7+nxQR15Idudjf5/iBP8OZZK0CWSn4OUGFcurJVQ7J7ddbaajAggtIzF28lK1qWaDqquwxyKLi7PK570nj9v1yFSzlTux3pe/cXrhDT12OM1acmxQYeOT5SGu6mKhiqUc+lonaezzCRSMA3THE2c3VM/PUoXNqencuTx3H2toSIZajelbFpvT1Y9E9YcWo/TEfQ0tPczzPMBpnuzJNVRaerpwdp7PaXOGUYKBqdDhKcNzqhdg5o1c0Zb4t9x+5AzW6LnDJPy/B3vDL9HgdV3jVAqcyFdPg1P4WfKfXgna8NhtIGCU8M2PFfTK3r9VggC63TFCPMLogM+zzhZmeUfvizUtXS92M0xW/JoKaCF2+LRpe84X3Xe5w9LEPJCaVhgJMZtBuGdnV8ALcZ4L4Fc2vmabgewJrV2a4PoP257kXdQUhPISbf7Rs/X2x1iQDoYrj2e3WGbL3dMLQ7jrY0uRIFYsWFBl5wKsVQCJQWVXyCKWxieQf4wVkKf3G0MWrkOR6vPC60GIF5i9tl5ZjwLhnvxc2aejk98F8gNK+U4eheZ+L0KdICnPXKBwDPsX39njHgJwQjLcXKpZBMgTDkgOsPuwpTa8NBFBRPAqyYKMmyHcZaHsYQp3M3Hx0731G/kx/8syr8dFbZpVy0kpb5K4dMtg6JkKAhGvl2k95SfCUKuQi1VoLcvzMrDY4Xa0M+D1UhcnarXIGpJDSGSaQQ6Nsf3R+HxFBDprBnekFxymHM3749SJLh/O2iL57tksSLJarV+bwYB6DW/qf7eeYMy/q923gL8GarxuK1co4nqWPsQybso9OtuuaZaFoxNQ41TL/LKAX5rG3dHBlazZZ7J2dWob/NB3gU4jWtwfj+UNdH0l/3DgsM9DJu3Fe4pgjPLLZH54dQklYIclujGY5qt8DrfJOe76OR6uJys1uJFDGIJKsu1R4vbzh22kZ4brnBtsCnsoj6zL0KEmbGi9cFINDdvc5YSYmESejAQKVSg8mHUul/E/XnNOOjYrqgta1mKTdNvt4xuOMx3azBkT/LRGwK6Zz+FL5SAGbsi8JiOpVrnPJzUiXzti3RoJRuYWCvDvStv3quf9pOSMyGORODWcXUrvfXQeL+EqRlv9l0hwG0fdgaAGrnOTuAkEz+/2Ptwmtguku/tiOoSfEXN5fRKHy7iGY/B5c/NMXw9wpmvdK8TVDdpWkGnIILidbgzfQv4e7pEcm/y5U14sUKY2+eEhwGwIseFSXAApXdcMFn6u9c2ZTYTNeOXlZ/J+w7jDNQRyyxitQRDBnmsP43ejjeuW+nyUOKrWlJbJKQECs8yuE1XN1/b0I7ew877CnguwIWZ/bX2mZFQdqSJjHz2plwsif+XUHgY7TEhKm+2cpwpiCbSEAA5yVEkGet6iFMZh/qVmikSmd+Qua7SD6AUDM09CH5NngykGITNoZL5rXMj1K32yzn1bhXQBCj7imz0nUfk2OLAq84BH63kvgGsA/mHZ4xsIpWn+9q13vk8xLyOsM5+1c2RO+KMuUBbvqtuhUqWxf7/YYpBoE08VmOzTGycVXPzY6OskprZXZPR4Nq5j2shrgPVAYTEZedF3UJU63Ttl4nJGz8aEkNHDi5XBaQlfNzM0w0qqh36pt/oeDM/kd+V0l8NJncnJAKyqOk0wA/9W7nHWkyqaUis3PXhBAha0EGSjsVL1O1ldDTDTAdI1DVF/28bwMjEUmDGudsH2Xmy79WxPzVsc9z27eRePPDorMPAU54skGiiNknsZsUD3j5blGM3op1zAv5s3nfvz0zxJWUPvXNEJn2Tw1E1z80in4jqo6lObzXm4v3cBM0M4TFu/SIo7BAavQmza3EQQevuPPhHdp/oalGRY+jrZ6XCvJrEu0Gg+q+qx1l1gKrFcmoanct+m3zW57La5fZqTRfp8Qb5jWsPQ0v+dM3VU+B8gxMa7JvWIeHrJ05CjL36J8MX1tuqLmCvejbfqY3ycL2h5qVLaVkfCKunfW4Ljk+IFXOAd+BYAOcixbaecKG5hG000r5SVm6QNL5kWZ1qZwvaMH3ozh9L3h0F5R/XEUjgoX3KIC8idBycYvsSdr3BWOhnZOHB3ktPRwM3kmwC7tDTavQZTsvbip/eHFVaFmJt9h6ZvfN/Ul1KNCzS2UxOtzqgA3+bdhYnAwUmBv0DR5GRNJwBHwCcC+McqhvymgF4hPYEbrrOg2KaAwMVNxI2fN9mUtrNgCrxhukLwlxryXGc2R7B17WuwiSbpo+bt586qXAH20RKak3Ctblv97xJqmtvV474PCvSV7x1wzQCRbsHs+6ivlTF0gakqSOxPJuwOoYr14gP15D6yzLRzrvh1Qj2h/3WDWHqSu9GPpBYzr3La5+J0sk2DD/CObKcjs7DrvHPPkwwOc/EzAhGk5zdu3qyU/oXxJuXEze6ONQx+nuT52CRjawF8UM/HIkZaLK0mH10VsTfJOC8h3pBKrwcmfDhlrYJb54540wIOxDmQLDPd4fN6+kaZoO4iZKCqVgDY8MeTCT3OWNe4C8auEB1sHtBiVl5qg7dNg3c+T5TrvhoSJKSa21R57ov2eTFNs+dPS+I56yRCAmAVQZ3NzC/qXgH6++cXf/WfnLPVbZ0bT/7rBgRZ1sF6CNjFYoZv2xAwaG50PJSNyKgAUXJmMXvSKKCAHYkahUvRr7/amTq7zg9WkgVkaUrcykP6LJ5VwBMjPFHG5FVOD6zrTwXeIthDWUNUU9uCB3eQCW+NIm+REjLCx29lksFLneTtVyCkgs/7m09CfQgSe3IH38G5ZwcXCNmrSpRv+20lci5aKw9Noqr4Ljv03RSDkWvcccDwXB31eVLQRGFTqDjxX2N4euZHjEQYJi2YpJVBynzwrUEL5CtZJyvJkZ+09OREgyc4IkPLvlIf94/dGL0Fjh1GUCytUVdu4WJHd/xSC4PAvCy1relzQ4c70s4qK+oFj/e77OYswTwZf8hZ2bVIF5Tif9SBC5FQ7RXRVnq/04l6MYi9LXmGuAjmN/6tTwmUL+RxFEHynTDXBwCAa9rPSmZqYoO3XWIJEd35swI+JX7zj62MJ2+iL27bsHPu6JlADhmjWNGufaEf4+lIiNH/ddZhP8EKqSKTZMzCGgK2WU6zcsoEPgUnG18ljokwedhsH7oJJpkZwkzl4AioqmyQytg+qQd556zNBCMc1AalFD0JHRkpb+FaH5Weu6NvoXcwLHoixwY/jS/jZ+k4HAup8zy8wA+2/kk52GZAzt3BEKK2OtGhLuczC8sZlhNTtHEyDV7AlV/zvL0iWVblQevHDPX/hLzGSp6BX8RHL7uY6hkGnXKlGvPN8xiwqlJsIjZJvO3EvVPk8z02hGAK5eempyC/D4wEauUny8FQ3D190SKpFAp/dtva7K6IBrt6uFmym0tlLRWKuXmYslUaBXEzV1Q6AXf+NDgyjBI35WVCZHFlBhM3nTn4h323CEpY8r1E8av6E/N2u2SirwvwND1fxj6+3xDdY9ZF+CXrLKeA3MhvV+9VLxgD120bbNBMeoSorYCM8UxCSGgGiyVD+pbobLEDcX8Lz6H5LhXO7oCS7zgTNHMmtonglEuIfLGG1Y1s2HyafDc7Vd/FodAtWBuAgMymbiMQWkyMy1BlG2l1pjOq6s2JqtvvdJ90pyc0SfY7/b6UT9mav/1UaHrPQ0n7josvXHrlvtZOJd2RVOTeMtUUYNQrtahbqW4LAVvr0+4pLXyPQe3VXCZ3XCt8GJk49tZu76Rt2VFgSEz6CHRUInb9fmDPtNi9YaCXxnggaMev8LXl0kbyl/4m6qiBYNet4S3pDmkiVNIzsygetwaSi+XM3kUaHT7DfXrmQqwstbcAkq27B0Bf6Zl7MFosj2F97UHzAt7iTIxntXrWCrcOY+Z6v5wAx2quQmESQo8hfu7a8oa5hvzLSPs1K+h/Tb3WFT2Pa3M0w6TXmn/3Ut1ZbGMO7+VSb1+RRwAqCE2E/FSEdnrhSHQ1VmwX/qc3LGE/JF4z5FAkdatrRapLgnUG8zLggXS9Zv0Fjvj90NNId14UbhxUALr9MejSlXrLLQuua3FaCP/CE/KLPn/t/N4pyf3jnGznv+Fx7ULQpA9lChQF6DrxIcKaFq09w9rC9c7nK12lzt0mRtA3VTrNHzEycdd90K1Rc27JZJ1i/NuydE5N0l2f/ft4VJdbPBnyyb2PRPB110YqY5fc19/7jFEZaId4RWAqyXSwNyHMBk8V7FXrf1p5MrL36PUfIG5jJegrZ+m6psrdX4UNjK7phxe5xLCiYTnBaI7ODl9ZQ+BwdrYbxmxH7R9g/FJVvd7qBXCQ8R42nJEf2n6RVWh41ohzejJO5BwL9XaM8S+f3mxB3JXBVV/Y3ok1yMCCA5n3v82Njw8E117OcFFgKVGQGQECuINStmEmL41TVRxd2Jj+mzGGq6fQe8EX8MUCgKtmDS2BmC7eZxzqCFClU9SXcykZ6t8CbkAhNY5U/4mDesw4o1JOHxRefka6q7fQs1ZEpVGw+98QNZ12/Koln0a7bMpciu7+gCvYPpqNpyjTaRLdqfyFvJ1Upvod81P0IN0ORMxh6voAvIUdCciAXjydItcFSf5MoslZYVy9PpDjS6C44FtP3foxvAoFJucVuE9TOS31rvn8hq5VXOnNx91IhW2vaHRfx0dEaZ+d3o2tx9FVP7aOil363XqoBBHFpFuYVr3y0ujVQh+SD12q9vCxgBNEUctAk112ljuFcjtbg8HWA40y+wSE4Vc7kh9VHvX9vto62h4XpJCr3D1ZWWtnIv6gSfRTdtPejlKI4IDmMMHY7U7a99xxYuIH0ALXkPbRAgDBrt4ekJbjBAXdMTP++hlD/GisM5V5Fb94vWOb6UEEqxqRo61Zmcux86qBP6DHEbO2EHJS0NKWpLkGx6LpSMxqlFg6v0Y1r2gH/KGaVUV5fLKi+H93lLdjWrLGYQcUVVhwYoJ3Tbw0QSrXZY5Ak0wZFgE4AfOOHIOcnAD0Hna/H1h+LcR0+MlSewbUT0lZdc/o83UgFty8TJwDHDZAUaPnrmX2a5u6cR160Qk87Y8voM/VenV08d4QtOYHKRcIV3738Dx6R0mN6qsZiReghPyGQchGVa+xFFfztc95wSchNOpiehvrqn7LqJx0iJyEdBA5tsU9mDWodq9xkfqcnfGysQIzLKqrycb/qo7gKvs87Lwu/RNmHZ8asj7iesdNkLRYPYNoHEXSePglC79IlWc+9X5KbwM8/EusCeroNu236dioh66VJ1Znbb2+ZLPX/ZGeS4A89Tn/NyWnuwQ9TvufVs7inwfVRF4n+Xq75OKqqY0nSYAeoHwcWwVXVVCEjmEDrDxeNe0Ina61cvmNPQ43sUVAiQCSZuAfaERtCRDr8X/6z+u45mwq7NxylwZ5xNyJ/igivP002On3kvL5IkJGGXq+SD/DmrA6+1AjIiYmvxefhdSGbYD2SgesYOiNSA67FuVH7fPsv77fabDdVd+BsFJjPcspVFTiR0rsSrUZsQHa2zam/aZKTB32JBcdAQlG/ya5nvM7KtxJ7N8OaX1Dr6YdjCRVsbchQZOiVucqxUroXVVRHtSnWJuVz25Bmup9g34ibhQYpoAOkAAKJfZ53oXRJ4Wcv59aUKBuWZECJbmkEHnfmuxGedPMHnjkNUfjKwXEOjvR6VEUjHgqxWPGqu8iEvNSW70a37v6FX5m8WNfIHfjER+uLR7tjuLQC6FFeyqDG2E1fdFk6MfS3cFAaYA/FgONB80AwqrDgA5+HP9UwEigtFRuEvYYQKiiK7zi2bWC60mWvf4G2VtcM+UCnhezDp7ig7UozIx7YbbwgLo7KUT2S6sKNptKvz1bh4s0JvOBUQG7PLoABP5qVKHFs24eVY3+E/7TC5zvD+QtzNlZy4dELQHvdwXRyi32XKjZlFg78iqRL/6iMPOZ8xy5illdVXNysS53K8az5NymQCNl6BsyzIJZQ9nk1wWe+VxJO9NbeKFqdNwS3qZseNR0XaX/tlxGt2r7TscNNrHxcSE7nB+wZE7RolAmk7j07ZD4XSp9KCRtKlJALRwUdcLONxQU5Mt0OSxzqL1VEKSe8sM+2LJIiu2FjIkB7cqJgtNLXtENh0kIdTBcrVg2NsfJa7FMqB2o2H1vJrMg5Y1R78kioIxq4VwR5vWcSHDXN1Z0YvZFBAmVD9h+mxCKi6zI9q+AS6p3tmVQ7iQTzi4qHPxCaiIMUkbVTR3DXnC8NGMmvR5hiI+BYA6zh+ToxwDBluPokFF14fLf2yrkmoQXMbjNA+LBVAAGXuyXkvLZbqwf7G1D0lM2zYKAkVSKK12ImmKAuJ2D88MfDdXeB8idPmaE+GBT6f93DVoi6cCDCvY05McBTUW0+PpWmsuIaLhqTnheEWRbFYEjc0bac8txybKe9zJqxomYmSpTP4B0LY29aXMfYax49wufyachQYN4nc8jdJiSHH3TvsMlAg+MW2vH7F/7/omCFbgjPkMOqzDxoZqQH5kTkcC7QbaY5EBMsaW4qzA4wO8JSO6TOKWCp6zXg3G9oyKhtw71DM5MmYp1k9emxcVoLpbFXrVAo6fQKshCF3ginO1WMu66rxWmjvQQTuB4LX+6EU+xyilshnuJ5iKTxNxtR4V7Aqp7qECEJQ1sfzJF7uuCg8qK/8HVAfL7N2YDgWqCKIEU6hBZpvM2swmJeQda8PvFdqxy4+qm0bvkVMIN6laInEBFgQbBjcypzONzWuCY9GAbGR6VS9RuEa6zI5vIrlxus8yfNqBhoTe9OYMtJlDFGzLTjtKNjGEQ3I1oqBy2bSj/RJu5nsQi10E8Nk+AL+CoZ1RUpHc3Dg/DUqbgl/0OYKTONtUfl6e6FBsixKC8VCGSLW1dp0Cj+2XUu5V58erDOT9eqjdNWNtXR59iJ1cSBpZrtm/Uh41vS0oBGkrcX8sip0M4N1r4l1WLxRT4wCnsSVULPj4IZNWdMKDn5loPBm9L8dpU+ObHibgB32W4HgQL89cjntFMxt4uqBKAGYk1SSDaucf9Ot8DKqK/m7FZbDpAELJay8w3haVCB7zJkIwekbJQGQ7k1RJgUpLN1ehBkge7wv5LiM8vjWNG5rG1oaiRoEl+5ZY4pegeAkE1nBomDIHvTsWRfiYT+3+qhcmy9TGeb2tmc+Kc9HBOw6hKS1EcQUnhbVZc+ta1b584/YY+fqbxc+sU3kiZ/5Z//q3ypGfOCzWnmbvPeQpSWSYd+isbqNrRnUQGAaI1pjKoMIfjSKgQXdX8JAtzjMRLDJ3rS2UARrXSDOXkcQiVHudOBpQtmxbZOEmUvxyq4VEBjF97sY/hgMhjfy4ozjX4oZ716Rd1yg2ZTcLqMbKsWYMta5iuJuBdlkzbvx9K5K/b73bRNX6feKYTzWZHTuEkirB3cUKcYy7icEHncoQ/EPc/X6c2SSJM0TYKmdpvhMjwM3HkuhhBId/PiV5VsRMggTfWxGQcVKhC3q2CJp5cgtQZRZorKCxjbejsRcV/iRgzOI+x151R1+T4o5K0HMVQgTc4EtS6rTYpLuIL7YO/LpN6ibmiw5En5K96qERrkvoX3XWTMsRSF/8/6b8pmnj9JuZsxtjDvOlKCfACKr7zyI0TxO+kRPOGPz3OV0xj+EeaR3x5DsEbQSq183NGX5o3sdWX6ipUfnnrjqRD7/UGkorqUzORl6b1EB+XUo0FCFR/1E7hYI8QvuIsAXdlyXrOE+JabeAUJmcVess/mUMKLpK1/kqEPD5RQmbIHlrnr1L7Odvr8Trdm7AImdSFruN5Vb5AWp7E1JOBhC4G4RWpQ2NOvfs2kViFcQYfHQLZXTbJuztw/k+KVEGkdc7x6M4rwYJBh7oqGot3Qk79CS0ZD+hfX4SiUaXTrSZnOkA4h2YHV3yAlRXwc2oNwq0VBJ8wTzLsK11kTdI3WV4S17S+JEAN59rineO1fYsjDzhtMfMptzaFIBAZaI3ld8f+r/UkBuSyEM3YAxqLowoIGztBCaeQvsCste5FANQoTPHl7yoY8c1y/QVkL6o0Tw77qgP2ArfYMDGj0ebuXAA1rdFk8bWBAIu8eibfjW+fUYHDtVA0cvWfxlrZI9icX7For5W5OXEfnnwcOGPIrlI+v4XRsBpOF9w64DYLHIde4ewqygK7UrKzY7J3QjzI7hLD+YpGYpPcQyMAMAFAF9pDFk4Utr4W/P3r1WUp1EMgX0eJR1GmyY7FyE/JnpIzaWs8iPUStD5EteKYJZWP+EfQPDtO7AELHsld5t/W1tQLkm305Vfa12FI9LDbw28mvKVlU1pkCwwV2Qqs8ZdKjBbJj/5r9uXMlAcOGbTD6Ddv4NQFx/StOu4+xf5EyuCo8UlmVL9eKIS3nS2OnUo2ow29JucNuOUFRZnr/qf8oE8eSVcdoFFKJZ9idevMB0/1pC1rXua8iHl+gNT+Zv9FFCs83Vw9zYoB7U/nM8HsPPI28q7m2GNGxYN6jCcJ9xUc84m6xhypR+nsRChtCBX2tF1q77NS69Q8Hb5QM4Z9jzRUYCKVEijTaHPPpFJ2Vc8NVUV0vbj0VndL7RRcmXZguS4oufQmWS8fshqz7g7OQ6JMuxWzrQn4Pau4IT7vdfXqFFNCMItjkk5FkQvlVj+X7VqImSCMDl6jcoua9Unb4w3TbpaL9WthNiVYKxUxzGuw0qnh0H3hnYl1whgpWBixCQpdDPG28YIyUUREb5DxYwk/p18AaAVoPDpx5FjDBxdw7s9uyNtYzti2CyYu4CisEaWOZQsleC7Yn79bd4/4kkP2NyU8ZbSlZLuAq4Zx20oZCuTOdf/DfpsP1bJ1oNRs7j5j1lq5TX12wAtWzn1s4QCzp0aiokX0tCG2jXsf7d0gqMygcI26oLog8Nli5r1HbFMU0QDcUkSRxbg7tixO0yZyKw3DS+qStpK3YrUXtKcs7seLpxYwq7K4VHeKw43cHvzag0qjmzgRRrrIwhfYVjKHUIDLEtSXxs1SBt1b5MzfldrAxYrI2yyYIjhxUXS/cEsidjmXbU7+vB3CnGhn+8iUATDqogvLNaZL54XzoRK/PyWxyOKHCf/w6+tY5ceLQ0ryhBgeWmzWqTfEozdFp2x/WTKr0dzEGr/OBQmLDpHa/qp4ofQ3ujUeHTupQpBYj5/ftHouFYio60KPI5RGFJLQdU686NmAeKE06PjdghdYxSE2fmUYx4zcaUNVswK8izN01jqE+DGNwEVpg2eDn808QCo3uYxg9ZwkuHIFNyYJqQ+BzMD2BniytMYrJS8EZzi5KYY0ax5KT/6KCV97Jv+AntmMpfLgwAyQk0OkfgEX25WH32eR5A2fQ4V0evKYdZve5HFVyEj7m/bB3QoBoqhWPqup+Dv13biZjGbn2p5p7oZE8cC3ag3pCm00PheMnK8DYAt63RUKQPQcNsaDCJdeMP7SkS2gTzSG9jSIFmSDMrwCdDbtPCJUK7EfB4lML7wuH2LaKDubx0qt7gz4bhM2AeXeAoA4ew7mgbC23VNzDLOYHxlIK6Bq32irezNM6/03R6ODhx8DEGo3XOCkyRnXENGbAYf6H66oBzO5XcrpICiddjb0ZqrnjKFfwHnA3xl/JxK4vcmcatK9TFgQULFFzyT4q6fedOdATfdn5Lf7Bbe8yFFDQLslrgE7Eg1bSfCpxK5HiDAHZW4H1SEKBwVtij4w9cs2pe1wzzhM8/LIv4KEu8aOXIgcO+840nYEu2q6oamIsvFcTFAGAfmis+xg8henc0UMzhz3srhRhqF5JmWG6Z9qMEk2gUyHaFlx2oYwqDQ3G5sxhpaR/vH25BAVTH53x94EhSYaJCoJi5dXvqKyKcZoVx+VHB361cNpf7VS0+Jekl9nmwTMgcZcFFw8aom5LPamR0gbdP1UhoEBoKg2/Nvce2PfPfYzpIVBK+stesTx5PRKPgP+iKwXckaUkMI09oCls39stT9foePro5YHNc3XZ8RWoRHqSjacTLbvo6tPm5+g66Y5SfRnWutOteaxYm25vV74Pnu+SRxXTPf17n/S3qPa4/v9aJqg4TmgMC+RJO9arD8tCwMaJHad1Bbv81XDTplqiV72C/nVXI48Z2kWbuAVONYVHxCx15gdNrNo2qevh+0A0DVt2WRc6FRu9yFv9Ep2KOY8JXRXINrOuNhs8q54vBzXAh9/9Q+BnDZoBy3ktw2En6XNxpG2NrgtXOB2aAmlRiIT00RuGmNPjEiXGnXSskIpHYuY0O6EGTlNTnXX/2+Dk5lpb9LeSRSjlbXUUiYl35KY9iCtOe8bInP3BB7wbqc22+B7f7R9tf9e/hjsBQ49yXNw+zTJPDO8Pj0SImmP6dPSPZ3mJb9nsM64/IRlW+oaLvFKwQ4JTWnDYvwkZqACtJsBea9aNYEAcbL3GD4u7GPEsAxwBPgQzUnaCiTsKH5stISds03sCP61pIEu3mqP/NYPqqUXGej6H0qIR9nPrNhtZTExZhR9IJukvwOw3pCQLxUJ3TrncQVBm/pHAIYGaE4CVUg0pDKvxq6FJwq1DIZL+X1VOfeaukRn98OZGkHhsRZ3pGivsMykDk3GqAE2234d/4vh+0BxY7cDiCjhRP4KFaFICNoMdhcGZdJpSBnhl/JzoBC2lC5gv1S/aWiRaW379+3nQs6Sxun8cjND24JVpau8dYwADqPxSN983UHfSV9BRa31LP4tGRu88m0D7CAi5N+FPTmvLGZjluu8E3IpsrR2DrkcrPhINmcQJpewc+EZkcRlc07t4bv9fsJOHT/cJSV+WytQimtMNqmeQerQ9n4daki+5UjgBVAy8fx4W3SemM8ozI161zYYB10PHKDRlzg606N6i8emAXlbyvZjPoNTIsrIoYRaH8S2qTkbqsQ1eK03F1twfUo1l70WxzQFICYT5yPHjYOgiZetO6n38J+BDiRUTRW7YPY/TxhCyGoKq721oUnepHmu2nGTMQ9eHT3qVN+Wnr+yt2Wol0LWJzWf96lqMH4eZhrWYHjuZqNsQG2M2UAF/q9NdMA2ODI+eXaVveG4SlGpjCiv9Lg+lI3hsxjF25up4pcDMga8zl+rMr145yygGMm9NHdXCAzpfJDLHhhh9XxnD2KgpfC51FaFXX6/tRlVFyufccMYrpfVh/qXdXxTtziJVcE6j/akoxDfCiFZDV+JDHfpZow2bdDsg6Pj1WdmfSbm799fsE3M/6pDvFQ23v3ldP0NrUbTpwPRKDhaxg45gxqV8VkiOiHHwKO1SdHFWWPtpO4TiG/biN8OqE1v6KqPDdKzcx8KkntOYQJu9e2HMLdKSKOBXyG2CPgCe0CaEOGHEtGxCoYGNFc9vfk8vwr+rsABOmnUFkj1tgvQMBstLqbTNueB+inwXlsVsoBJkzYdTfjG2zx0wO7WIvxCz3zJifah7SeLWU9BkIwkjxBzJsyCiUV4zECdI3va7ONfeDhkZStpo7fHiPu7kGCXEN4M0E3rI0L9jdoXmlEMSaY4ccY51TvhRMOpQ0IsciTGSdV/jk31qj/j5EjEVAYr5+WOW3Vki+FQh49YNONIT4gkzLrH8Ongxx8HGlpi/KNvYLcWQcvfOaUG2X7DyhiANPk/sI9HATtzEc/LV1cxq6cJ6FSQsiNoiWzCBEUGVH4FqNP/it997Nj6xax8XLedB0BmOm29XdnmlDzNej9sZ8DF5iAryGcppBy4WfjKnESoOa1Y0Cf2C9J6YfMDfdYJRu8W2z1Y8tYRse14qigD9D49tTuhwx62vNwQP6hhohTKSgakw43rmTXxvyNrGxbzW/cqNYuQY/PzY6xrvklFBuU6cF8M9dhPZA1uY9C6vGLaVNXgKeJ56fJe3H/EbcxzJDmgEWfpapLUQwe3qUx/wtaBdwsH35Gv2H+y/aMbgeHhZgsSXCc18O/3wK83joJ1LUaWDguGF7PIOoS1MmDLAebDGUToiBF5IsOWjkIDaeIyujxb55m3gC5RzKB4fM7QGhgZYtOYcvz52867BfadAsA3D4jh/zi5mrrrmuwdki7c+iOXCMmwRWk8L4MPOBxJWygYud9vZIKlOvFVHvfRu71Oi8dCW8KMsdAXGNoR7i639rQN0tlQdp0rJtPSx3jDo3TZ9ReCNuMDi2+NEuGQb89uuiNJJkYCQmpoEtMjfniGZphn/jstKHeALXdgcuxOVNXA60fT1o7zi9uzbwYIOYf9PM44r6FlUm7u+ioCG2AjklPKPdur2NHvoY+JX4Ap6NEZHSs2/iQRZ4pu6W13peUggBt2lOB1zdAvqZ2BgREcgFl9As/2BFzohpfC7GAzRIGK4mayE9GBPCPcXFCekON3MQcUJq6bH7brWHtEYMUTAxmqW0ZtyFDfLH4AD92mElRv9SR0uHFgxvwsJr0cehyoByPGAAr8V3J6Xhzt92yCUDZsAXbS0XNuwgLjpPjczxmzLXdCmeyYBSk+jUFlsZr9uhZrTgbwLvUixYHcqo5Kjyr0azfyXJ//7d/PCZo0HRpdjr2wc4ndrOdyAaiNkPAhm++fs3ta4+VSJVTkt0UL+U+a9/pin2jzGIDdg24lRKQ/Y1LcXJol9eMUjn4WPtCnNBVR4wOPFa4oOMEnSZTiDuOE5XDvMULc5ilbM9WAmP07AGOkMf70Iyov3RbeBzpXyzy3Ub9g5YwJEoK0mUPCDyOmBQkjL7ZaBcT29JehNPfabH9PlNxSookLhBTmXYoPq9Rw9cCGAegOYZPlS2jKURV9TuCyi/Wrd7hPtSO2fG2Zh2Jmxk4JhlYrOcWWGAMNGSLAFfoJKJ+K1cP90IA0If11kwkolx3QDIk6BQqS/Ee1RYfpS5E8lBovG9vC0+LrjTQe9V8K1jYre9LCjYyr7pUzHceOsK5EzrcwyEfAOI3pyhAfs0DTou41v1n7BUmkF7+msZX8klREVDjXKygxyO5U/YeEWdxvnAo07YxwzzowZXWC4PJq+ffFtiroBTKgMyQ/cYYuWtAqQwGkVEZw8wJnO1i4bEC3vbsME0AonCDv7mjGux/sayPRMexHYY7PVL0tueVSPjNW2Nx7lpLO73Un0393ENaKKsMHd3PjLFok9L6WHYmGF76ewMTE15Eo20HQErBY83wi0hCXy/5zm9il6M0IrCYuzlMM2lVFw7+yrPupwwRQRSy2ZAyoOi27HtMENqT4ws6YqD1Lgqw1bUrxOJkAOIgNMK6eC4cfMUAE/AuKAlNxafAQjd6a4jD5g4yi/3FYDz06Qy1BfuWM9rZiPp+lSKvl6/fOsXRqp7d6sRnHMeqyKHEkcFhQ6JAszuUWJmqC0GIEVC0PGd5yn3SOl8bwMQ00BpmBkP3BbvvlxyBpDpOaZ2utUTuJKhi+g/WOhMEAzItG3n3ASB/nDjMU/5BCGun8a0Ct944wEfxOrV0lDdwGuVxQRTwDIZpZtkKK5f7lO4N3/ngU8EP5g5du1QP0Raf5d3Wgaw1GxjMPA2/TwBJlJVRySnV0KOJSMPm6g3vT53ZfkT5J1kh96O4yAHQ8/u5tykyWGCyLiEi1PKL0ZaWVKlrk1KbAtoCOJUjr4nmjm+OEwPC9+GZedq0YdpF/SrBfZFFKJd6LiuZUlInyqft5cuqPz2jqwrTy7jx3uiMxNGlqolBBR5WtZWxPZ3RWt/vlzSUK+MwT+mqSWnqJQb3g9TNulBPhWyKBo/R42OzaeZIwnhmz8DaXQMNCa5YJmXzlRTkSX1WgGTczopgwWhvXo4mraG8XmMituFigrGSrIUpYahF61dGS8EaUm9C0QZET/jvZ+Cu2XBoIVART+MXfFJCyJenRsnXS5YHbeYc5P9uNLeqwVOOFnSe4Z2gNHFwndULESgNZRo18Grrf6zEzMiCqMHSIL1HqvUqSgLhdh2TzWW8KV5YqBrOdFBjHNAmVw/lINhbCIfMu/9GgUZx02CT3uLgMlZtIuvCzg7VqZV0PBgVBas4GbuqnGBNCloipcSVp4EACyvmlj17wDsV7ZTa3C80Z8l66UOwBTT3+JWJLHY03W3tJYefnlvgVVrV/3lDHZRQ7VLixevV2hr5bc+wVdtLYkQci/LKfJnL+XM0Wyth1cGFOlKP1nzFa3qw8crRsnV8xb3+Y+s50nHbFrn6vco/afNeriDtENsqqCy1PmpoA/OzK+7BFzcQe/YH7bvFZ9U75o6nQVvsQoryAV+fzfcjYpsQMpb02xxFyXiK2e+LNBidDA+RjCO/ODpBxXa4t/gxU4JAvcMGF4c2t89pM4k1+a1AJoBG/+KwHSR2gR2ApAo1BbbYHpoUHAU6UWS19VbL466bAlhyoQlFjHkTk7hio0Ydnbxu2vt0lva6xHYtX15AnVi4WDsn1KCOP2sFouL+z49JDxkEBTYFfdJlEP5Ve3cuNa5O/WmzzRKcbeJLGkJWAJ77EpjEvOzmkm7NTUZtFH2WEDua5tR9zWnz2ZgUIgJLCR2Pa3NKysyghG0mgncgHrNkqUcG0u09mHk+qQeZLakmylJiEK1pJE7tfqbyEoZcZ9vHiIuv/995WUS+hTyy2c0sFqVhs3I3uYysRhogyb4TqxoLFa/9EfTKTGN4Wg8m4TvAwCO2xMeyyQgkrJ6E994JzIm/vPTOfXJbdeocZwBzXiBwzAmon6i/BmvKvQPQ4h+gEGuq6YysWlrR238gj6nj4InlArmLdbMUip+JJlrhxv/3XFVdLYIN9m+KOlLzOjSf4zkSirdCB0y40s8qJokHtytuVt4G8k1LyYhh/RiXdS4VnUkaonCwhlJfh9XF3vTIWcjtMlyESOFcRemSdBFo2OylPpcdZSvQy7NY0ukIe4/GDiiwGPW9/VAjPEBJBzYJ189FvhLr+b1E75T6GDsifAyPmj/Yu2QyoR18BjcSH1wHukplpgWHjlWSmozn0sIY/fvBnrF8i/E1pfEk50Ohu9oXjcGSZ8KhCdYdQvNr5XWbskpMVlfXnGTFU+cdsuJp9UONiYtdLJRaAlwDkBo0wIibmQyJiuAPMMgnZM9nktzb0JKFZzblbpi0T/TBShj6JgTpCBuZsPRRjkigN+YXJOXD3A9JsQsWuti44tyQ52T74+6OQqF/TVSRLtZBEvMs7vRGwi6v7/CckfWpRjD4XWajUsRnloKoIO+y59rofEUeczshqLeleY5MH+hwAMiPxiQ7G+HASOJYYK4t+YDb7Manlw+3Y15UWxY2R1YTOfULrIGvQQ5Wb8g5Sfi3azoLwd35mp1GJ26EI3V8fv++/d5DVO67v4CqbtFhhY8plpe/8L+a9JbNrqq99EQ4YyoG0DMb0t9ErqYeo+/PFgkA2Qpmm4unCTyO9suGjKXbqvs5R7v+XgwNDR+YJhslZmCffLU+Hoh+4Ilkv65FGqyJL1OUxpD3cE80NfFD3ZcsNBTeYdOEzgbpOOLt7xC9YdjacMkpt7B7SKNuCDx/SMNSUXk5V2qIFlguP+Pv/4GP26E4a10lctAbfbGxxdVqq4DJwmhmNf5A0bbUpooDRfPqaqQEtx/TDKpW/GISl59knpQGETJ9bnKCjxLsbBxcQLgcINes/Rr7JqyXx7gmLzehFUdmpLCAVwBg+p6S18gyF0Y5iri3pIxZDG/O06yAYM0F8HVGpRohK4K468Jz4FWcX7OQxayyUDPlaqA5yXMMNcQ5/juP5lg7AirFyDQ3VCtWiDkfq8OTruccK5/AzAAA=",
+      "poseAnglesVisible": true,
+      "hiddenAngleMarkIds": [],
+      "annotations": [],
+      "poseAnalysis": {
+        "engine": "mediapipe_pose_landmarker",
+        "analyzedAt": "2026-06-13T08:41:38.203Z",
+        "landmarks": [
+          {
+            "id": 0,
+            "name": "nose",
+            "x": 50.2367377281189,
+            "y": 35.727280378341675,
+            "z": -0.37739458680152893,
+            "visibility": 0.9993487000465393
+          },
+          {
+            "id": 1,
+            "name": "left_eye_inner",
+            "x": 50.63357949256897,
+            "y": 34.64857041835785,
+            "z": -0.3713161051273346,
+            "visibility": 0.9983320832252502
+          },
+          {
+            "id": 2,
+            "name": "left_eye",
+            "x": 50.86162090301514,
+            "y": 34.7229540348053,
+            "z": -0.3713161051273346,
+            "visibility": 0.9982590079307556
+          },
+          {
+            "id": 3,
+            "name": "left_eye_outer",
+            "x": 51.087892055511475,
+            "y": 34.75537300109863,
+            "z": -0.3713161051273346,
+            "visibility": 0.9982317090034485
+          },
+          {
+            "id": 4,
+            "name": "right_eye_inner",
+            "x": 49.9906063079834,
+            "y": 34.5733642578125,
+            "z": -0.3699946999549866,
+            "visibility": 0.9986006617546082
+          },
+          {
+            "id": 5,
+            "name": "right_eye",
+            "x": 49.68637824058533,
+            "y": 34.25067365169525,
+            "z": -0.3699946999549866,
+            "visibility": 0.9986749291419983
+          },
+          {
+            "id": 6,
+            "name": "right_eye_outer",
+            "x": 49.47706460952759,
+            "y": 34.27034020423889,
+            "z": -0.3699946999549866,
+            "visibility": 0.9988259673118591
+          },
+          {
+            "id": 7,
+            "name": "left_ear",
+            "x": 51.12268328666687,
+            "y": 34.904128313064575,
+            "z": -0.27881744503974915,
+            "visibility": 0.9952999353408813
+          },
+          {
+            "id": 8,
+            "name": "right_ear",
+            "x": 48.7460196018219,
+            "y": 34.91582274436951,
+            "z": -0.2732675075531006,
+            "visibility": 0.9974090456962585
+          },
+          {
+            "id": 9,
+            "name": "mouth_left",
+            "x": 50.48208832740784,
+            "y": 37.05219030380249,
+            "z": -0.33722373843193054,
+            "visibility": 0.9978594183921814
+          },
+          {
+            "id": 10,
+            "name": "mouth_right",
+            "x": 49.53257143497467,
+            "y": 36.52082681655884,
+            "z": -0.33563804626464844,
+            "visibility": 0.998364269733429
+          },
+          {
+            "id": 11,
+            "name": "left_shoulder",
+            "x": 53.031790256500244,
+            "y": 40.54042100906372,
+            "z": -0.2041577845811844,
+            "visibility": 0.999906063079834
+          },
+          {
+            "id": 12,
+            "name": "right_shoulder",
+            "x": 45.85072696208954,
+            "y": 39.571866393089294,
+            "z": -0.15790845453739166,
+            "visibility": 0.9999538660049438
+          },
+          {
+            "id": 13,
+            "name": "left_elbow",
+            "x": 52.52905488014221,
+            "y": 50.56154131889343,
+            "z": -0.23428593575954437,
+            "visibility": 0.9921537041664124
+          },
+          {
+            "id": 14,
+            "name": "right_elbow",
+            "x": 44.38818097114563,
+            "y": 50.42588710784912,
+            "z": -0.13808730244636536,
+            "visibility": 0.9692078232765198
+          },
+          {
+            "id": 15,
+            "name": "left_wrist",
+            "x": 47.119852900505066,
+            "y": 55.69142699241638,
+            "z": -0.3433022201061249,
+            "visibility": 0.9862577319145203
+          },
+          {
+            "id": 16,
+            "name": "right_wrist",
+            "x": 41.795748472213745,
+            "y": 60.61630845069885,
+            "z": -0.24089297652244568,
+            "visibility": 0.966663122177124
+          },
+          {
+            "id": 17,
+            "name": "left_pinky",
+            "x": 45.91861665248871,
+            "y": 57.92316794395447,
+            "z": -0.38188737630844116,
+            "visibility": 0.9709092378616333
+          },
+          {
+            "id": 18,
+            "name": "right_pinky",
+            "x": 40.69594144821167,
+            "y": 62.5117301940918,
+            "z": -0.26560333371162415,
+            "visibility": 0.9419752359390259
+          },
+          {
+            "id": 19,
+            "name": "left_index",
+            "x": 45.60239017009735,
+            "y": 57.07902908325195,
+            "z": -0.38717302680015564,
+            "visibility": 0.9693241715431213
+          },
+          {
+            "id": 20,
+            "name": "right_index",
+            "x": 40.8338189125061,
+            "y": 62.6304030418396,
+            "z": -0.29705289006233215,
+            "visibility": 0.9465966820716858
+          },
+          {
+            "id": 21,
+            "name": "left_thumb",
+            "x": 45.61780393123627,
+            "y": 56.90881013870239,
+            "z": -0.34700217843055725,
+            "visibility": 0.953880250453949
+          },
+          {
+            "id": 22,
+            "name": "right_thumb",
+            "x": 41.391125321388245,
+            "y": 61.96938753128052,
+            "z": -0.25489991903305054,
+            "visibility": 0.9356999397277832
+          },
+          {
+            "id": 23,
+            "name": "left_hip",
+            "x": 52.89197564125061,
+            "y": 58.45804214477539,
+            "z": -0.008481797762215137,
+            "visibility": 0.9994115829467773
+          },
+          {
+            "id": 24,
+            "name": "right_hip",
+            "x": 48.47484529018402,
+            "y": 59.047603607177734,
+            "z": 0.008556127548217773,
+            "visibility": 0.9992985725402832
+          },
+          {
+            "id": 25,
+            "name": "left_knee",
+            "x": 54.22016382217407,
+            "y": 75.73698163032532,
+            "z": -0.07961492985486984,
+            "visibility": 0.9787126779556274
+          },
+          {
+            "id": 26,
+            "name": "right_knee",
+            "x": 46.32629752159119,
+            "y": 74.34558868408203,
+            "z": -0.08430593460798264,
+            "visibility": 0.9674102663993835
+          },
+          {
+            "id": 27,
+            "name": "left_ankle",
+            "x": 55.30136227607727,
+            "y": 92.68839359283447,
+            "z": -0.0030516304541379213,
+            "visibility": 0.9744347929954529
+          },
+          {
+            "id": 28,
+            "name": "right_ankle",
+            "x": 45.2332079410553,
+            "y": 89.84189033508301,
+            "z": -0.005822461098432541,
+            "visibility": 0.9691494703292847
+          },
+          {
+            "id": 29,
+            "name": "left_heel",
+            "x": 55.08047342300415,
+            "y": 94.8118507862091,
+            "z": -0.0011479746317490935,
+            "visibility": 0.8238958716392517
+          },
+          {
+            "id": 30,
+            "name": "right_heel",
+            "x": 45.495569705963135,
+            "y": 91.80108308792114,
+            "z": -0.0034542474895715714,
+            "visibility": 0.7730450630187988
+          },
+          {
+            "id": 31,
+            "name": "left_foot_index",
+            "x": 55.83220720291138,
+            "y": 96.72952890396118,
+            "z": -0.12348572909832001,
+            "visibility": 0.9658995866775513
+          },
+          {
+            "id": 32,
+            "name": "right_foot_index",
+            "x": 44.16453838348389,
+            "y": 95.27648687362671,
+            "z": -0.12368394434452057,
+            "visibility": 0.9564718008041382
+          }
+        ],
+        "segments": [
+          {
+            "id": "pose_shoulder",
+            "label": "어깨선",
+            "from": {
+              "id": 11,
+              "name": "left_shoulder",
+              "x": 53.031790256500244,
+              "y": 40.54042100906372,
+              "z": -0.2041577845811844,
+              "visibility": 0.999906063079834
+            },
+            "to": {
+              "id": 12,
+              "name": "right_shoulder",
+              "x": 45.85072696208954,
+              "y": 39.571866393089294,
+              "z": -0.15790845453739166,
+              "visibility": 0.9999538660049438
+            }
+          },
+          {
+            "id": "pose_left_upper_arm",
+            "label": "왼쪽 상완",
+            "from": {
+              "id": 11,
+              "name": "left_shoulder",
+              "x": 53.031790256500244,
+              "y": 40.54042100906372,
+              "z": -0.2041577845811844,
+              "visibility": 0.999906063079834
+            },
+            "to": {
+              "id": 13,
+              "name": "left_elbow",
+              "x": 52.52905488014221,
+              "y": 50.56154131889343,
+              "z": -0.23428593575954437,
+              "visibility": 0.9921537041664124
+            }
+          },
+          {
+            "id": "pose_left_forearm",
+            "label": "왼쪽 전완",
+            "from": {
+              "id": 13,
+              "name": "left_elbow",
+              "x": 52.52905488014221,
+              "y": 50.56154131889343,
+              "z": -0.23428593575954437,
+              "visibility": 0.9921537041664124
+            },
+            "to": {
+              "id": 15,
+              "name": "left_wrist",
+              "x": 47.119852900505066,
+              "y": 55.69142699241638,
+              "z": -0.3433022201061249,
+              "visibility": 0.9862577319145203
+            }
+          },
+          {
+            "id": "pose_right_upper_arm",
+            "label": "오른쪽 상완",
+            "from": {
+              "id": 12,
+              "name": "right_shoulder",
+              "x": 45.85072696208954,
+              "y": 39.571866393089294,
+              "z": -0.15790845453739166,
+              "visibility": 0.9999538660049438
+            },
+            "to": {
+              "id": 14,
+              "name": "right_elbow",
+              "x": 44.38818097114563,
+              "y": 50.42588710784912,
+              "z": -0.13808730244636536,
+              "visibility": 0.9692078232765198
+            }
+          },
+          {
+            "id": "pose_right_forearm",
+            "label": "오른쪽 전완",
+            "from": {
+              "id": 14,
+              "name": "right_elbow",
+              "x": 44.38818097114563,
+              "y": 50.42588710784912,
+              "z": -0.13808730244636536,
+              "visibility": 0.9692078232765198
+            },
+            "to": {
+              "id": 16,
+              "name": "right_wrist",
+              "x": 41.795748472213745,
+              "y": 60.61630845069885,
+              "z": -0.24089297652244568,
+              "visibility": 0.966663122177124
+            }
+          },
+          {
+            "id": "pose_hip",
+            "label": "골반선",
+            "from": {
+              "id": 23,
+              "name": "left_hip",
+              "x": 52.89197564125061,
+              "y": 58.45804214477539,
+              "z": -0.008481797762215137,
+              "visibility": 0.9994115829467773
+            },
+            "to": {
+              "id": 24,
+              "name": "right_hip",
+              "x": 48.47484529018402,
+              "y": 59.047603607177734,
+              "z": 0.008556127548217773,
+              "visibility": 0.9992985725402832
+            }
+          },
+          {
+            "id": "pose_left_body",
+            "label": "왼쪽 몸통",
+            "from": {
+              "id": 11,
+              "name": "left_shoulder",
+              "x": 53.031790256500244,
+              "y": 40.54042100906372,
+              "z": -0.2041577845811844,
+              "visibility": 0.999906063079834
+            },
+            "to": {
+              "id": 23,
+              "name": "left_hip",
+              "x": 52.89197564125061,
+              "y": 58.45804214477539,
+              "z": -0.008481797762215137,
+              "visibility": 0.9994115829467773
+            }
+          },
+          {
+            "id": "pose_right_body",
+            "label": "오른쪽 몸통",
+            "from": {
+              "id": 12,
+              "name": "right_shoulder",
+              "x": 45.85072696208954,
+              "y": 39.571866393089294,
+              "z": -0.15790845453739166,
+              "visibility": 0.9999538660049438
+            },
+            "to": {
+              "id": 24,
+              "name": "right_hip",
+              "x": 48.47484529018402,
+              "y": 59.047603607177734,
+              "z": 0.008556127548217773,
+              "visibility": 0.9992985725402832
+            }
+          },
+          {
+            "id": "pose_left_thigh",
+            "label": "왼쪽 허벅지",
+            "from": {
+              "id": 23,
+              "name": "left_hip",
+              "x": 52.89197564125061,
+              "y": 58.45804214477539,
+              "z": -0.008481797762215137,
+              "visibility": 0.9994115829467773
+            },
+            "to": {
+              "id": 25,
+              "name": "left_knee",
+              "x": 54.22016382217407,
+              "y": 75.73698163032532,
+              "z": -0.07961492985486984,
+              "visibility": 0.9787126779556274
+            }
+          },
+          {
+            "id": "pose_left_shin",
+            "label": "왼쪽 정강이",
+            "from": {
+              "id": 25,
+              "name": "left_knee",
+              "x": 54.22016382217407,
+              "y": 75.73698163032532,
+              "z": -0.07961492985486984,
+              "visibility": 0.9787126779556274
+            },
+            "to": {
+              "id": 27,
+              "name": "left_ankle",
+              "x": 55.30136227607727,
+              "y": 92.68839359283447,
+              "z": -0.0030516304541379213,
+              "visibility": 0.9744347929954529
+            }
+          },
+          {
+            "id": "pose_right_thigh",
+            "label": "오른쪽 허벅지",
+            "from": {
+              "id": 24,
+              "name": "right_hip",
+              "x": 48.47484529018402,
+              "y": 59.047603607177734,
+              "z": 0.008556127548217773,
+              "visibility": 0.9992985725402832
+            },
+            "to": {
+              "id": 26,
+              "name": "right_knee",
+              "x": 46.32629752159119,
+              "y": 74.34558868408203,
+              "z": -0.08430593460798264,
+              "visibility": 0.9674102663993835
+            }
+          },
+          {
+            "id": "pose_right_shin",
+            "label": "오른쪽 정강이",
+            "from": {
+              "id": 26,
+              "name": "right_knee",
+              "x": 46.32629752159119,
+              "y": 74.34558868408203,
+              "z": -0.08430593460798264,
+              "visibility": 0.9674102663993835
+            },
+            "to": {
+              "id": 28,
+              "name": "right_ankle",
+              "x": 45.2332079410553,
+              "y": 89.84189033508301,
+              "z": -0.005822461098432541,
+              "visibility": 0.9691494703292847
+            }
+          },
+          {
+            "id": "pose_stance",
+            "label": "스탠스",
+            "from": {
+              "id": 31,
+              "name": "left_foot_index",
+              "x": 55.83220720291138,
+              "y": 96.72952890396118,
+              "z": -0.12348572909832001,
+              "visibility": 0.9658995866775513
+            },
+            "to": {
+              "id": 32,
+              "name": "right_foot_index",
+              "x": 44.16453838348389,
+              "y": 95.27648687362671,
+              "z": -0.12368394434452057,
+              "visibility": 0.9564718008041382
+            }
+          }
+        ],
+        "angles": [
+          {
+            "id": "angle_left_elbow",
+            "label": "왼팔",
+            "value": 136,
+            "x": 52.52905488014221,
+            "y": 50.56154131889343
+          },
+          {
+            "id": "angle_right_elbow",
+            "label": "오른팔",
+            "value": 173,
+            "x": 44.38818097114563,
+            "y": 50.42588710784912
+          },
+          {
+            "id": "angle_left_knee",
+            "label": "왼무릎",
+            "value": 179,
+            "x": 54.22016382217407,
+            "y": 75.73698163032532
+          },
+          {
+            "id": "angle_right_knee",
+            "label": "오른무릎",
+            "value": 176,
+            "x": 46.32629752159119,
+            "y": 74.34558868408203
+          },
+          {
+            "id": "angle_shoulder_tilt",
+            "label": "어깨",
+            "value": -172,
+            "x": 49.44125860929489,
+            "y": 40.05614370107651
+          },
+          {
+            "id": "angle_hip_tilt",
+            "label": "골반",
+            "value": 172,
+            "x": 50.683410465717316,
+            "y": 58.75282287597656
+          },
+          {
+            "id": "angle_spine_tilt",
+            "label": "척추",
+            "value": -4,
+            "x": 50.0623345375061,
+            "y": 49.404483288526535
+          }
+        ]
+      },
+      "poseEngine": "mediapipe_pose_landmarker",
+      "createdAtLabel": "로컬 저장"
+    },
+    {
+      "id": "fb_local_1780730854459",
+      "recordId": "rec_real_video_test_1780729871658",
+      "proName": "Niel 프로",
+      "goalComment": "이번 주는 어드레스 정렬을 먼저 맞춥니다.",
+      "focusComment": "백스윙 때 왼쪽 어깨가 너무 빨리 열리지 않게 해주세요.",
+      "stickerComment": "자세 각도 체크",
+      "snapshotUrl": "data:image/webp;base64,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",
+      "poseAnglesVisible": true,
+      "hiddenAngleMarkIds": [
+        "arm",
+        "pose_shoulder"
+      ],
+      "annotations": [
+        {
+          "id": "ann_text_1780730423917",
+          "kind": "text",
+          "color": "#ffd15d",
+          "text": "자세 각도 체크",
+          "x": 50.11223173494233,
+          "y": 41.967945587940704
+        },
+        {
+          "id": "ann_line_1780730445099",
+          "kind": "line",
+          "color": "#ffd15d",
+          "x": 26.2626241435662,
+          "y": 59.91666353665865,
+          "x2": 61.335576483825214,
+          "y2": 38.12179174178686,
+          "width": 35.072952340259015,
+          "height": -21.794871794871796
+        }
+      ],
+      "createdAtLabel": "로컬 저장"
+    },
+    {
+      "id": "fb_local_1780456372416",
+      "recordId": "rec_local_1780456285832",
+      "proName": "Niel 프로",
+      "goalComment": "테스트 목표: 발 정렬과 피니시 균형 확인",
+      "focusComment": "테스트 피드백: 백스윙 시작 때 고개와 등 각도를 유지해 주세요.",
+      "stickerComment": "고개 유지",
+      "snapshotUrl": "data:image/svg+xml;charset=utf-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22720%22%20height%3D%22720%22%20viewBox%3D%220%200%20720%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22720%22%20height%3D%22720%22%20fill%3D%22%231f5f4a%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22560%22%20cy%3D%22116%22%20r%3D%2274%22%20fill%3D%22%23f2a900%22%20opacity%3D%220.95%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M84%20560%20C178%20432%20260%20354%20372%20310%20C478%20268%20568%20272%20642%20302%22%20fill%3D%22none%22%20stroke%3D%22%23fff6dd%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M236%20496%20L426%20294%22%20stroke%3D%22%23fff6dd%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22236%22%20cy%3D%22496%22%20r%3D%2226%22%20fill%3D%22%23f2a900%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22426%22%20cy%3D%22294%22%20r%3D%2226%22%20fill%3D%22%23f2a900%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2272%22%20y%3D%22112%22%20fill%3D%22%23fff6dd%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2242%22%20font-weight%3D%22700%22%3ESample%20Swing%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2272%22%20y%3D%22164%22%20fill%3D%22%23ffd15d%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%3EGolfAlign%20prototype%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+      "poseAnglesVisible": true,
+      "hiddenAngleMarkIds": [],
+      "createdAtLabel": "로컬 저장"
+    }
+  ],
+  "joinRequests": [
+    {
+      "id": "join_req_local_1779413119780",
+      "memberId": "flow_member_1779413119673",
+      "memberName": "테스트 회원",
+      "message": "테스트 회원이 프로방 가입을 신청했습니다.",
+      "proId": "flow_pro_1779413119673",
+      "proName": "테스트 프로",
+      "status": "approved",
+      "createdAt": "2026-05-22T01:25:19.779Z"
+    },
+    {
+      "id": "join_req_local_1779411383119",
+      "memberId": "acc_local_1779185204928_thsmog",
+      "memberName": "Niel Member",
+      "message": "??? ?? ?? ??????.",
+      "proId": "acc_local_1779185204984_ksiooi",
+      "proName": "Niel Pro",
+      "status": "pending",
+      "createdAt": "2026-05-22T00:56:23.119Z"
+    },
+    {
+      "id": "join_req_local_1779185872538",
+      "memberId": "acc_local_1779185204928_thsmog",
+      "memberName": "Niel ??",
+      "message": "??? ??? ?? ??",
+      "proId": "acc_local_1779185204984_ksiooi",
+      "proName": "Niel ??",
+      "requestedRoomId": "room_1779185871312",
+      "status": "approved",
+      "createdAt": "2026-05-19T10:17:52.538Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_local_1779413119829",
+      "senderId": "flow_pro_1779413119673",
+      "senderName": "테스트 프로",
+      "receiverId": "flow_member_1779413119673",
+      "receiverName": "테스트 회원",
+      "roomId": "flow_room_1779413119673",
+      "messageType": "system",
+      "content": "테스트 프로님이 테스트 회원님을 연결 갱신 테스트방에 배정했습니다.",
+      "relatedId": "join_req_local_1779413119780",
+      "createdAt": "2026-05-22T01:25:19.829Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779413119780",
+      "senderId": "flow_member_1779413119673",
+      "senderName": "테스트 회원",
+      "receiverId": "flow_pro_1779413119673",
+      "receiverName": "테스트 프로",
+      "messageType": "request",
+      "content": "테스트 회원이 프로방 가입을 신청했습니다.",
+      "relatedId": "join_req_local_1779413119780",
+      "createdAt": "2026-05-22T01:25:19.779Z",
+      "status": "active"
+    },
+    {
+      "senderId": "acc_local_1779185204984_ksiooi",
+      "senderName": "Niel 프로",
+      "receiverId": "acc_local_1779185204928_thsmog",
+      "receiverName": "Niel 회원",
+      "messageType": "text",
+      "content": "프로가 회원에게 답장하는 한글 개인메시지 테스트입니다.",
+      "id": "msg_local_1779411417135_axkzd1",
+      "createdAt": "2026-05-22T00:56:57.136Z",
+      "status": "active"
+    },
+    {
+      "senderId": "acc_local_1779185204928_thsmog",
+      "senderName": "Niel 회원",
+      "receiverId": "acc_local_1779185204984_ksiooi",
+      "receiverName": "Niel 프로",
+      "messageType": "text",
+      "content": "회원이 프로에게 보내는 한글 개인메시지 테스트입니다.",
+      "id": "msg_local_1779411417109_qylizd",
+      "createdAt": "2026-05-22T00:56:57.109Z",
+      "status": "active"
+    },
+    {
+      "senderId": "acc_local_1779185204984_ksiooi",
+      "senderName": "Niel 프로",
+      "receiverId": "acc_local_1779185204928_thsmog",
+      "receiverName": "Niel 회원",
+      "messageType": "text",
+      "content": "??? ???? ???? 1:1 ????? ??????.",
+      "id": "msg_local_1779411383278_p66k9h",
+      "createdAt": "2026-05-22T00:56:23.278Z",
+      "status": "active"
+    },
+    {
+      "senderId": "acc_local_1779185204928_thsmog",
+      "senderName": "Niel 회원",
+      "receiverId": "acc_local_1779185204984_ksiooi",
+      "receiverName": "Niel 프로",
+      "messageType": "text",
+      "content": "??? ???? ??? 1:1 ????? ??????.",
+      "id": "msg_local_1779411383263_53r2z1",
+      "createdAt": "2026-05-22T00:56:23.263Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779411383119",
+      "senderId": "acc_local_1779185204928_thsmog",
+      "senderName": "Niel 회원",
+      "receiverId": "acc_local_1779185204984_ksiooi",
+      "receiverName": "Niel 프로",
+      "messageType": "request",
+      "content": "??? ?? ?? ??????.",
+      "relatedId": "join_req_local_1779411383119",
+      "createdAt": "2026-05-22T00:56:23.119Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779188987123",
+      "senderId": "acc_local_1779185204984_ksiooi",
+      "senderName": "Niel 프로",
+      "receiverId": "",
+      "receiverName": "",
+      "messageType": "system",
+      "content": "훈련 결과 trr_test_64298 확인 완료: ?? ?????. ?? ??? ??? ??? ???????.",
+      "relatedId": "trr_test_64298",
+      "createdAt": "2026-05-19T11:09:47.123Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779185909129",
+      "senderId": "acc_local_1779184229247_wwevla",
+      "senderName": "Aunova 회원 2",
+      "receiverId": "acc_local_1779185204984_ksiooi",
+      "receiverName": "Niel 프로",
+      "roomId": "room_1779185871312",
+      "messageType": "system",
+      "content": "Aunova 회원 2님이 Niel ??? ??? 초대를 수락했습니다.",
+      "relatedId": "room_invitation_local_1779185908691",
+      "createdAt": "2026-05-19T10:18:29.129Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779185908691",
+      "senderId": "acc_local_1779185204984_ksiooi",
+      "senderName": "Niel 프로",
+      "receiverId": "acc_local_1779184229247_wwevla",
+      "receiverName": "Aunova 회원 2",
+      "roomId": "room_1779185871312",
+      "messageType": "invite",
+      "content": "??? ?? ???",
+      "relatedId": "room_invitation_local_1779185908691",
+      "createdAt": "2026-05-19T10:18:28.691Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779185878792",
+      "senderId": "acc_local_1779185204984_ksiooi",
+      "senderName": "Niel 프로",
+      "receiverId": "acc_local_1779185204928_thsmog",
+      "receiverName": "Niel 회원",
+      "roomId": "room_1779185871312",
+      "messageType": "system",
+      "content": "Niel ??님이 Niel ??님을 Niel ??? ???에 배정했습니다.",
+      "relatedId": "join_req_local_1779185872538",
+      "createdAt": "2026-05-19T10:17:58.792Z",
+      "status": "active"
+    },
+    {
+      "id": "msg_local_1779185872538",
+      "senderId": "acc_local_1779185204928_thsmog",
+      "senderName": "Niel 회원",
+      "receiverId": "acc_local_1779185204984_ksiooi",
+      "receiverName": "Niel 프로",
+      "messageType": "request",
+      "content": "??? ??? ?? ??",
+      "relatedId": "join_req_local_1779185872538",
+      "createdAt": "2026-05-19T10:17:52.538Z",
+      "status": "active"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec_real_video_test_1780729871658",
+      "memberId": "acc_local_1779185204928_thsmog",
+      "memberName": "Niel Member",
+      "title": "Real upload video test",
+      "meta": "Swing - arm wrist - real video test",
+      "media": "video",
+      "mediaUrl": "/test-assets/test-swing-short.mp4",
+      "badge": "피드백 완료",
+      "thumbnailUrl": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22720%22%20height%3D%22405%22%20viewBox%3D%220%200%20720%20405%22%3E%3Crect%20width%3D%22720%22%20height%3D%22405%22%20fill%3D%22%231f5f4a%22%2F%3E%3Ccircle%20cx%3D%22584%22%20cy%3D%2276%22%20r%3D%2246%22%20fill%3D%22%23e2a51f%22%2F%3E%3Cpath%20d%3D%22M78%20314%20C184%20250%20255%20216%20360%20192%20C468%20168%20565%20176%20644%20210%22%20fill%3D%22none%22%20stroke%3D%22%23fff4e0%22%20stroke-width%3D%2214%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M238%20294%20L438%20144%22%20stroke%3D%22%23ffd15d%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%2F%3E%3Ctext%20x%3D%2248%22%20y%3D%2274%22%20fill%3D%22%23fff4e0%22%20font-family%3D%22Arial%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%3EReal%20swing%20test%3C%2Ftext%3E%3Ctext%20x%3D%2248%22%20y%3D%22116%22%20fill%3D%22%23ffd15d%22%20font-family%3D%22Arial%22%20font-size%3D%2222%22%20font-weight%3D%22700%22%3EGolfAlign%20feedback%20flow%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "recordType": "swing",
+      "cameraAngle": "arm_wrist",
+      "bodyAngle": "arm_wrist",
+      "memo": "Real attached video upload and feedback test",
+      "roomId": "room_1779185871312",
+      "roomName": "Niel Driver Room",
+      "sharedAt": "2026-06-06T07:14:52.046Z"
+    },
+    {
+      "id": "rec_local_1780456285832",
+      "memberId": "acc_member_demo",
+      "memberName": "박회원",
+      "title": "방금 올린 스윙 영상",
+      "meta": "스윙 · 발 정렬 · 원본 0:06.0 · 스냅샷 저장됨",
+      "media": "video",
+      "badge": "피드백 완료",
+      "thumbnailUrl": "data:image/svg+xml;charset=utf-8,%0A%20%20%20%20%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22720%22%20height%3D%22720%22%20viewBox%3D%220%200%20720%20720%22%3E%0A%20%20%20%20%20%20%3Crect%20width%3D%22720%22%20height%3D%22720%22%20fill%3D%22%231f5f4a%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22560%22%20cy%3D%22116%22%20r%3D%2274%22%20fill%3D%22%23f2a900%22%20opacity%3D%220.95%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M84%20560%20C178%20432%20260%20354%20372%20310%20C478%20268%20568%20272%20642%20302%22%20fill%3D%22none%22%20stroke%3D%22%23fff6dd%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M236%20496%20L426%20294%22%20stroke%3D%22%23fff6dd%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22236%22%20cy%3D%22496%22%20r%3D%2226%22%20fill%3D%22%23f2a900%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22426%22%20cy%3D%22294%22%20r%3D%2226%22%20fill%3D%22%23f2a900%22%2F%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2272%22%20y%3D%22112%22%20fill%3D%22%23fff6dd%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2242%22%20font-weight%3D%22700%22%3ESample%20Swing%3C%2Ftext%3E%0A%20%20%20%20%20%20%3Ctext%20x%3D%2272%22%20y%3D%22164%22%20fill%3D%22%23ffd15d%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22700%22%3EGolfAlign%20prototype%3C%2Ftext%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20",
+      "recordType": "swing",
+      "cameraAngle": "feet_alignment",
+      "bodyAngle": "feet_alignment",
+      "memo": "백스윙이 조금 빠른 것 같아요.",
+      "roomId": "room_demo_driver",
+      "roomName": "드라이버 교정반",
+      "sharedAt": "2026-06-03T03:11:25.854Z"
+    },
+    {
+      "id": "rec_test_32834",
+      "memberId": "acc_local_1779185204928_thsmog",
+      "memberName": "Niel 회원",
+      "title": "Niel 테스트 스윙 영상",
+      "meta": "스윙 · 정면 · 5초 · 로컬 저장",
+      "media": "video",
+      "badge": "피드백 완료",
+      "thumbnailUrl": "local://thumbnail/test.jpg",
+      "recordType": "swing",
+      "cameraAngle": "front",
+      "memo": "실제 계정 테스트 기록",
+      "roomId": "room_1779185871312",
+      "roomName": "Niel 드라이버 교정방",
+      "sharedAt": "2026-05-19T10:23:56.585Z"
+    }
+  ],
+  "roomInvitations": [
+    {
+      "id": "room_invitation_local_1779185908691",
+      "memberId": "acc_local_1779184229247_wwevla",
+      "memberName": "Aunova 회원 2",
+      "message": "??? ?? ???",
+      "proId": "acc_local_1779185204984_ksiooi",
+      "proName": "Niel 프로",
+      "roomId": "room_1779185871312",
+      "roomName": "Niel 드라이버 교정방",
+      "status": "accepted",
+      "createdAt": "2026-05-19T10:18:28.691Z"
+    }
+  ],
+  "roomMemberships": [
+    {
+      "id": "membership_local_1779413119829",
+      "roomId": "flow_room_1779413119673",
+      "memberId": "flow_member_1779413119673",
+      "memberName": "테스트 회원",
+      "joinedAtLabel": "신청 승인"
+    },
+    {
+      "id": "membership_local_1779185909129",
+      "roomId": "room_1779185871312",
+      "memberId": "acc_local_1779184229247_wwevla",
+      "memberName": "Aunova 회원 2",
+      "joinedAtLabel": "초대 수락"
+    },
+    {
+      "id": "membership_local_1779185878792",
+      "roomId": "room_1779185871312",
+      "memberId": "acc_local_1779185204928_thsmog",
+      "memberName": "Niel 회원",
+      "joinedAtLabel": "신청 승인"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "flow_room_1779413119673",
+      "inviteCode": "FL119673",
+      "name": "연결 갱신 테스트방",
+      "proId": "flow_pro_1779413119673",
+      "proName": "테스트 프로",
+      "purpose": "신청 승인 후 즉시 갱신 테스트",
+      "createdAtLabel": "로컬 저장"
+    },
+    {
+      "id": "room_1779185871312",
+      "inviteCode": "NIEL6281",
+      "name": "Niel 드라이버 교정방",
+      "proId": "acc_local_1779185204984_ksiooi",
+      "proName": "Niel 프로",
+      "purpose": "실제 계정 테스트용 개인 레슨 관리",
+      "createdAtLabel": "로컬 저장"
+    }
+  ],
+  "trainingAssignments": [
+    {
+      "id": "trn_local_1779788707596",
+      "assignmentType": "personal",
+      "memberId": "acc_member_demo",
+      "title": "하프스윙 균형 50개",
+      "meta": "프로 추천 · 로컬 저장",
+      "roomId": "room_demo_driver",
+      "status": "진행 중",
+      "goal": "피니시 자세를 3초 유지하며 균형을 확인합니다.",
+      "recordGuide": "횟수, 체감 난이도, 선택 이미지/영상을 기록",
+      "dueLabel": "마감 2일 전",
+      "requireMedia": false,
+      "createdAtLabel": "로컬 저장"
+    },
+    {
+      "id": "trn_test_21515",
+      "assignmentType": "personal",
+      "memberId": "acc_local_1779185204928_thsmog",
+      "title": "어프로치 거리감 50개",
+      "meta": "프로 추천 · 로컬 저장",
+      "roomId": "room_1779185871312",
+      "status": "완료",
+      "goal": "30m 거리감과 방향성을 안정적으로 맞춥니다.",
+      "recordGuide": "성공 횟수, 체감 난이도, 선택 이미지/영상을 기록",
+      "dueLabel": "이번 주",
+      "requireMedia": true,
+      "createdAtLabel": "로컬 저장"
+    }
+  ],
+  "trainingResults": [
+    {
+      "id": "trr_test_64298",
+      "assignmentId": "trn_test_21515",
+      "title": "어프로치 거리감 50개",
+      "memberName": "Niel 회원",
+      "count": "50개",
+      "difficulty": "보통",
+      "memo": "후반 10개에서 거리감이 좋아졌습니다.",
+      "shareToRoom": true,
+      "attachmentLabel": "이미지 1장",
+      "createdAtLabel": "로컬 저장",
+      "status": "확인 완료",
+      "proComment": "좋습니다. 다음에는 방향성을 함께 확인해보겠습니다."
+    }
+  ]
+}

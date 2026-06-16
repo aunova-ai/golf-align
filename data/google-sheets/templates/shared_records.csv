@@ -1,0 +1,2 @@
+id,room_id,user_id,record_id,shared_to_pro_id,permission,shared_at,revoked_at,created_at,updated_at,status
+shr_001,room_001,usr_001,rec_001,pro_001,comment,2026-05-14T10:00:00+09:00,,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

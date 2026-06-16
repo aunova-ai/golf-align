@@ -1,0 +1,2 @@
+id,user_id,display_name,center_name,lesson_area,lesson_type,career_text,certificate_text,contact_phone,contact_url,pro_badge_enabled,created_at,updated_at,status
+pro_001,usr_100,김프로,Golf Center A,서울 강남,"실내, 온라인",10년 레슨 경력,프로 인증 예정,,,true,2026-05-14T10:00:00+09:00,2026-05-14T10:00:00+09:00,active

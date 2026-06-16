@@ -1,0 +1,2 @@
+id,training_result_id,assignment_id,room_id,pro_id,user_id,review_comment,decision,next_assignment_id,created_at,updated_at,status
+review_001,result_001,assign_001,room_001,pro_001,usr_001,어프로치는 충분합니다. 다음 주에는 퍼팅 거리감 과제로 넘어갑니다.,complete,,2026-05-14T21:00:00+09:00,2026-05-14T21:00:00+09:00,active
