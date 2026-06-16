@@ -34,3 +34,5 @@ docx_utf8_check/
 Thumbs.db
 .vscode/
 .idea/
+
+.vercel
