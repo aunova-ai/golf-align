@@ -55,6 +55,48 @@ type LocalRoomInvitation = {
 
 const dbPath = join(process.cwd(), "data", "local-db", "prototype-db.json");
 
+const demoAccounts: PrototypeAccount[] = [
+  {
+    id: "acc_member_demo",
+    username: "golfalign_user",
+    loginId: "golfalign_user",
+    password: "password123",
+    authProvider: "local",
+    emailVerified: false,
+    role: "member",
+    displayName: "박회원",
+    phone: "010-0000-0001",
+    profileImageUrl: sampleProfileImages.miSook
+  },
+  {
+    id: "acc_pro_demo",
+    username: "golfalign_pro",
+    loginId: "golfalign_pro",
+    password: "password123",
+    authProvider: "local",
+    emailVerified: false,
+    role: "pro",
+    displayName: "김프로",
+    organization: "드라이버 교정반",
+    phone: "010-0000-0002",
+    profileImageUrl: sampleProfileImages.david
+  }
+];
+
+function normalizeBaseAccounts(accounts: PrototypeAccount[]) {
+  const baseAccounts = [createAdminAccount(), ...demoAccounts];
+  const baseIds = new Set(baseAccounts.map((account) => account.id));
+  const baseLoginIds = new Set(baseAccounts.map((account) => account.loginId ?? account.username));
+
+  return [
+    ...baseAccounts,
+    ...accounts.filter((account) => {
+      const loginId = account.loginId ?? account.username;
+      return !baseIds.has(account.id) && !baseLoginIds.has(loginId);
+    })
+  ];
+}
+
 const initialDb: LocalPrototypeDb = {
   accounts: [
     {
@@ -88,13 +130,9 @@ async function readLocalPrototypeDb(): Promise<LocalPrototypeDb> {
   try {
     const raw = await readFile(dbPath, "utf8");
     const parsed = JSON.parse(raw) as Partial<LocalPrototypeDb>;
-    const adminAccount = createAdminAccount();
     const parsedAccounts = parsed.accounts ?? initialDb.accounts;
     return {
-      accounts: [
-        adminAccount,
-        ...parsedAccounts.filter((account) => account.role !== "admin" && account.id !== adminAccount.id)
-      ],
+      accounts: normalizeBaseAccounts(parsedAccounts),
       feedback: parsed.feedback ?? [],
       joinRequests: parsed.joinRequests ?? [],
       messages: parsed.messages ?? [],
@@ -106,8 +144,12 @@ async function readLocalPrototypeDb(): Promise<LocalPrototypeDb> {
       trainingResults: parsed.trainingResults ?? []
     };
   } catch {
-    await writeLocalPrototypeDb(initialDb);
-    return initialDb;
+    const seededDb = {
+      ...initialDb,
+      accounts: normalizeBaseAccounts(initialDb.accounts)
+    };
+    await writeLocalPrototypeDb(seededDb);
+    return seededDb;
   }
 }
 

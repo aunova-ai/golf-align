@@ -1,6 +1,42 @@
 {
   "accounts": [
     {
+      "id": "acc_admin_demo",
+      "username": "aunova",
+      "loginId": "aunova",
+      "password": "aunova3123",
+      "authProvider": "local",
+      "emailVerified": true,
+      "role": "admin",
+      "displayName": "관리자",
+      "profileImageUrl": "/assets/profiles/kenji.png"
+    },
+    {
+      "id": "acc_member_demo",
+      "username": "golfalign_user",
+      "loginId": "golfalign_user",
+      "password": "password123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "role": "member",
+      "displayName": "박회원",
+      "phone": "010-0000-0001",
+      "profileImageUrl": "/assets/profiles/mi-sook.png"
+    },
+    {
+      "id": "acc_pro_demo",
+      "username": "golfalign_pro",
+      "loginId": "golfalign_pro",
+      "password": "password123",
+      "authProvider": "local",
+      "emailVerified": false,
+      "role": "pro",
+      "displayName": "김프로",
+      "organization": "드라이버 교정반",
+      "phone": "010-0000-0002",
+      "profileImageUrl": "/assets/profiles/david.png"
+    },
+    {
       "id": "acc_local_1779185204984_ksiooi",
       "username": "nielfarm3@gmail.com",
       "loginId": "nielfarm3@gmail.com",
@@ -93,19 +129,6 @@
       "golfExperience": "6개월",
       "mainGoal": "드라이버 슬라이스 교정",
       "profileImageUrl": "/assets/profiles/liam.png"
-    },
-    {
-      "id": "acc_admin_demo",
-      "username": "aunova",
-      "loginId": "aunova",
-      "password": "aunova3123",
-      "authProvider": "local",
-      "emailVerified": true,
-      "role": "admin",
-      "displayName": "관리자",
-      "bio": "관리자 테스트",
-      "phone": "",
-      "profileImageUrl": "/assets/profiles/kenji.png"
     }
   ],
   "feedback": [

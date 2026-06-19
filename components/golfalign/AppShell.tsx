@@ -798,6 +798,7 @@ function AuthScreen({
         account?: PrototypeAccount;
         code?: string;
         message?: string;
+        mode?: string;
         ok?: boolean;
       };
 
@@ -807,7 +808,12 @@ function AuthScreen({
         return;
       }
 
-      if (result.code !== "GOOGLE_SHEETS_NOT_CONFIGURED") {
+      const canUseOfflineFallback =
+        result.code === "GOOGLE_SHEETS_NOT_CONFIGURED" ||
+        result.code === "LOCAL_ACCOUNT_NOT_FOUND" ||
+        result.mode === "local_prototype";
+
+      if (!canUseOfflineFallback) {
         setAuthMessage(result.message ?? "아이디 또는 비밀번호가 맞지 않습니다.");
         return;
       }

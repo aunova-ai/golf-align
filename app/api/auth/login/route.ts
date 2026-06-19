@@ -62,7 +62,15 @@ export async function POST(request: Request) {
     const account = await findLocalAccount(username, password);
 
     if (!account) {
-      return NextResponse.json({ ok: false, message: "가입된 로컬 테스트 계정을 찾을 수 없습니다." }, { status: 404 });
+      return NextResponse.json(
+        {
+          ok: false,
+          code: "LOCAL_ACCOUNT_NOT_FOUND",
+          message: "가입된 로컬 테스트 계정을 찾을 수 없습니다.",
+          mode: "local_prototype"
+        },
+        { status: 404 }
+      );
     }
 
     const response = NextResponse.json({ ok: true, account, mode: "local_prototype" });
