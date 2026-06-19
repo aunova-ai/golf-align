@@ -194,6 +194,7 @@ export function MemberPages({
   onJoinRoom,
   onSelectRecord
   , onSelectTraining,
+  onToggleTrainingStatus,
   onUpdateProfile,
   onSaveTrainingResult
 }: {
@@ -216,6 +217,7 @@ export function MemberPages({
   onJoinRoom: (code: string) => Promise<{ ok: true; room: PrototypeRoom } | { ok: false; message: string }>;
   onSelectRecord: (recordId: string, page?: Page) => void;
   onSelectTraining: (assignmentId: string) => void;
+  onToggleTrainingStatus: (assignmentId: string) => void;
   onUpdateProfile: (profile: Partial<PrototypeAccount> & { id: string }) => Promise<{ ok: true; account: PrototypeAccount } | { ok: false; message: string }>;
   onSaveTrainingResult: (result: Omit<TrainingResult, "id" | "createdAtLabel" | "status">) => void;
 }) {
@@ -229,7 +231,7 @@ export function MemberPages({
     case "detail":
       return <DetailPage activeFeedback={activeFeedback} activeRecord={activeRecord} />;
     case "training":
-      return <TrainingPage go={go} onSelectTraining={onSelectTraining} trainingAssignments={trainingAssignments} />;
+      return <TrainingPage go={go} onSelectTraining={onSelectTraining} onToggleTrainingStatus={onToggleTrainingStatus} trainingAssignments={trainingAssignments} />;
     case "training-result":
       return <TrainingResultPage activeTraining={activeTraining} go={go} onSaveTrainingResult={onSaveTrainingResult} />;
     case "room":
@@ -788,15 +790,19 @@ function ReadOnlyAnnotationElement({ annotation }: { annotation: NonNullable<Fee
 function TrainingPage({
   go,
   onSelectTraining,
+  onToggleTrainingStatus,
   trainingAssignments
 }: {
   go: GoToPage;
   onSelectTraining: (assignmentId: string) => void;
+  onToggleTrainingStatus: (assignmentId: string) => void;
   trainingAssignments: TrainingAssignment[];
 }) {
   const commonAssignments = trainingAssignments.filter((assignment) => assignment.assignmentType === "room_common");
   const personalAssignments = trainingAssignments.filter((assignment) => assignment.assignmentType !== "room_common");
   const fallbackAssignments = trainingAssignments.length > 0 ? trainingAssignments : todayTrainings.slice(0, 1);
+  const [fallbackCommonDone, setFallbackCommonDone] = useState(false);
+  const [fallbackPersonalDone, setFallbackPersonalDone] = useState(false);
 
   return (
     <>
@@ -811,7 +817,12 @@ function TrainingPage({
         <div className="stack">
           {(commonAssignments.length > 0 ? commonAssignments : fallbackAssignments.filter((_, index) => index === 0)).map((assignment) => (
             <Card className="highlight" key={assignment.id}>
-              <TrainingRow title={assignment.title} meta={assignment.meta} status={assignment.status ?? "진행 중"} />
+              <TrainingRow
+                title={assignment.title}
+                meta={assignment.meta}
+                status={commonAssignments.length > 0 ? assignment.status ?? "진행 중" : fallbackCommonDone ? "완료" : assignment.status ?? "진행 중"}
+                onToggle={() => commonAssignments.length > 0 ? onToggleTrainingStatus(assignment.id) : setFallbackCommonDone((current) => !current)}
+              />
               <div className="detail-grid">
                 <span>목표</span>
                 <strong>{assignment.goal}</strong>
@@ -830,7 +841,7 @@ function TrainingPage({
           <div className="stack">
             {personalAssignments.map((assignment) => (
               <Card key={assignment.id}>
-                <TrainingRow title={assignment.title} meta={assignment.meta} status={assignment.status ?? "진행 중"} />
+                <TrainingRow title={assignment.title} meta={assignment.meta} status={assignment.status ?? "진행 중"} onToggle={() => onToggleTrainingStatus(assignment.id)} />
                 <div className="detail-grid">
                   <span>목표</span>
                   <strong>{assignment.goal}</strong>
@@ -846,7 +857,12 @@ function TrainingPage({
         </Section>
       ) : null}
       <Section title="개인 훈련">
-        <TrainingRow title={todayTrainings[1].title} meta={todayTrainings[1].meta} status={todayTrainings[1].status} />
+        <TrainingRow
+          title={todayTrainings[1].title}
+          meta={todayTrainings[1].meta}
+          status={fallbackPersonalDone ? "완료" : todayTrainings[1].status}
+          onToggle={() => setFallbackPersonalDone((current) => !current)}
+        />
       </Section>
     </>
   );

@@ -584,6 +584,20 @@ export function usePrototypeStore() {
     }));
   }
 
+  function toggleTrainingAssignmentStatus(assignmentId: string) {
+    setState((current) => ({
+      ...current,
+      trainingAssignments: current.trainingAssignments.map((assignment) =>
+        assignment.id === assignmentId
+          ? {
+              ...assignment,
+              status: assignment.status === "완료" ? "진행 중" : "완료"
+            }
+          : assignment
+      )
+    }));
+  }
+
   function saveTrainingResult(result: Omit<TrainingResult, "id" | "createdAtLabel" | "status">) {
     const nextResult: TrainingResult = {
       ...result,
@@ -723,6 +737,7 @@ export function usePrototypeStore() {
     saveTrainingReview,
     selectRecord,
     selectTraining,
+    toggleTrainingAssignmentStatus,
     sharedRecords,
     trainingAssignments: state.trainingAssignments,
     trainingResults: state.trainingResults

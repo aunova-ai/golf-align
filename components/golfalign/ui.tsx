@@ -124,15 +124,45 @@ export function Person({ label, muted }: { label: string; muted?: boolean }) {
   );
 }
 
-export function TrainingRow({ title, meta, status }: { title: string; meta: string; status?: string }) {
-  return (
-    <div className="training-row">
-      <div className="check-dot">{status === "완료" ? <Check size={16} /> : null}</div>
+export function TrainingRow({
+  title,
+  meta,
+  status,
+  onToggle
+}: {
+  title: string;
+  meta: string;
+  status?: string;
+  onToggle?: () => void;
+}) {
+  const isDone = status === "완료" || Boolean(status?.includes("완료"));
+  const content = (
+    <>
+      <div className={`check-dot ${isDone ? "checked" : ""}`} aria-hidden="true">{isDone ? <Check size={16} /> : null}</div>
       <div>
         <h3>{title}</h3>
         <p>{meta}</p>
       </div>
       {status ? <Badge>{status}</Badge> : null}
+    </>
+  );
+
+  if (onToggle) {
+    return (
+      <button
+        className={`training-row training-row-button ${isDone ? "is-done" : ""}`}
+        type="button"
+        aria-pressed={isDone}
+        onClick={onToggle}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <div className="training-row">
+      {content}
     </div>
   );
 }

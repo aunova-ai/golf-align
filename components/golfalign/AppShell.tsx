@@ -526,6 +526,7 @@ export function AppShell() {
               prototypeStore.selectTraining(assignmentId);
               setPage("training-result");
             }}
+            onToggleTrainingStatus={prototypeStore.toggleTrainingAssignmentStatus}
             onSaveTrainingResult={(result) => {
               const savedResult = prototypeStore.saveTrainingResult(result);
               fetch("/api/training-results", {
