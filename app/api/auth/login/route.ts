@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { AccountRole, PrototypeAccount } from "@/components/golfalign/types";
+import { createAdminAccount, isAdminCredential } from "@/lib/auth/adminAccount";
 import { encodeAuthSession, sessionCookieName } from "@/lib/auth/session";
 import { isGoogleSheetsWriteConfigured, readSheetRange, verifyPassword } from "@/lib/google/googleSheetsServer";
 import { findLocalAccount } from "@/lib/local/prototypeDbServer";
@@ -48,6 +49,13 @@ export async function POST(request: Request) {
 
   if (!username || !password) {
     return NextResponse.json({ ok: false, message: "아이디와 비밀번호를 입력해 주세요." }, { status: 400 });
+  }
+
+  if (isAdminCredential(username, password)) {
+    const account = createAdminAccount();
+    const response = NextResponse.json({ ok: true, account, mode: "admin" });
+    setSessionCookie(response, account, true);
+    return response;
   }
 
   if (!isGoogleSheetsWriteConfigured()) {

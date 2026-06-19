@@ -57,9 +57,9 @@ const defaultAccounts: PrototypeAccount[] = [
   },
   {
     id: "acc_admin_demo",
-    username: "golfalign_admin",
-    password: "admin123",
-    loginId: "golfalign_admin",
+    username: "aunova",
+    password: "aunova3123",
+    loginId: "aunova",
     authProvider: "local",
     emailVerified: true,
     role: "admin",
@@ -67,6 +67,18 @@ const defaultAccounts: PrototypeAccount[] = [
     profileImageUrl: sampleProfileImages.kenji
   }
 ];
+
+function normalizeAccounts(accounts: PrototypeAccount[]) {
+  const adminAccount = defaultAccounts.find((account) => account.role === "admin");
+  if (!adminAccount) {
+    return accounts;
+  }
+
+  return [
+    adminAccount,
+    ...accounts.filter((account) => account.role !== "admin" && account.id !== adminAccount.id)
+  ];
+}
 
 const defaultRecords: RecordItem[] = [
   {
@@ -175,7 +187,7 @@ export function usePrototypeStore() {
       if (saved) {
         const parsed = JSON.parse(saved) as Partial<PrototypeState>;
         setState({
-          accounts: parsed.accounts ?? defaultAccounts,
+          accounts: normalizeAccounts(parsed.accounts ?? defaultAccounts),
           feedback: mergeFeedback(parsed.feedback ?? []),
           records: mergeRecords(parsed.records ?? []),
           roomMemberships: parsed.roomMemberships ?? initialState.roomMemberships,

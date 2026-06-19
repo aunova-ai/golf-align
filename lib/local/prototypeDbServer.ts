@@ -12,6 +12,7 @@ import type {
   TrainingAssignment,
   TrainingResult
 } from "@/components/golfalign/types";
+import { createAdminAccount } from "@/lib/auth/adminAccount";
 import { resolveProfileImageForAccount, sampleProfileImages } from "@/lib/mock/profileImages";
 
 type LocalPrototypeDb = {
@@ -58,9 +59,9 @@ const initialDb: LocalPrototypeDb = {
   accounts: [
     {
       id: "acc_admin_demo",
-      username: "golfalign_admin",
-      loginId: "golfalign_admin",
-      password: "admin123",
+      username: "aunova",
+      loginId: "aunova",
+      password: "aunova3123",
       authProvider: "local",
       emailVerified: true,
       role: "admin",
@@ -87,8 +88,13 @@ async function readLocalPrototypeDb(): Promise<LocalPrototypeDb> {
   try {
     const raw = await readFile(dbPath, "utf8");
     const parsed = JSON.parse(raw) as Partial<LocalPrototypeDb>;
+    const adminAccount = createAdminAccount();
+    const parsedAccounts = parsed.accounts ?? initialDb.accounts;
     return {
-      accounts: parsed.accounts ?? initialDb.accounts,
+      accounts: [
+        adminAccount,
+        ...parsedAccounts.filter((account) => account.role !== "admin" && account.id !== adminAccount.id)
+      ],
       feedback: parsed.feedback ?? [],
       joinRequests: parsed.joinRequests ?? [],
       messages: parsed.messages ?? [],

@@ -96,9 +96,9 @@
     },
     {
       "id": "acc_admin_demo",
-      "username": "golfalign_admin",
-      "loginId": "golfalign_admin",
-      "password": "admin123",
+      "username": "aunova",
+      "loginId": "aunova",
+      "password": "aunova3123",
       "authProvider": "local",
       "emailVerified": true,
       "role": "admin",

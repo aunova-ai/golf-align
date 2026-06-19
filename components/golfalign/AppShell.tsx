@@ -711,10 +711,8 @@ function AuthScreen({
 
   function fillDemoAccount(nextRole: AccountRole) {
     setSelectedRole(nextRole);
-    setUsername(
-      nextRole === "admin" ? "golfalign_admin" : nextRole === "pro" ? "golfalign_pro" : "golfalign_user"
-    );
-    setPassword(nextRole === "admin" ? "admin123" : "password123");
+    setUsername(nextRole === "admin" ? "aunova" : nextRole === "pro" ? "golfalign_pro" : "golfalign_user");
+    setPassword(nextRole === "admin" ? "aunova3123" : "password123");
     setAuthMessage("");
     setSyncMessage("");
   }
@@ -906,7 +904,7 @@ function AuthScreen({
           <>
             <p className="auth-note">가입한 계정 유형을 자동 확인해 회원 또는 프로 화면으로 이동합니다.</p>
             <div className="demo-login-panel">
-              <span>테스트 계정 빠른 입력</span>
+              <span>사용자 / 프로 확인용 계정</span>
               <div className="chips">
                 <Chip active={false} onClick={() => fillDemoAccount("member")}>
                   회원
@@ -914,17 +912,20 @@ function AuthScreen({
                 <Chip active={false} onClick={() => fillDemoAccount("pro")}>
                   프로
                 </Chip>
-                <Chip active={false} onClick={() => fillDemoAccount("admin")}>
-                  관리자
-                </Chip>
               </div>
-              <span>실제 가입 계정</span>
+              <span>실제 가입 테스트 계정</span>
               <div className="chips">
                 <Chip active={false} onClick={() => fillRealTestAccount("member")}>
                   Niel 회원
                 </Chip>
                 <Chip active={false} onClick={() => fillRealTestAccount("pro")}>
                   Niel 프로
+                </Chip>
+              </div>
+              <span>관리자 전용</span>
+              <div className="chips">
+                <Chip active={false} onClick={() => fillDemoAccount("admin")}>
+                  관리자
                 </Chip>
               </div>
             </div>
