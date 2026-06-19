@@ -148,6 +148,19 @@ PWA, Vercel, Google Sheets, Google Drive, NAS 백업, 인증, 권한, AI/분석 
 
 MVP:
 
+현재 확정 기준:
+
+- 미디어 임시 저장: Google Drive
+- 장기 백업: NAS
+- 원본 영상: 사용자 기기 보관 우선
+- NAS 모델: ipTIME NAS1 Dual
+- NAS 내부 IP: `192.168.0.102`
+- NAS 외부 주소: `https://novart.ipdisk.co.kr`
+- 영상은 5초 권장, 최대 7초 허용
+- MVP 권장 최대 파일 크기: 30MB
+- 앱에는 썸네일, 캡처 이미지, 피드백 데이터, 메타데이터를 우선 저장
+- 원본 영상은 스트리밍보다 필요 시 다운로드 후 기기 재생을 우선 고려
+
 - DB: Google Sheets
 - 미디어 임시 저장: Google Drive
 - 장기 백업: NAS

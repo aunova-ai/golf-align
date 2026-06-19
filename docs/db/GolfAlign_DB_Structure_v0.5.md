@@ -580,6 +580,14 @@ GolfAlign/
 
 ### NAS
 
+MVP 기준 실제 장비:
+
+- 모델: ipTIME NAS1 Dual
+- 내부 IP: `192.168.0.102`
+- 외부 접속 주소: `https://novart.ipdisk.co.kr`
+- 역할: Google Drive 임시 저장 이후 장기 백업/아카이브
+- 주의: NAS 연결 실패가 앱 사용을 막으면 안 되며, 백업은 비동기 후처리로 둔다.
+
 역할:
 
 - 장기 백업

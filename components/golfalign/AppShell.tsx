@@ -13,7 +13,7 @@ import {
   UserRound,
   UsersRound
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { MemberPages } from "./MemberPages";
 import { ProPages } from "./ProPages";
 import type {
@@ -54,6 +54,8 @@ const pageNav: Record<Page, Page> = {
 };
 
 const lastLoginIdStorageKey = "golfalign:last-login-id";
+const inactivityLogoutMs = 15 * 60 * 1000;
+const inactivityEvents = ["mousedown", "mousemove", "keydown", "scroll", "touchstart", "pointerdown"] as const;
 
 export function AppShell() {
   const [accountRole, setAccountRole] = useState<AccountRole | null>(null);
@@ -62,7 +64,21 @@ export function AppShell() {
   const [page, setPage] = useState<Page>("home");
   const [sessionMessage, setSessionMessage] = useState("");
   const [adminNotice, setAdminNotice] = useState("");
+  const inactivityTimerRef = useRef<number | null>(null);
   const prototypeStore = usePrototypeStore();
+
+  const logout = useCallback((message?: string) => {
+    fetch("/api/auth/logout", { method: "POST" }).catch(() => undefined);
+    if (inactivityTimerRef.current) {
+      window.clearTimeout(inactivityTimerRef.current);
+      inactivityTimerRef.current = null;
+    }
+    setAccountRole(null);
+    setCurrentAccount(null);
+    setMode("member");
+    setPage("home");
+    setSessionMessage(typeof message === "string" ? message : "");
+  }, []);
 
   useEffect(() => {
     const authError = new URLSearchParams(window.location.search).get("auth_error");
@@ -90,6 +106,36 @@ export function AppShell() {
       })
       .catch(() => undefined);
   }, []);
+
+  useEffect(() => {
+    if (!accountRole) {
+      return;
+    }
+
+    function resetInactivityTimer() {
+      if (inactivityTimerRef.current) {
+        window.clearTimeout(inactivityTimerRef.current);
+      }
+      inactivityTimerRef.current = window.setTimeout(() => {
+        logout("15분 동안 입력이 없어 자동 로그아웃되었습니다.");
+      }, inactivityLogoutMs);
+    }
+
+    resetInactivityTimer();
+    inactivityEvents.forEach((eventName) => {
+      window.addEventListener(eventName, resetInactivityTimer, { passive: true });
+    });
+
+    return () => {
+      if (inactivityTimerRef.current) {
+        window.clearTimeout(inactivityTimerRef.current);
+        inactivityTimerRef.current = null;
+      }
+      inactivityEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, resetInactivityTimer);
+      });
+    };
+  }, [accountRole, currentAccount?.id, logout]);
 
   useEffect(() => {
     if (!currentAccount || currentAccount.role === "admin") {
@@ -320,14 +366,6 @@ export function AppShell() {
     return { ok: false as const, message: result?.message ?? "프로필 저장에 실패했습니다." };
   }
 
-  function logout() {
-    fetch("/api/auth/logout", { method: "POST" }).catch(() => undefined);
-    setAccountRole(null);
-    setCurrentAccount(null);
-    setMode("member");
-    setPage("home");
-  }
-
   if (!accountRole) {
     return (
       <div className="app-shell auth-shell">
@@ -377,7 +415,7 @@ export function AppShell() {
           height={40}
           priority
         />
-        <button className="icon-button" aria-label="로그아웃" onClick={logout}>
+        <button className="icon-button" aria-label="로그아웃" onClick={() => logout()}>
           <LogOut size={20} />
         </button>
       </header>

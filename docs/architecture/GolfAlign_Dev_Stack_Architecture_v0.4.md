@@ -244,6 +244,14 @@ sequenceDiagram
 
 ## 8. NAS 연동 방식
 
+MVP 기준 NAS 정보:
+
+- 모델: ipTIME NAS1 Dual
+- 내부 IP: `192.168.0.102`
+- 외부 접속 주소: `https://novart.ipdisk.co.kr`
+- 사용 목적: Google Drive 임시 저장 이후 장기 백업/아카이브
+- 운영 원칙: NAS 연결 실패가 앱 사용을 막지 않도록 비동기 백업으로 처리한다.
+
 초기에는 NAS를 직접 실시간 서버처럼 쓰지 않는다.  
 NAS는 백업 저장소로 먼저 사용한다.
 
