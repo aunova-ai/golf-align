@@ -1266,7 +1266,7 @@ function MemberMessagesPage({
                 <p>{pro.meta}</p>
               </div>
               <div className="directory-actions">
-                <button className="secondary" onClick={() => requestRoom(pro)}>
+                <button aria-label={`${pro.name}에게 프로방 신청`} className="secondary" onClick={() => requestRoom(pro)}>
                   신청
                 </button>
                 <button className="icon-button small" aria-label={`${pro.name}에게 메시지`} onClick={() => openMessage(pro)}>
@@ -1336,12 +1336,12 @@ function MemberMessagesPage({
                 <div className="message-actions">
                   <Badge tone={message.status === "새 메시지" ? "amber" : "gray"}>{message.status}</Badge>
                   {message.source?.messageType === "invite" && message.source.receiverId === currentMember?.id ? (
-                    <button className="secondary" onClick={() => (message.source ? acceptInvitation(message.source) : undefined)}>
+                    <button aria-label={`${message.title} 초대 수락`} className="secondary" onClick={() => (message.source ? acceptInvitation(message.source) : undefined)}>
                       수락
                     </button>
                   ) : null}
                   {message.source?.messageType === "text" && message.source.senderId !== currentMember?.id ? (
-                    <button className="secondary" onClick={() => (message.source ? replyToMessage(message.source) : undefined)}>
+                    <button aria-label={`${message.title} 답장`} className="secondary" onClick={() => (message.source ? replyToMessage(message.source) : undefined)}>
                       답장
                     </button>
                   ) : null}

@@ -184,8 +184,10 @@ export function RecordCard({
   cta?: string;
   onClick: () => void;
 }) {
+  const actionLabel = `${cta}: ${title}`;
+
   return (
-    <button className="record-card" onClick={onClick}>
+    <button aria-label={actionLabel} className="record-card" onClick={onClick}>
       <div className="record-media">
         {thumbnailUrl ? <img src={thumbnailUrl} alt={`${title} 썸네일`} /> : media === "video" ? <Play size={26} /> : <FileImage size={26} />}
       </div>
@@ -217,8 +219,10 @@ export function RecordListItem({
   cta?: string;
   onClick: () => void;
 }) {
+  const actionLabel = `${cta}: ${title}`;
+
   return (
-    <button className="list-item" onClick={onClick}>
+    <button aria-label={actionLabel} className="list-item" onClick={onClick}>
       <div className="thumb">
         {thumbnailUrl ? <img src={thumbnailUrl} alt={`${title} 썸네일`} /> : <Camera size={20} />}
       </div>
@@ -246,7 +250,7 @@ export function MemberListItem({
   onClick: () => void;
 }) {
   return (
-    <button className="list-item" onClick={onClick}>
+    <button aria-label={`${name} 회원 보기`} className="list-item" onClick={onClick}>
       <Avatar imageUrl={imageUrl} label={name.slice(0, 1)} />
       <div>
         <h3>{name}</h3>

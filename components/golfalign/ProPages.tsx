@@ -1680,7 +1680,7 @@ function ProMessagesPage({
                 <p>{member.meta}</p>
               </div>
               <div className="directory-actions">
-                <button className="secondary" onClick={() => inviteMember(member)}>
+                <button aria-label={`${member.name} 초대`} className="secondary" onClick={() => inviteMember(member)}>
                   <UserPlus size={16} />
                   초대
                 </button>
@@ -1751,12 +1751,12 @@ function ProMessagesPage({
                 <div className="message-actions">
                   <Badge tone={message.status === "처리 필요" || message.status === "신청" ? "amber" : "gray"}>{message.status}</Badge>
                   {message.source?.messageType === "request" && message.source.receiverId === currentPro?.id ? (
-                    <button className="secondary" onClick={() => (message.source ? approveJoinRequest(message.source) : undefined)}>
+                    <button aria-label={`${message.title} 승인`} className="secondary" onClick={() => (message.source ? approveJoinRequest(message.source) : undefined)}>
                       승인
                     </button>
                   ) : null}
                   {message.source?.messageType === "text" && message.source.senderId !== currentPro?.id ? (
-                    <button className="secondary" onClick={() => (message.source ? replyToMessage(message.source) : undefined)}>
+                    <button aria-label={`${message.title} 답장`} className="secondary" onClick={() => (message.source ? replyToMessage(message.source) : undefined)}>
                       답장
                     </button>
                   ) : null}
