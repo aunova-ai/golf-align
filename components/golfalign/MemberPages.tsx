@@ -1364,10 +1364,10 @@ function SignupPage({ go }: { go: GoToPage }) {
       <PageHeader title="간편 가입" desc="프로토타입에서는 아이디와 비밀번호만 가볍게 만듭니다." />
       <Card>
         <Field label="아이디">
-          <input className="input" defaultValue="golfalign_user" />
+          <input className="input" placeholder="사용할 아이디 입력" />
         </Field>
         <Field label="비밀번호">
-          <input className="input" type="password" defaultValue="password123" />
+          <input className="input" type="password" placeholder="비밀번호 입력" />
         </Field>
         <Field label="가입 유형">
           <Chip active>일반 회원</Chip>

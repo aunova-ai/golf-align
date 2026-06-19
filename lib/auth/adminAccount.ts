@@ -1,11 +1,13 @@
 import type { PrototypeAccount } from "@/components/golfalign/types";
 import { sampleProfileImages } from "@/lib/mock/profileImages";
 
-export const adminLoginId = process.env.ADMIN_LOGIN_ID || "aunova";
-export const adminPassword = process.env.ADMIN_PASSWORD || "aunova3123";
+const isProduction = process.env.NODE_ENV === "production";
+
+export const adminLoginId = process.env.ADMIN_LOGIN_ID || (isProduction ? "" : "aunova");
+export const adminPassword = process.env.ADMIN_PASSWORD || (isProduction ? "" : "aunova3123");
 
 export function isAdminCredential(username: string, password: string) {
-  return username.trim() === adminLoginId && password === adminPassword;
+  return Boolean(adminLoginId && adminPassword && username.trim() === adminLoginId && password === adminPassword);
 }
 
 export function createAdminAccount(): PrototypeAccount {

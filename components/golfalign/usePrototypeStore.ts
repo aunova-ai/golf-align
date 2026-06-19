@@ -32,9 +32,7 @@ const storageKey = "golfalign.prototype.v1";
 const defaultAccounts: PrototypeAccount[] = [
   {
     id: "acc_member_demo",
-    username: "golfalign_user",
-    password: "password123",
-    loginId: "golfalign_user",
+    username: "member_seed_profile",
     authProvider: "local",
     emailVerified: false,
     role: "member",
@@ -44,9 +42,7 @@ const defaultAccounts: PrototypeAccount[] = [
   },
   {
     id: "acc_pro_demo",
-    username: "golfalign_pro",
-    password: "password123",
-    loginId: "golfalign_pro",
+    username: "pro_seed_profile",
     authProvider: "local",
     emailVerified: false,
     role: "pro",
@@ -54,29 +50,15 @@ const defaultAccounts: PrototypeAccount[] = [
     organization: "드라이버 교정반",
     phone: "010-0000-0002",
     profileImageUrl: sampleProfileImages.david
-  },
-  {
-    id: "acc_admin_demo",
-    username: "aunova",
-    password: "aunova3123",
-    loginId: "aunova",
-    authProvider: "local",
-    emailVerified: true,
-    role: "admin",
-    displayName: "관리자",
-    profileImageUrl: sampleProfileImages.kenji
   }
 ];
 
 function normalizeAccounts(accounts: PrototypeAccount[]) {
-  const adminAccount = defaultAccounts.find((account) => account.role === "admin");
-  if (!adminAccount) {
-    return accounts;
-  }
+  const seedIds = new Set(defaultAccounts.map((account) => account.id));
 
   return [
-    adminAccount,
-    ...accounts.filter((account) => account.role !== "admin" && account.id !== adminAccount.id)
+    ...defaultAccounts,
+    ...accounts.filter((account) => account.role !== "admin" && !seedIds.has(account.id))
   ];
 }
 

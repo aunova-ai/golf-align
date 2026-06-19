@@ -9,9 +9,9 @@
 | GitHub 저장소 | `https://github.com/aunova-ai/golf-align` |
 | Vercel 프로젝트 | `golf-align` |
 | 프로덕션 도메인 | `https://golf.aunova.ai` |
-| 관리자 계정 | `aunova / aunova3123` |
-| 회원 테스트 계정 | `golfalign_user / password123` |
-| 프로 테스트 계정 | `golfalign_pro / password123` |
+| 관리자 계정 | 내부 담당자에게 별도 전달 |
+| 회원 테스트 계정 | 내부 담당자에게 별도 전달 |
+| 프로 테스트 계정 | 내부 담당자에게 별도 전달 |
 
 ## 배포 전 로컬 확인
 
@@ -32,6 +32,9 @@ Vercel Project Settings > Environment Variables에 아래 값을 등록한다.
 
 ```env
 NEXT_PUBLIC_APP_URL=https://golf.aunova.ai
+
+ADMIN_LOGIN_ID=
+ADMIN_PASSWORD=
 
 GOOGLE_OAUTH_CLIENT_ID=
 GOOGLE_OAUTH_CLIENT_SECRET=
@@ -72,21 +75,21 @@ Aliased     https://golf.aunova.ai
 관리자 로그인:
 
 ```powershell
-$body = @{ username='aunova'; password='aunova3123' } | ConvertTo-Json
+$body = @{ username='<ADMIN_ID>'; password='<ADMIN_PASSWORD>' } | ConvertTo-Json
 Invoke-RestMethod -Uri 'https://golf.aunova.ai/api/auth/login' -Method Post -ContentType 'application/json' -Body $body
 ```
 
 회원 테스트 로그인:
 
 ```powershell
-$body = @{ username='golfalign_user'; password='password123' } | ConvertTo-Json
+$body = @{ username='<MEMBER_TEST_ID>'; password='<MEMBER_TEST_PASSWORD>' } | ConvertTo-Json
 Invoke-RestMethod -Uri 'https://golf.aunova.ai/api/auth/login' -Method Post -ContentType 'application/json' -Body $body
 ```
 
 프로 테스트 로그인:
 
 ```powershell
-$body = @{ username='golfalign_pro'; password='password123' } | ConvertTo-Json
+$body = @{ username='<PRO_TEST_ID>'; password='<PRO_TEST_PASSWORD>' } | ConvertTo-Json
 Invoke-RestMethod -Uri 'https://golf.aunova.ai/api/auth/login' -Method Post -ContentType 'application/json' -Body $body
 ```
 
@@ -102,9 +105,8 @@ Invoke-RestMethod -Uri 'https://golf.aunova.ai/api/auth/login' -Method Post -Con
 `https://golf.aunova.ai`에서 아래 문구와 버튼이 보여야 한다.
 
 - `회원과 프로가 직접 가입하고, 만든 계정으로 다시 로그인할 수 있습니다.`
-- `사용자 / 프로 확인용 계정`
-- `실제 가입 테스트 계정`
-- `관리자 전용`
+- 빠른 테스트 계정, 관리자 계정, 샘플 계정명이 노출되지 않아야 한다.
+- 이전에 로그인한 기기에서는 마지막 로그인 아이디만 자동 입력되고, 비밀번호는 다시 입력해야 한다.
 
 관리자 로그인 후 확인할 것:
 

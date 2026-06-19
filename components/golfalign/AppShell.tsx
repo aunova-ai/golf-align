@@ -53,6 +53,8 @@ const pageNav: Record<Page, Page> = {
   "pro-training-review": "pro-training-review"
 };
 
+const lastLoginIdStorageKey = "golfalign:last-login-id";
+
 export function AppShell() {
   const [accountRole, setAccountRole] = useState<AccountRole | null>(null);
   const [currentAccount, setCurrentAccount] = useState<PrototypeAccount | null>(null);
@@ -697,6 +699,17 @@ function AuthScreen({
   const [authMessage, setAuthMessage] = useState("");
   const [syncMessage, setSyncMessage] = useState("");
 
+  useEffect(() => {
+    if (authView !== "login") {
+      return;
+    }
+
+    const savedLoginId = window.localStorage.getItem(lastLoginIdStorageKey);
+    if (savedLoginId) {
+      setUsername(savedLoginId);
+    }
+  }, [authView]);
+
   function changeAuthView(nextView: "login" | "signup") {
     setAuthView(nextView);
     setAuthMessage("");
@@ -707,22 +720,6 @@ function AuthScreen({
     setDisplayName("");
     setPhone("");
     setOrganization("");
-  }
-
-  function fillDemoAccount(nextRole: AccountRole) {
-    setSelectedRole(nextRole);
-    setUsername(nextRole === "admin" ? "aunova" : nextRole === "pro" ? "golfalign_pro" : "golfalign_user");
-    setPassword(nextRole === "admin" ? "aunova3123" : "password123");
-    setAuthMessage("");
-    setSyncMessage("");
-  }
-
-  function fillRealTestAccount(nextRole: "member" | "pro") {
-    setSelectedRole(nextRole);
-    setUsername(nextRole === "member" ? "niel333l@gmail.com" : "nielfarm3@gmail.com");
-    setPassword("aunova3123");
-    setAuthMessage("");
-    setSyncMessage("");
   }
 
   function startGoogleAuth(role: "member" | "pro") {
@@ -782,6 +779,7 @@ function AuthScreen({
         setSyncMessage("계정은 이 기기에 생성되었습니다. Google Sheets 반영은 연결 설정 후 다시 확인하세요.");
       }
 
+      window.localStorage.setItem(lastLoginIdStorageKey, username);
       onEnter(result.account);
       return;
     }
@@ -804,6 +802,7 @@ function AuthScreen({
 
       if (result.ok && result.account) {
         setSyncMessage("로그인했습니다.");
+        window.localStorage.setItem(lastLoginIdStorageKey, username);
         onEnter(result.account);
         return;
       }
@@ -828,6 +827,7 @@ function AuthScreen({
     }
 
     setSyncMessage("로컬 프로토타입 계정으로 로그인했습니다. DB 로그인은 Google Sheets 설정 후 활성화됩니다.");
+    window.localStorage.setItem(lastLoginIdStorageKey, username);
     onEnter(account);
   }
 
@@ -909,32 +909,6 @@ function AuthScreen({
         ) : (
           <>
             <p className="auth-note">가입한 계정 유형을 자동 확인해 회원 또는 프로 화면으로 이동합니다.</p>
-            <div className="demo-login-panel">
-              <span>사용자 / 프로 확인용 계정</span>
-              <div className="chips">
-                <Chip active={false} onClick={() => fillDemoAccount("member")}>
-                  회원
-                </Chip>
-                <Chip active={false} onClick={() => fillDemoAccount("pro")}>
-                  프로
-                </Chip>
-              </div>
-              <span>실제 가입 테스트 계정</span>
-              <div className="chips">
-                <Chip active={false} onClick={() => fillRealTestAccount("member")}>
-                  Niel 회원
-                </Chip>
-                <Chip active={false} onClick={() => fillRealTestAccount("pro")}>
-                  Niel 프로
-                </Chip>
-              </div>
-              <span>관리자 전용</span>
-              <div className="chips">
-                <Chip active={false} onClick={() => fillDemoAccount("admin")}>
-                  관리자
-                </Chip>
-              </div>
-            </div>
           </>
         )}
 

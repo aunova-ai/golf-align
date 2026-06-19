@@ -38,7 +38,20 @@ const aunovaAccounts = [
 
 const usernames = aunovaAccounts.map((account) => account.username);
 
+function rejectProductionDevApi() {
+  if (process.env.NODE_ENV !== "production" || process.env.ENABLE_DEV_API === "true") {
+    return null;
+  }
+
+  return NextResponse.json({ ok: false, message: "Development API is disabled." }, { status: 404 });
+}
+
 export async function GET() {
+  const rejection = rejectProductionDevApi();
+  if (rejection) {
+    return rejection;
+  }
+
   const accounts = await listLocalAccounts();
   return NextResponse.json({
     ok: true,
@@ -55,6 +68,11 @@ export async function GET() {
 }
 
 export async function POST() {
+  const rejection = rejectProductionDevApi();
+  if (rejection) {
+    return rejection;
+  }
+
   const results = [];
 
   for (const account of aunovaAccounts) {
@@ -80,6 +98,11 @@ export async function POST() {
 }
 
 export async function DELETE() {
+  const rejection = rejectProductionDevApi();
+  if (rejection) {
+    return rejection;
+  }
+
   const result = await deleteLocalAccounts(usernames);
   return NextResponse.json({
     ok: true,
