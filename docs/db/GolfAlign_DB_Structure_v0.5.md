@@ -302,6 +302,27 @@ ID 접두어 예시:
 - 기본은 회원 본인만 조회한다.
 - 프로는 `shared_records`에 연결된 기록만 조회한다.
 
+### 영상 NAS 아카이브 정책
+
+MVP 영상 원본은 Google Drive 또는 임시 저장소를 전달용으로 쓰고, NAS를 장기 보관소로 둔다.
+
+추가 관리 컬럼:
+
+| 컬럼명 | 설명 | 예시 |
+|---|---|---|
+| archive_policy | 영상 아카이브 정책 | feedback_done_plus_7_or_upload_plus_14 |
+| archive_after_days | 피드백 완료 후 NAS 이동 기준일 | 7 |
+| archive_due_at | 늦어도 NAS 이동 후보가 되는 시점 | 2026-05-28T10:00:00+09:00 |
+| archived_at | 실제 NAS 이동 완료 시점 | 2026-05-29T01:00:00+09:00 |
+
+운영 기준:
+
+- 영상은 피드백 완료 후 7일 뒤 NAS 이동 대상으로 잡는다.
+- 피드백이 늦어져도 업로드 후 최대 14일이 지나면 NAS 이동 후보로 잡는다.
+- 이미지는 기본적으로 `archive_policy=none`으로 둔다.
+- NAS 이동 성공 전에는 Google Drive/임시 원본을 삭제하지 않는다.
+- NAS 이동 실패 시 `sync_status=failed`로 기록하고 관리자 점검 대상으로 남긴다.
+
 ## 11. record_snapshots
 
 영상 업로드 시 자동 생성되거나 사용자가 선택한 정지 이미지다.  

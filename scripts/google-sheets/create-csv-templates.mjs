@@ -217,7 +217,11 @@ const sheets = [
       "recorded_at",
       "created_at",
       "updated_at",
-      "status"
+      "status",
+      "archive_policy",
+      "archive_after_days",
+      "archive_due_at",
+      "archived_at"
     ],
     sample: [
       "rec_001",
@@ -248,7 +252,11 @@ const sheets = [
       "2026-05-14T09:00:00+09:00",
       "2026-05-14T10:00:00+09:00",
       "2026-05-14T10:00:00+09:00",
-      "active"
+      "active",
+      "feedback_done_plus_7_or_upload_plus_14",
+      "7",
+      "2026-05-28T10:00:00+09:00",
+      ""
     ]
   },
   {

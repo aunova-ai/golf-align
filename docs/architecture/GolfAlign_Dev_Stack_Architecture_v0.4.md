@@ -280,6 +280,18 @@ NAS는 백업 저장소로 먼저 사용한다.
 MVP에서는 NAS 연결 실패가 앱 사용을 막으면 안 된다.  
 NAS 백업은 비동기 후처리로 둔다.
 
+### 영상 원본 아카이브 기준
+
+MVP에서는 영상 원본을 앱 서버에서 계속 들고 있지 않는다. Google Drive/임시 저장소는 전달과 다운로드용으로 사용하고, NAS는 장기 보관소로 사용한다.
+
+- 기본 정책: `MEDIA_ARCHIVE_POLICY=feedback_done_plus_7_or_upload_plus_14`
+- 피드백 완료 후 7일이 지나면 NAS 이동 대상으로 잡는다.
+- 피드백이 완료되지 않아도 업로드 후 14일이 지나면 NAS 이동 후보로 잡는다.
+- 이미지 기록은 `archive_policy=none`으로 두고 썸네일/스냅샷 중심으로 관리한다.
+- NAS 이동 성공 전에는 원본을 삭제하지 않는다.
+- NAS 이동 성공 시 `backup_provider=nas`, `backup_path`, `sync_status=backed_up`, `archived_at`을 갱신한다.
+- NAS 이동 실패 시 `sync_status=failed`로 남기고 관리자 지표에서 확인한다.
+
 ## 9. 인증/로그인
 
 프로토타입:

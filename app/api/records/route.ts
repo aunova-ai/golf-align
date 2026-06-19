@@ -21,13 +21,35 @@ type RecordRequest = {
   title?: string;
 };
 
-function nowIso() {
-  return new Date().toISOString();
+function addDaysIso(date: Date, days: number) {
+  const nextDate = new Date(date);
+  nextDate.setDate(nextDate.getDate() + days);
+  return nextDate.toISOString();
+}
+
+function getMediaArchivePolicy(media: "video" | "image", createdAt: Date) {
+  const archiveAfterDays = Number(process.env.MEDIA_ARCHIVE_AFTER_DAYS ?? "7");
+  const archiveMaxDays = Number(process.env.MEDIA_ARCHIVE_MAX_DAYS ?? "14");
+  const archivePolicy = process.env.MEDIA_ARCHIVE_POLICY ?? "feedback_done_plus_7_or_upload_plus_14";
+
+  if (media !== "video") {
+    return {
+      archiveAfterDays: "",
+      archiveDueAt: "",
+      archivePolicy: "none"
+    };
+  }
+
+  return {
+    archiveAfterDays: String(archiveAfterDays),
+    archiveDueAt: addDaysIso(createdAt, archiveMaxDays),
+    archivePolicy
+  };
 }
 
 function mapRecordRow(row: string[], shared?: { roomId?: string; roomName?: string }): RecordItem {
-  const mediaUrl = row[18] || "";
-  const thumbnailUrl = row[20] || row[18] || row[17] || "";
+  const mediaUrl = row[14] || "";
+  const thumbnailUrl = row[18] || row[14] || row[17] || "";
   const visibility = row[23] || row[22] || "";
   return {
     id: row[0],
@@ -67,7 +89,7 @@ export async function GET(request: Request) {
   }
 
   const [rows, sharedRows, roomRows] = await Promise.all([
-    readSheetRange("records!A:AC"),
+    readSheetRange("records!A:AG"),
     readSheetRange("shared_records!A:K"),
     readSheetRange("lesson_rooms!A:L")
   ]);
@@ -145,8 +167,10 @@ export async function POST(request: Request) {
     });
   }
 
-  const createdAt = nowIso();
-  await appendSheetRow("records!A:AC", [
+  const createdAtDate = new Date();
+  const createdAt = createdAtDate.toISOString();
+  const archivePolicy = getMediaArchivePolicy(media, createdAtDate);
+  await appendSheetRow("records!A:AG", [
     recordId,
     memberId,
     recordType,
@@ -159,25 +183,27 @@ export async function POST(request: Request) {
     "",
     "",
     "",
+    body.mediaUrl?.trim() ? "local" : "none",
     "",
-    "",
-    "device",
-    "",
-    "",
-    "local_download",
     body.mediaUrl?.trim() ?? "",
+    "download_only",
+    body.thumbnailUrl ? "local" : "",
     "",
     body.thumbnailUrl ?? "",
     body.thumbnailUrl ? 1 : 0,
+    media === "video" ? "nas" : "",
     "",
-    "",
-    "synced",
+    media === "video" ? "archive_pending" : "synced",
     shared ? "shared" : "private",
     body.memo?.trim() ?? "",
     createdAt,
     createdAt,
     createdAt,
-    "active"
+    "active",
+    archivePolicy.archivePolicy,
+    archivePolicy.archiveAfterDays,
+    archivePolicy.archiveDueAt,
+    ""
   ]);
 
   if (shared) {

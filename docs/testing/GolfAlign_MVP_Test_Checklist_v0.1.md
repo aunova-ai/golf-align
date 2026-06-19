@@ -122,6 +122,17 @@ MVP 기준 NAS:
 - 백업 실패 시 `sync_status=failed`, `error_message`를 기록한다.
 - 백업 실패 기록은 관리자 화면에서 확인할 수 있어야 한다.
 
+### 영상 아카이브 정책 테스트
+- 영상 업로드 시 `archive_policy=feedback_done_plus_7_or_upload_plus_14`가 저장된다.
+- 영상 업로드 시 `archive_after_days=7`이 저장된다.
+- 영상 업로드 시 `archive_due_at`은 업로드 시점 기준 14일 뒤로 저장된다.
+- 이미지 업로드 시 `archive_policy=none`으로 저장된다.
+- 피드백 완료 후 7일이 지난 영상은 NAS 이동 후보로 잡힌다.
+- 피드백이 완료되지 않아도 업로드 후 14일이 지난 영상은 NAS 이동 후보로 잡힌다.
+- NAS 이동 성공 전에는 Google Drive/임시 원본을 삭제하지 않는다.
+- NAS 이동 성공 시 `backup_provider=nas`, `backup_path`, `sync_status=backed_up`, `archived_at`을 기록한다.
+- NAS 이동 실패 시 `sync_status=failed`로 남기고 관리자 지표에서 확인한다.
+
 ## 6. 프로방 / 메시지
 
 - 회원이 프로를 검색한다.
@@ -277,4 +288,3 @@ MVP 기준 NAS:
 16. 모바일 화면 확인
 17. Vercel 배포
 18. `https://golf.aunova.ai` 운영 확인
-

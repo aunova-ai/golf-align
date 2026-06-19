@@ -173,6 +173,7 @@ export const golfAlignSheets: SheetDefinition[] = [
       "original_duration_sec",
       "selected_start_sec",
       "selected_end_sec",
+      "file_size_mb",
       "storage_provider",
       "storage_file_id",
       "storage_url",
@@ -185,9 +186,15 @@ export const golfAlignSheets: SheetDefinition[] = [
       "backup_path",
       "sync_status",
       "visibility",
+      "memo",
+      "recorded_at",
       "created_at",
       "updated_at",
-      "status"
+      "status",
+      "archive_policy",
+      "archive_after_days",
+      "archive_due_at",
+      "archived_at"
     ]
   },
   {
