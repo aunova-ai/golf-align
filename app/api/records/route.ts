@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { RecordItem } from "@/components/golfalign/types";
 import { appendSheetRow, isGoogleSheetsWriteConfigured, readSheetRange } from "@/lib/google/googleSheetsServer";
 import { createLocalRecord, getLocalRecords } from "@/lib/local/prototypeDbServer";
+import { canUseServerLocalPrototypeDb, serverLocalDbUnavailableResponse } from "@/lib/local/serverDbMode";
 
 type RecordRequest = {
   bodyAngle?: string;
@@ -84,6 +85,10 @@ export async function GET(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json({ ...serverLocalDbUnavailableResponse(), records: [] }, { status: 503 });
+    }
+
     const records = await getLocalRecords({ memberId, roomIds });
     return NextResponse.json({ ok: true, mode: "local_prototype", records });
   }
@@ -141,6 +146,10 @@ export async function POST(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json(serverLocalDbUnavailableResponse(), { status: 503 });
+    }
+
     const result = await createLocalRecord({
       bodyAngle,
       cameraAngle: bodyAngle,

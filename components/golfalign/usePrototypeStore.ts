@@ -28,6 +28,12 @@ type PrototypeState = {
 };
 
 const storageKey = "golfalign.prototype.v1";
+const trainingStatusDone = "완료";
+const trainingStatusInProgress = "진행 중";
+
+function isTrainingStatusDone(status?: string) {
+  return Boolean(status?.includes(trainingStatusDone));
+}
 
 const defaultAccounts: PrototypeAccount[] = [
   {
@@ -585,17 +591,22 @@ export function usePrototypeStore() {
   }
 
   function toggleTrainingAssignmentStatus(assignmentId: string) {
+    const currentAssignment = state.trainingAssignments.find((assignment) => assignment.id === assignmentId);
+    const nextStatus = isTrainingStatusDone(currentAssignment?.status) ? trainingStatusInProgress : trainingStatusDone;
+
     setState((current) => ({
       ...current,
       trainingAssignments: current.trainingAssignments.map((assignment) =>
         assignment.id === assignmentId
           ? {
               ...assignment,
-              status: assignment.status === "완료" ? "진행 중" : "완료"
+              status: isTrainingStatusDone(assignment.status) ? trainingStatusInProgress : trainingStatusDone
             }
           : assignment
       )
     }));
+
+    return nextStatus;
   }
 
   function saveTrainingResult(result: Omit<TrainingResult, "id" | "createdAtLabel" | "status">) {

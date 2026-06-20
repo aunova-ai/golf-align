@@ -3,6 +3,7 @@ import type { AccountRole, PrototypeAccount } from "@/components/golfalign/types
 import { encodeAuthSession, sessionCookieName } from "@/lib/auth/session";
 import { appendSheetRow, hashPassword, isGoogleSheetsWriteConfigured, readSheetRange, updateSheetValues } from "@/lib/google/googleSheetsServer";
 import { createLocalAccount, updateLocalAccountProfile } from "@/lib/local/prototypeDbServer";
+import { canUseServerLocalPrototypeDb, serverLocalDbUnavailableResponse } from "@/lib/local/serverDbMode";
 import { resolveProfileImageForAccount } from "@/lib/mock/profileImages";
 
 type CreateUserRequest = {
@@ -58,6 +59,10 @@ export async function POST(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json(serverLocalDbUnavailableResponse(), { status: 503 });
+    }
+
     const result = await createLocalAccount({
       displayName,
       organization: body.organization,
@@ -153,6 +158,10 @@ export async function PATCH(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json(serverLocalDbUnavailableResponse(), { status: 503 });
+    }
+
     const account = await updateLocalAccountProfile({
       bio: body.bio,
       displayName: body.displayName,

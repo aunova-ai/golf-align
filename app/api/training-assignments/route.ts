@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import type { TrainingAssignment } from "@/components/golfalign/types";
-import { appendSheetRow, isGoogleSheetsWriteConfigured, readSheetRange } from "@/lib/google/googleSheetsServer";
-import { createLocalTrainingAssignment, getLocalTrainingAssignments } from "@/lib/local/prototypeDbServer";
+import { appendSheetRow, isGoogleSheetsWriteConfigured, readSheetRange, updateSheetValues } from "@/lib/google/googleSheetsServer";
+import { createLocalTrainingAssignment, getLocalTrainingAssignments, updateLocalTrainingAssignmentStatus } from "@/lib/local/prototypeDbServer";
+import { canUseServerLocalPrototypeDb, serverLocalDbUnavailableResponse } from "@/lib/local/serverDbMode";
 
 type AssignmentRequest = {
   assignmentId?: string;
@@ -14,6 +15,11 @@ type AssignmentRequest = {
   requireMedia?: boolean;
   roomId?: string;
   title?: string;
+};
+
+type AssignmentUpdateRequest = {
+  assignmentId?: string;
+  status?: string;
 };
 
 function nowIso() {
@@ -53,6 +59,10 @@ export async function GET(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json({ ...serverLocalDbUnavailableResponse(), assignments: [] }, { status: 503 });
+    }
+
     const assignments = await getLocalTrainingAssignments({ memberId, proId, roomIds });
     return NextResponse.json({ ok: true, mode: "local_prototype", assignments });
   }
@@ -90,6 +100,10 @@ export async function POST(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json(serverLocalDbUnavailableResponse(), { status: 503 });
+    }
+
     const assignment = await createLocalTrainingAssignment({
       assignmentId,
       assignmentScope: scope,
@@ -125,4 +139,47 @@ export async function POST(request: Request) {
   ]);
 
   return NextResponse.json({ ok: true, assignmentId });
+}
+
+export async function PATCH(request: Request) {
+  const body = (await request.json()) as AssignmentUpdateRequest;
+  const assignmentId = body.assignmentId?.trim() ?? "";
+  const status = body.status?.trim() ?? "";
+
+  if (!assignmentId || !status) {
+    return NextResponse.json({ ok: false, message: "훈련 과제와 상태 값이 필요합니다." }, { status: 400 });
+  }
+
+  if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json(serverLocalDbUnavailableResponse(), { status: 503 });
+    }
+
+    const assignment = await updateLocalTrainingAssignmentStatus({ assignmentId, status });
+    if (!assignment) {
+      return NextResponse.json({ ok: false, message: "훈련 과제를 찾을 수 없습니다." }, { status: 404 });
+    }
+
+    return NextResponse.json({ ok: true, mode: "local_prototype", assignment });
+  }
+
+  const rows = await readSheetRange("training_assignments!A:N");
+  const rowIndex = rows.slice(1).findIndex((row) => row[0] === assignmentId);
+
+  if (rowIndex < 0) {
+    return NextResponse.json({ ok: false, message: "훈련 과제를 찾을 수 없습니다." }, { status: 404 });
+  }
+
+  const sheetRowNumber = rowIndex + 2;
+  const row = [...rows[rowIndex + 1]];
+  while (row.length < 14) {
+    row.push("");
+  }
+
+  row[11] = nowIso();
+  row[13] = status;
+
+  await updateSheetValues(`training_assignments!A${sheetRowNumber}:N${sheetRowNumber}`, [row]);
+
+  return NextResponse.json({ ok: true, assignment: mapAssignmentRow(row) });
 }

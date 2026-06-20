@@ -300,6 +300,18 @@ export function AppShell() {
     result.memberships?.forEach((membership) => prototypeStore.upsertRoomMembership(membership));
   }
 
+  function toggleTrainingAssignmentStatus(assignmentId: string) {
+    const nextStatus = prototypeStore.toggleTrainingAssignmentStatus(assignmentId);
+    fetch("/api/training-assignments", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        assignmentId,
+        status: nextStatus
+      })
+    }).catch(() => undefined);
+  }
+
   function enterApp(account: PrototypeAccount) {
     const nextMode = account.role === "admin" ? "member" : account.role;
     setAccountRole(account.role);
@@ -564,7 +576,7 @@ export function AppShell() {
               prototypeStore.selectTraining(assignmentId);
               setPage("training-result");
             }}
-            onToggleTrainingStatus={prototypeStore.toggleTrainingAssignmentStatus}
+            onToggleTrainingStatus={toggleTrainingAssignmentStatus}
             onSaveTrainingResult={(result) => {
               const savedResult = prototypeStore.saveTrainingResult(result);
               fetch("/api/training-results", {

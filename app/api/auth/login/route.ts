@@ -4,6 +4,7 @@ import { createAdminAccount, isAdminCredential } from "@/lib/auth/adminAccount";
 import { encodeAuthSession, sessionCookieName } from "@/lib/auth/session";
 import { isGoogleSheetsWriteConfigured, readSheetRange, verifyPassword } from "@/lib/google/googleSheetsServer";
 import { findLocalAccount } from "@/lib/local/prototypeDbServer";
+import { canUseServerLocalPrototypeDb, serverLocalDbUnavailableResponse } from "@/lib/local/serverDbMode";
 
 type LoginRequest = {
   password?: string;
@@ -59,6 +60,10 @@ export async function POST(request: Request) {
   }
 
   if (!isGoogleSheetsWriteConfigured()) {
+    if (!canUseServerLocalPrototypeDb()) {
+      return NextResponse.json(serverLocalDbUnavailableResponse(), { status: 503 });
+    }
+
     const account = await findLocalAccount(username, password);
 
     if (!account) {

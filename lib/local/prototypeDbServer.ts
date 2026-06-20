@@ -1051,6 +1051,34 @@ export async function createLocalTrainingAssignment({
   return assignment;
 }
 
+export async function updateLocalTrainingAssignmentStatus({
+  assignmentId,
+  status
+}: {
+  assignmentId: string;
+  status: string;
+}) {
+  const db = await readLocalPrototypeDb();
+  let updatedAssignment: TrainingAssignment | undefined;
+
+  await writeLocalPrototypeDb({
+    ...db,
+    trainingAssignments: db.trainingAssignments.map((assignment) => {
+      if (assignment.id !== assignmentId) {
+        return assignment;
+      }
+
+      updatedAssignment = {
+        ...assignment,
+        status
+      };
+      return updatedAssignment;
+    })
+  });
+
+  return updatedAssignment;
+}
+
 export async function getLocalTrainingAssignments({
   memberId,
   proId,
