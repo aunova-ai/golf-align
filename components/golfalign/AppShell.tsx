@@ -773,12 +773,6 @@ function AuthScreen({
     setOrganization("");
   }
 
-  function startGoogleAuth(role: "member" | "pro") {
-    setAuthMessage("");
-    setSyncMessage("");
-    window.location.href = `/api/auth/google/start?role=${role}`;
-  }
-
   async function syncUserToSheet() {
     try {
       const response = await fetch("/api/users", {
@@ -905,25 +899,6 @@ function AuthScreen({
           <button className={authView === "signup" ? "active" : ""} onClick={() => changeAuthView("signup")}>
             회원가입
           </button>
-        </div>
-
-        <div className="google-auth-panel">
-          <p>{authView === "login" ? "Google 계정으로 바로 시작" : "Google 계정으로 가입"}</p>
-          <div className="google-auth-actions">
-            <button className="google-auth-button" type="button" onClick={() => startGoogleAuth("member")}>
-              <span>G</span>
-              회원으로 시작
-            </button>
-            <button className="google-auth-button" type="button" onClick={() => startGoogleAuth("pro")}>
-              <span>G</span>
-              프로로 시작
-            </button>
-          </div>
-          <small>가입하지 않은 Google 계정은 선택한 유형으로 새 계정을 만듭니다.</small>
-        </div>
-
-        <div className="auth-divider">
-          <span>또는 직접 입력</span>
         </div>
 
         <label className="field-label">아이디</label>

@@ -36,10 +36,6 @@ NEXT_PUBLIC_APP_URL=https://golf.aunova.ai
 ADMIN_LOGIN_ID=
 ADMIN_PASSWORD=
 
-GOOGLE_OAUTH_CLIENT_ID=
-GOOGLE_OAUTH_CLIENT_SECRET=
-GOOGLE_OAUTH_REDIRECT_URI=https://golf.aunova.ai/api/auth/google/callback
-
 GOOGLE_DRIVE_ROOT_FOLDER_ID=1yn75-KuQ1GRR6GqnRZ2n8t5u2t83AEZO
 GOOGLE_DRIVE_SHEET_FOLDER_ID=1ixM9gVRDFSYkNIuqhbbuPdxJ0UTodPUP
 GOOGLE_SHEETS_SPREADSHEET_ID=1Y1dAKoggA1Ae-DSZQZf2FilxZE7VOJod-n-lechyJ0M
@@ -57,8 +53,8 @@ NAS_BACKUP_HOST=https://novart.ipdisk.co.kr
 주의:
 
 - `GOOGLE_PRIVATE_KEY`는 줄바꿈을 `\n`으로 바꿔 입력한다.
-- Google OAuth Console에도 `https://golf.aunova.ai/api/auth/google/callback`을 등록해야 한다.
 - 서비스 계정 이메일을 Google Sheets와 필요한 Drive 폴더에 편집자로 공유해야 한다.
+- MVP에서는 Google 계정 로그인/회원가입을 제외한다. `GOOGLE_OAUTH_CLIENT_ID`, `GOOGLE_OAUTH_CLIENT_SECRET`, `GOOGLE_OAUTH_REDIRECT_URI`는 향후 소셜 로그인 확장 시 다시 검토한다.
 
 ## 배포 명령
 

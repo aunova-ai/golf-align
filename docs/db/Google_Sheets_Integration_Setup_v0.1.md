@@ -29,10 +29,6 @@ https://drive.google.com/drive/folders/1yn75-KuQ1GRR6GqnRZ2n8t5u2t83AEZO
 ```env
 NEXT_PUBLIC_APP_URL=https://golf.aunova.ai
 
-GOOGLE_OAUTH_CLIENT_ID=
-GOOGLE_OAUTH_CLIENT_SECRET=
-GOOGLE_OAUTH_REDIRECT_URI=https://golf.aunova.ai/api/auth/google/callback
-
 GOOGLE_DRIVE_ROOT_FOLDER_ID=1yn75-KuQ1GRR6GqnRZ2n8t5u2t83AEZO
 GOOGLE_DRIVE_SHEET_FOLDER_ID=1ixM9gVRDFSYkNIuqhbbuPdxJ0UTodPUP
 GOOGLE_SHEETS_SPREADSHEET_ID=1Y1dAKoggA1Ae-DSZQZf2FilxZE7VOJod-n-lechyJ0M
@@ -56,7 +52,8 @@ GOOGLE_PRIVATE_KEY=
 
 ## Google OAuth 설정 순서
 
-Google 계정으로 회원가입/로그인을 쓰려면 OAuth 클라이언트도 필요하다.
+MVP에서는 Google 계정 회원가입/로그인을 제외한다.  
+아래 항목은 향후 소셜 로그인 확장 시 다시 검토한다.
 
 1. Google Cloud Console > APIs & Services > Credentials로 이동한다.
 2. OAuth client ID를 생성한다.
